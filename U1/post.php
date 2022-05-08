@@ -12,10 +12,11 @@
     }else{
         $datos_antiguos = (array)json_decode(file_get_contents($path.'data.json', true));
         $datos = (array)json_decode($datos);
-        echo $datos_antiguos;
+        $nuevo_array = $datos_antiguos;
         var_dump($datos_antiguos);
         var_dump($datos);
-        //file_put_contents($path.'data.json', json_encode($datos));
+        var_dump($nuevo_array);
+        //file_put_contents($path.'data.json', array_merge($datos_antiguos, $datos));
     }
 ?>
 
