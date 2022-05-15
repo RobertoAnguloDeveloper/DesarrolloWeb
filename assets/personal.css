@@ -1,0 +1,33 @@
+.tabla {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabla th {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla td {
+    font-size: 12px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.tabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabla tr:nth-child(odd) {
+    background-color: #fff;
+}
