@@ -14,9 +14,22 @@
 </head>
 
 <body>
-    <h1 style="text-align:center">ACTIVIDAD DE APRENDIZAJE # 1</h1>
-    <h4 style="text-align:center">Asignatura &lt;DESARROLLO WEB&gt;</h4>
-    <table >
+    <header>
+        <h1>Actividad de aprendizaje # 1</h1>
+        <p>
+            Asignatura
+            <br>
+            &lt;DESARROLLO WEB&gt;
+        </p>
+        <p>
+            Tutor
+            <br>
+            &lt;John Arrieta Arrieta&gt;
+        </p>
+    </header>
+    
+    <center>
+        <table>
         <tr>
             <td>
                 <form method="post" style="width: 40%;">
@@ -25,6 +38,7 @@
                         <label for="">Ingrese los datos solicitados</label>
                         <input type="text" name="nombres" id="texto1" placeholder="Ingrese sus nombres">
                         <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
+                        <input type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
                         <br><br>
                         <input type="submit" value="Enviar">
                     </fieldset>
@@ -35,44 +49,45 @@
 
                     <!-- Crea una tabla com los datos del formulario  -->
                     <?php
-                        while(key($_POST)!=null){
-                            echo "<th><b>".strtoupper(key($_POST))."</b></th>";
-                            next($_POST);
-                        }
+                    while (key($_POST) != null) {
+                        echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
+                        next($_POST);
+                    }
 
-                        //Rebobina el puntero al principio del array
-                        reset($_POST);
+                    //Rebobina el puntero al principio del array
+                    reset($_POST);
 
-                        echo "<tr>";
+                    echo "<tr>";
 
-                        while(key($_POST)!=null){
-                            echo "<td>".current($_POST)."</td>";
-                            next($_POST);
-                        }
+                    while (key($_POST) != null) {
+                        echo "<td>" . current($_POST) . "</td>";
+                        next($_POST);
+                    }
 
-                        echo "</tr>";
+                    echo "</tr>";
                     ?>
                 </table>
             </td>
         </tr>
     </table>
+    </center>
     <br>
     <br>
-    
+
 </body>
 
 </html>
 
 <!-- <?php
-$datos = json_encode($_POST);
-var_dump($_POST);
+        $datos = json_encode($_POST);
+        var_dump($_POST);
 
-$path = "./DATA/";
+        $path = "./DATA/";
 
-if (!is_dir($path)) {
-    mkdir($path, 0777, true);
-    file_put_contents($path . 'form1.json', $datos);
-} else {
-    file_put_contents($path . 'form1.json', $datos);
-}
-?> -->
+        if (!is_dir($path)) {
+            mkdir($path, 0777, true);
+            file_put_contents($path . 'form1.json', $datos);
+        } else {
+            file_put_contents($path . 'form1.json', $datos);
+        }
+        ?> -->
