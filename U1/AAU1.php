@@ -27,7 +27,13 @@
             &lt;John Arrieta Arrieta&gt;
         </p>
     </header>
-    <!-- Crea un navbar con 4 botones -->
+    <!-- Build a simple side bar with four buttons -->
+    <div id="sidebar">
+        <div class="toggle-btn">
+            <span>&#9776;</span>
+        </div>
+    </div>
+    
     <center>
         <div class="contenido-central">
             <table>
