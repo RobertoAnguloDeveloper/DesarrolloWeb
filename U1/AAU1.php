@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <h1>Actividad de aprendizaje # 1</h1>
         <p>
             Asignatura
@@ -27,52 +27,53 @@
             &lt;John Arrieta Arrieta&gt;
         </p>
     </header>
-    
+    <!-- Crea un navbar con 4 botones -->
     <center>
-        <table>
-        <tr>
-            <td>
-                <form method="post" style="width: 40%;">
-                    <fieldset>
-                        <legend><b>Formulario 1</b></legend>
-                        <label for="">Ingrese los datos solicitados</label>
-                        <input type="text" name="nombres" id="texto1" placeholder="Ingrese sus nombres">
-                        <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
-                        <input type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
-                        <br><br>
-                        <input type="submit" value="Enviar">
-                    </fieldset>
-                </form>
-            </td>
-            <td>
-                <table class="tabla">
+        <div class="contenido-central">
+            <table>
+                <tr>
+                    <td>
+                        <form method="post" style="width: 40%;">
+                            <fieldset>
+                                <legend><b>Formulario 1</b></legend>
+                                <label for="">Ingrese los datos solicitados</label>
+                                <input type="text" name="nombres" id="texto1" placeholder="Ingrese sus nombres">
+                                <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
+                                <input type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
+                                <br><br>
+                                <input type="submit" value="Enviar">
+                            </fieldset>
+                        </form>
+                    </td>
+                    <td>
+                        <table class="tabla">
+                        <!-- Crea una tabla com los datos del formulario  -->
+                        <?php
+                            while (key($_POST) != null) {
+                                echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
+                                next($_POST);
+                            }
 
-                    <!-- Crea una tabla com los datos del formulario  -->
-    <?php
-    while (key($_POST) != null) {
-        echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
-        next($_POST);
-    }
+                            //Rebobina el puntero al principio del array
+                            reset($_POST);
 
-    //Rebobina el puntero al principio del array
-    reset($_POST);
+                            echo "<tr>";
 
-    echo "<tr>";
+                            while (key($_POST) != null) {
+                                echo "<td>" . current($_POST) . "</td>";
+                                next($_POST);
+                            }
 
-    while (key($_POST) != null) {
-        echo "<td>" . current($_POST) . "</td>";
-        next($_POST);
-    }
-
-    echo "</tr>";
-    ?>
-    </table>
-    </td>
-    </tr>
-    </table>
+                            echo "</tr>";
+                        ?>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </center>
-    <br>
-    <br>
+<br>
+<br>
 
 </body>
 

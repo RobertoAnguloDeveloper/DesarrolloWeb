@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="chooser">
+        Utilice este menú para ver nuestros cursos.
+        </div>
+        <div id="navhowto">
+        Utilice la tecla de tabulación para entrar y salir del menú. Use las teclas de flecha para navegar dentro del menú.
+        </div>
+        <div id="menu_container" tabindex="0" aria-details="chooser">
+        <ul role="menubar" aria-activedescendant="cursos" id="offerings" aria-describedby="navhowto" tabindex="0">
+         <li role="menuitem" id="home">Inicio</li>
+         <li role="menuitem" aria-haspopup="true" id="cursos">Cursos
+          <ul role="menu" aria-expanded="true">
+            <li role="menuitem" id="programacion">Programación</li>
+            <li role="menuitem" id="marketing">Marketing Digital</li>
+          </ul>
+         </li>
+        </ul>
+        </div>
+</body>
+</html>
