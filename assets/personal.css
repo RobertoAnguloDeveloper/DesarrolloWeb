@@ -1,3 +1,7 @@
+*{
+    margin: 0 auto;
+}
+
 .header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     background-color: #ffe600;
@@ -11,49 +15,43 @@
     border-radius: 40px;
 }
 
-/* Use flexbox to place a sidebar */
-#sidebar {
+#sidebar{
+    /* Wrap text*/
+    white-space: nowrap;
     background-color: #ffe600;
-    background-image: linear-gradient(#ffe600, #ffc200);
-    color: #fff;
-    text-shadow: 1.5px 1px 5px #000;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 40px;
-    width: 100px;
+    background-image: linear-gradient(#ffe600c0, #ffc200);
+    /* set sidebar to left*/
+    float: left;
     height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    overflow-y: auto;
+    width: 20%;
 }
 
-.toogle-btn{
-    background-color: #ffe600;
-    background-image: linear-gradient(#ffe600, #ffc200);
-    color: #fff;
-    text-shadow: 1.5px 1px 5px #000;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 40px;
-    width: 100px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    overflow-y: auto;
+#lista{
+    list-style: none;
 }
 
-.contenido-central{
+#lista li a{
+    text-decoration: none;
+    color: #000;
+}
+
+table.formulario, table.formulario tbody{
+    margin: 0;
+    padding: 0;
+}
+
+.formulario{
+    /* set table close to sidebar*/
+    
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+
+}
+
+.contenido-central {
     background-color: #fff;
     text-shadow: 1px 1px 1px rgb(191, 191, 191);
-    padding: 20px;
     border-radius: 20px;
 }
 
