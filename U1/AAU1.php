@@ -30,7 +30,7 @@
     <!-- Build a simple side bar with four buttons -->
     <div id="sidebar">
         <div class="toggle-btn">
-            <span>&#9776;</span>
+            &#9776;
         </div>
     </div>
     

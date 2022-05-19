@@ -32,22 +32,7 @@
 }
 
 .toogle-btn{
-    background-color: #ffe600;
-    background-image: linear-gradient(#ffe600, #ffc200);
-    color: #fff;
-    text-shadow: 1.5px 1px 5px #000;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 40px;
-    width: 100px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    overflow-y: auto;
+    font-size: 50px;
 }
 
 .contenido-central{
