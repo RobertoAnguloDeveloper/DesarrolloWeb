@@ -17,26 +17,21 @@
     <header class="header">
         <h1>Actividad de aprendizaje # 1</h1>
         <p>
-            Asignatura
-            <br>
             &lt;DESARROLLO WEB&gt;
-        </p>
-        <p>
-            Tutor
-            <br>
-            &lt;John Arrieta Arrieta&gt;
         </p>
     </header>
     <!-- Build a simple side bar with four buttons -->
     <div id="sidebar">
-        <div class="toggle-btn">
-            &#9776;
-        </div>
+            <ul id="lista">
+                <li><a href="#">Actividad de aprendizaje # 1</a></li>
+                <li><a href="#">Actividad de aprendizaje # 2</a></li>
+                <li><a href="#">Actividad de aprendizaje # 3</a></li>
+                <li><a href="#">Actividad de aprendizaje # 4</a></li>
+            </ul>
     </div>
     
-    <center>
         <div class="contenido-central">
-            <table>
+            <table class="formulario">
                 <tr>
                     <td>
                         <form method="post" style="width: 40%;">
@@ -77,7 +72,6 @@
                 </tr>
             </table>
         </div>
-    </center>
 <br>
 <br>
 
