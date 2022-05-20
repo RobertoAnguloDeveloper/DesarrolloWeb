@@ -9,8 +9,8 @@
     <script src="../assets/js/bootstrap.bundle.min.js"></script> -->
     <link rel="stylesheet" href="../assets/personal.css">
 
-
     <title>Actividad de aprendizaje # 1</title>
+    
 </head>
 
 <body>
@@ -20,61 +20,51 @@
             &lt;DESARROLLO WEB&gt;
         </p>
     </header>
-    <!-- Build a simple side bar with four buttons -->
-    <div id="sidebar">
-            <ul id="lista">
-                <li><a href="#">Actividad de aprendizaje # 1</a></li>
-                <li><a href="#">Actividad de aprendizaje # 2</a></li>
-                <li><a href="#">Actividad de aprendizaje # 3</a></li>
-                <li><a href="#">Actividad de aprendizaje # 4</a></li>
-            </ul>
-    </div>
+
+    <ul class="menu-barra">
+        <li><a href="#">Actividad de aprendizaje # 1</a></li>
+        <li><a href="#">Actividad de aprendizaje # 2</a></li>
+        <li><a href="#">Actividad de aprendizaje # 3</a></li>
+        <li><a href="#">Actividad de aprendizaje # 4</a></li>
+        <li><a href="#">Información del estudiante</a></li>
+    </ul>
     
-        <div class="contenido-central">
-            <table class="formulario">
-                <tr>
-                    <td>
-                        <form method="post" style="width: 40%;">
-                            <fieldset>
-                                <legend><b>Formulario 1</b></legend>
-                                <label for="">Ingrese los datos solicitados</label>
-                                <input type="text" name="nombres" id="texto1" placeholder="Ingrese sus nombres">
-                                <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
-                                <input type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
-                                <br><br>
-                                <input type="submit" value="Enviar">
-                            </fieldset>
-                        </form>
-                    </td>
-                    <td>
-                        <table class="tabla">
-                        <!-- Crea una tabla com los datos del formulario  -->
-                        <?php
-                            while (key($_POST) != null) {
-                                echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
-                                next($_POST);
-                            }
+    <div id="formulario"></div>
+        <form method="post" style="width: 40%;">
+            <fieldset>
+                <legend><b>Formulario 1</b></legend>
+                <label for="">Ingrese los datos solicitados</label>
+                <input type="text" name="nombres" id="texto1" placeholder="Ingrese sus nombres">
+                <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
+                <input type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
+                <br><br>
+                <input type="submit" value="Enviar">
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <table class="tabla">
+        <?php
+            while (key($_POST) != null) {
+                echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
+                next($_POST);
+            }
 
-                            //Rebobina el puntero al principio del array
-                            reset($_POST);
+            //Rebobina el puntero al principio del array
+            reset($_POST);
 
-                            echo "<tr>";
+            echo "<tr>";
 
-                            while (key($_POST) != null) {
-                                echo "<td>" . current($_POST) . "</td>";
-                                next($_POST);
-                            }
+            while (key($_POST) != null) {
+                echo "<td>" . current($_POST) . "</td>";
+                next($_POST);
+            }
 
-                            echo "</tr>";
-                        ?>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </div>
-<br>
-<br>
-
+            echo "</tr>";
+        ?>
+    </table>
+    <br>
+    <br>
 </body>
 
 </html>
@@ -91,4 +81,4 @@
         } else {
             file_put_contents($path . 'form1.json', $datos);
         }
-        ?> -->
+    ?> -->

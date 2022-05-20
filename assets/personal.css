@@ -1,5 +1,6 @@
 *{
     margin: 0 auto;
+    padding: 0 auto;
 }
 
 .header {
@@ -15,44 +16,37 @@
     border-radius: 40px;
 }
 
-#sidebar{
-    /* Wrap text*/
-    white-space: nowrap;
+.menu-barra{
+    width: 75%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     background-color: #ffe600;
-    background-image: linear-gradient(#ffe600c0, #ffc200);
-    /* set sidebar to left*/
-    float: left;
-    height: 100%;
-    width: 20%;
+    color: #fff;
+    text-shadow: 0px 0px 1px #000;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 40px;
 }
 
-#lista{
-    list-style: none;
-}
-
-#lista li a{
+.menu-barra li a{
+    margin-left: 0px;
+    margin-right: 15px;
     text-decoration: none;
-    color: #000;
+    color: rgb(0, 0, 0);
 }
 
-table.formulario, table.formulario tbody{
-    margin: 0;
-    padding: 0;
+.menu-barra li{
+    margin: 5px;
+    display: inline-block;
 }
 
-.formulario{
-    /* set table close to sidebar*/
-    
-    width: 100%;
-    height: 100%;
-    vertical-align: top;
-
-}
-
-.contenido-central {
-    background-color: #fff;
-    text-shadow: 1px 1px 1px rgb(191, 191, 191);
-    border-radius: 20px;
+.menu-barra li a:hover{
+    border-radius: 40px;
+    background-color: #ffc200;
+    background-image: linear-gradient(#ffc200, #ffe600);
+    padding: 5px;
+    box-shadow: 0px 0px 10px #000;
+    color: #fff;
+    text-shadow: 1.5px 1px 5px #000;
 }
 
 .tabla {
