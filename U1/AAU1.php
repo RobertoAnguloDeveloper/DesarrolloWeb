@@ -20,13 +20,21 @@
 
     <ul class="menu-barra">
         <li>
-            <a onmouseover="display();"href="#" >Actividad de aprendizaje 1</a>
+            <a onmouseover="show();" onmouseout="hide();" href="#" >Actividad de aprendizaje 1</a>
 
             <!-- Lista despleglable -->
-            <ul id="popup">
+            <ul id="popup" onmouseover="show();" onmouseout="hide();">
                 <li><a href="#">Formulario 1</a></li>
-                <li><a href="#">Formulario 1</a></li>
-                <li><a href="#">Formulario 1</a></li>
+                <br>
+                <li><a href="#">Formulario 2</a></li>
+                <br>
+                <li><a href="#">Formulario 3</a></li>
+                <br>
+                <li><a href="#">Formulario 4</a></li>
+                <br>
+                <li><a href="#">Formulario 5</a></li>
+                <br>
+                <li><a href="#">Formulario 6</a></li>
             </ul>
         </li>
 
@@ -85,19 +93,13 @@
         document.getElementsByClassName("ventana-modal")[0].style.display = "none";
     }
 
-    function display() {
+    function show() {
         var popup = document.getElementById("popup");
-        var display = popup.style.display;
-        if (display == "none") {
-            popup.style.display = "block";
-        } else {
-            popup.style.display = "none";
-        }
-
-
+        popup.style.display = "block";
+        
     }
 
-    function noDisplay() {
+    function hide() {
         var popup = document.getElementById("popup");
             popup.style.display = "none";
     }
