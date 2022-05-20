@@ -9,39 +9,50 @@
     <script src="../assets/js/bootstrap.bundle.min.js"></script> -->
     <link rel="stylesheet" href="../assets/personal.css">
 
-    <title>Actividad de aprendizaje # 1</title>
+    <title>&lt;DESARROLLO WEB&gt;</title>
     
 </head>
 
 <body>
     <header class="header">
-        <h1>Actividad de aprendizaje # 1</h1>
-        <p>
-            &lt;DESARROLLO WEB&gt;
-        </p>
+        <h1>&lt; DESARROLLO WEB &gt;</h1>
     </header>
 
     <ul class="menu-barra">
-        <li><a href="#">Actividad de aprendizaje # 1</a></li>
-        <li><a href="#">Actividad de aprendizaje # 2</a></li>
-        <li><a href="#">Actividad de aprendizaje # 3</a></li>
-        <li><a href="#">Actividad de aprendizaje # 4</a></li>
+        <li>
+            <a onmouseover="display();"href="#" >Actividad de aprendizaje 1</a>
+
+            <!-- Lista despleglable -->
+            <ul id="popup">
+                <li><a href="#">Formulario 1</a></li>
+                <li><a href="#">Formulario 1</a></li>
+                <li><a href="#">Formulario 1</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Actividad de aprendizaje 2</a></li>
+        <li><a href="#">Actividad de aprendizaje 3</a></li>
+        <li><a href="#">Actividad de aprendizaje 4</a></li>
         <li><a href="#">Información del estudiante</a></li>
     </ul>
+
+    <center><iframe src="../test.html" frameborder="1"></iframe></center>
     
-    <div id="formulario"></div>
-        <form method="post" style="width: 40%;">
+        <form class="formulario" method="post">
             <fieldset>
                 <legend><b>Formulario 1</b></legend>
                 <label for="">Ingrese los datos solicitados</label>
+                <br>    
                 <input type="text" name="nombres" id="texto1" placeholder="Ingrese sus nombres">
+                <br>
                 <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
+                <br>
                 <input type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
                 <br><br>
                 <input type="submit" value="Enviar">
             </fieldset>
         </form>
-    </div>
+
     <br>
     <table class="tabla">
         <?php
@@ -68,6 +79,30 @@
 </body>
 
 </html>
+
+<script>
+    function cerrar() {
+        document.getElementsByClassName("ventana-modal")[0].style.display = "none";
+    }
+
+    function display() {
+        var popup = document.getElementById("popup");
+        var display = popup.style.display;
+        if (display == "none") {
+            popup.style.display = "block";
+        } else {
+            popup.style.display = "none";
+        }
+
+
+    }
+
+    function noDisplay() {
+        var popup = document.getElementById("popup");
+            popup.style.display = "none";
+    }
+
+</script>
 
 <!-- <?php
         $datos = json_encode($_POST);
