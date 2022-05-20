@@ -55,7 +55,6 @@
     border-radius: 40px;
     background-color: #ffc200;
     background-image: linear-gradient(#ffc200, #ffe600);
-    padding: 5px;
     box-shadow: 0px 0px 10px #000;
     color: #fff;
     text-shadow: 1.5px 1px 5px #000;
@@ -63,9 +62,17 @@
 
 #popup{
     display: none;
-    position: absolute;
+    position: fixed;
 }
 
+#popup a:hover{
+    border-radius: 40px;
+    background-color: #ffc200;
+    background-image: linear-gradient(#ffc200, #ffe600);
+    box-shadow: 0px 0px 10px #000;
+    color: #fff;
+    text-shadow: 1.5px 1px 5px #000;
+}
 
 .tabla {
     font-family: Arial, Helvetica, sans-serif;
