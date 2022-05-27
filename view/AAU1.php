@@ -8,6 +8,7 @@
     <!-- <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <script src="../assets/js/bootstrap.bundle.min.js"></script> -->
     <link rel="stylesheet" href="./assets/personal.css">
+    <script src="./assets/personal.js"></script>
 
     <title>&lt;DESARROLLO WEB&gt;</title>
     
@@ -22,19 +23,18 @@
         <li>
             <a onmouseover="showPopup();" onmouseout="hidePopup();" href="#" >Actividad de aprendizaje 1</a>
 
-            <!-- Lista despleglable -->
             <ul id="popup" onmouseover="showPopup();" onmouseout="hidePopup();">
                 <li><a onclick="form1();" href="#">Formulario 1</a></li>
                 <br>
-                <li><a href="#">Formulario 2</a></li>
+                <li><a onclick="form2();" href="#">Formulario 2</a></li>
                 <br>
-                <li><a href="#">Formulario 3</a></li>
+                <li><a onclick="form3();" href="#">Formulario 3</a></li>
                 <br>
-                <li><a href="#">Formulario 4</a></li>
+                <li><a onclick="form4();" href="#">Formulario 4</a></li>
                 <br>
-                <li><a href="#">Formulario 5</a></li>
+                <li><a onclick="form5();" href="#">Formulario 5</a></li>
                 <br>
-                <li><a href="#">Formulario 6</a></li>
+                <li><a onclick="form6();" href="#">Formulario 6</a></li>
             </ul>
         </li>
 
@@ -49,33 +49,3 @@
 </body>
 
 </html>
-
-<script>
-    function cerrar() {
-        document.getElementsByClassName("ventana-modal")[0].style.display = "none";
-    }
-
-    function showPopup() {
-        var popup = document.getElementById("popup");
-        popup.style.display = "block";
-        
-    }
-
-    function hidePopup() {
-        var popup = document.getElementById("popup");
-            popup.style.display = "none";
-    }
-
-    function showIframe() {
-        var iframe = document.getElementById("formsFrame");
-        iframe.style.display = "block";
-        
-    }
-
-    function form1() {
-        showIframe();
-        var iframe = document.getElementById("formsFrame");
-        iframe.src = "../U1/forms/form1.php";
-    }
-
-</script>
