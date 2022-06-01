@@ -19,14 +19,9 @@
         
     }
 
-    function form1() {
+    function form() {
         showIframe();
+        var form = document.activeElement.id;
         var iframe = document.getElementById("formsFrame");
-        iframe.src = "../U1/forms/form1.php";
-    }
-
-    function form2() {
-        showIframe();
-        var iframe = document.getElementById("formsFrame");
-        iframe.src = "../U1/forms/form2.php";
+        iframe.src = "../U1/forms/"+form+".php";
     }

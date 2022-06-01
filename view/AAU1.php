@@ -24,17 +24,17 @@
             <a onmouseover="showPopup();" onmouseout="hidePopup();" href="#" >Actividad de aprendizaje 1</a>
 
             <ul id="popup" onmouseover="showPopup();" onmouseout="hidePopup();">
-                <li><a id="form1" onclick="form1();" href="#">Formulario 1</a></li>
+                <li><a id="form1" onclick="form();" href="#">Formulario 1</a></li>
                 <br>
-                <li><a id="form2" onclick="form2();" href="#">Formulario 2</a></li>
+                <li><a id="form2" onclick="form();" href="#">Formulario 2</a></li>
                 <br>
-                <li><a id="form3" onclick="form3();" href="#">Formulario 3</a></li>
+                <li><a id="form3" onclick="form();" href="#">Formulario 3</a></li>
                 <br>
-                <li><a id="form4" onclick="form4();" href="#">Formulario 4</a></li>
+                <li><a id="form4" onclick="form();" href="#">Formulario 4</a></li>
                 <br>
-                <li><a id="form5" onclick="form5();" href="#">Formulario 5</a></li>
+                <li><a id="form5" onclick="form();" href="#">Formulario 5</a></li>
                 <br>
-                <li><a id="form6" onclick="form6();" href="#">Formulario 6</a></li>
+                <li><a id="form6" onclick="form();" href="#">Formulario 6</a></li>
             </ul>
         </li>
 
