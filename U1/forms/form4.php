@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../view/assets/personal.css">
-    <title>Formulario 1</title>
-</head>
+    <script src="../../view/assets/personal.js"></script>
 
+    <title>Formulario 4</title>
+</head>
 <body>
     <div class="formulario">
         <form method="post">
             <fieldset>
-                <legend><b>Formulario 1</b></legend>
+                <legend><b>Formulario 4</b></legend>
                 <label for="">Ingrese los datos solicitados</label>
                 <br>    
-                <input type="text" name="nombres" id="texto1" placeholder="Ingrese sus nombres">
+                <input type="color" oninput="muestraValorColor();" name="color de piel" id="piel">
+                <span id="valorPiel"></span>
                 <br>
-                <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
+                <input type="file" name="adjunto" id="archivo">
                 <br>
-                <input type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
+                <input type="range" onclick="muestraValor();" name="estatura" min="100" max="300" id="estatura">
+                <!-- Mostrar el valor del range a un lado -->
+                <span id="valor"></span>&nbsp;m
                 <br>
                 <input type="submit" value="Enviar">
+                <input type="reset" value="Limpiar">
             </fieldset>
         </form>
     </div>
     <br>
-
-    <!-- La tabla solo se muestra y crea cuando recive los datos del formulario -->
     <table class="tabla">
         <?php
             while (key($_POST) != null) {

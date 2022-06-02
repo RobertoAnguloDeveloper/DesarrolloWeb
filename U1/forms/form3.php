@@ -16,13 +16,23 @@
                 <br>    
                 <input type="date" name="fecha" id="fecha">
                 <br>
-                <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
+                <input type="datetime" name="fecha y hora" id="fechaCompleta">
+                <script>
+                    var date = new Date();
+                    //Translate Datetime in Spanish
+                    var options = {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric"
+                    };
+                    document.getElementById("fechaCompleta").value = date.toLocaleDateString("es-ES", options);
+                </script>
+                
                 <br>
-                <input type="email" name="email" id="email" placeholder="Ingrese su correo electrónico">
+                <input type="month" name="mes" id="mes">
                 <br>
-                <input type="tel" name="celular" id="celular" placeholder="Ingrese su teléfono celular">
-                <br>
-                <input type="search" name="busqueda" id="busqueda" placeholder="Ingrese su busqueda">
+                <input type="time" name="hora" id="hora">
                 <br>
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpiar">
