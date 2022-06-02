@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,24 @@
     <link rel="stylesheet" href="../../view/assets/personal.css">
     <script src="../../view/assets/personal.js"></script>
 
-    <title>Formulario 4</title>
+    <title>Formulario 5</title>
 </head>
+
 <body>
     <div class="formulario">
         <form method="post">
             <fieldset>
-                <legend><b>Formulario 4</b></legend>
+                <legend><b>Formulario 5</b></legend>
                 <label for="">Ingrese los datos solicitados</label>
-                <br>    
+                <br>
+                <select name="estado_civil" size="1" id="spinner"></select>    
                 <input type="color" oninput="muestraValorColor();" name="color de piel" id="piel">
                 <span id="valorPiel"></span>
                 <br>
                 <input type="file" name="adjunto" id="archivo">
                 <br>
                 <input type="range" onclick="muestraValor();" name="estatura(cm)" min="100" max="300" id="estatura">
+                
                 <!-- Mostrar el valor del range a un lado -->
                 <span id="valor"></span>&nbsp;m
                 <br>

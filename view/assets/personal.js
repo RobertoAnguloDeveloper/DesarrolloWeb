@@ -8,7 +8,6 @@
         valor = parseFloat(valor);
         valor = valor/100;
         document.getElementById("valor").innerHTML = valor;
-        document.getElementById(id).value = valor;
     }
 
     function muestraValorColor() {
