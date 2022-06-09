@@ -35,5 +35,5 @@
         showIframe();
         var form = document.activeElement.id;
         var iframe = document.getElementById("formsFrame");
-        iframe.src = "../U1/forms/"+form+".php";
+        iframe.src = "./forms/"+form+".php";
     }
