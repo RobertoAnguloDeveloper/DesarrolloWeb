@@ -18,17 +18,24 @@
                 <legend><b>Formulario 5</b></legend>
                 <label for="">Ingrese los datos solicitados</label>
                 <br>
-                <select name="estado_civil" size="1" id="spinner"></select>    
-                <input type="color" oninput="muestraValorColor();" name="color de piel" id="piel">
-                <span id="valorPiel"></span>
-                <br>
-                <input type="file" name="adjunto" id="archivo">
-                <br>
-                <input type="range" onclick="muestraValor();" name="estatura(cm)" min="100" max="300" id="estatura">
-                
-                <!-- Mostrar el valor del range a un lado -->
-                <span id="valor"></span>&nbsp;m
-                <br>
+                <select name="estado_civil" size="1" id="spinner1">
+                    <option value=""></option>
+                    <option value="Casado">Casado</option>
+                    <option value="Soltero">Soltero</option>
+                    <option value="Unión Libre">Unión libre</option>
+                </select>
+                <br><br>
+                <select name="idiomas" size="3" id="spinner2" multiple>
+                    <option value=""></option>
+                    <option value="Esp">Español</option>
+                    <option value="Eng">Inglés</option>
+                    <option value="Ita">Italiano</option>
+                    <option value="Fr">Francés</option>
+                    <option value="Ale">Alemán</option>
+                    <option value="Chi">Chino</option>
+                    <option value="Rus">Ruso</option>
+                </select>
+                <br><br>
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpiar">
             </fieldset>

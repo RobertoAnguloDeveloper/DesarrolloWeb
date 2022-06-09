@@ -19,9 +19,11 @@
                 <input type="color" oninput="muestraValorColor();" name="color de piel" id="piel">
                 <span id="valorPiel"></span>
                 <br><br>
-                <input type="file" name="adjunto" id="archivo">
+                <label for="">Adjunte su documentación en PDF</label>
+                <br>
+                <input type="file" accept=".pdf" name="adjunto" id="archivo">
                 <br><br>
-                <label for="">Desplace la barra para colocar su edad</label>
+                <label for="">Desplace la barra para colocar su estatura en metros</label>
                 <br>
                 <input type="range" onclick="muestraValor();" name="estatura(cm)" min="100" max="300" id="estatura">
                 <!-- Mostrar el valor del range a un lado -->
