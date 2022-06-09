@@ -12,18 +12,49 @@
         <form method="post">
             <fieldset>
                 <legend><b>Formulario 2</b></legend>
-                <label for="">Ingrese los datos solicitados</label>
-                <br>    
-                <input type="number" name="codigo" id="codigo" placeholder="Ingrese el código">
-                <br>
-                <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
-                <br>
-                <input type="email" name="email" id="email" placeholder="Ingrese su correo electrónico">
-                <br>
-                <input type="tel" name="celular" id="celular" placeholder="Ingrese su teléfono celular">
-                <br>
-                <input type="search" name="busqueda" id="busqueda" placeholder="Ingrese su busqueda">
-                <br>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="codigo">Código</label>
+                        </td>
+                        <td>
+                           <input type="number" name="codigo" id="codigo" placeholder="Ingrese el código">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Contraseña&nbsp;</label>
+                        </td>
+                        <td>
+                            <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Email</label>
+                        </td>
+                        <td>
+                            <input type="email" name="email" id="email" placeholder="Ingrese su correo electrónico">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="celular">Celular</label>
+                        </td>
+                        <td>
+                        <input type="tel" name="celular" id="celular" placeholder="Ingrese su teléfono celular">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="busqueda">Búsqueda</label>
+                        </td>
+                        <td>
+                        <input type="search" name="busqueda" id="busqueda" placeholder="Ingrese su busqueda">
+                        </td>
+                    </tr>
+                </table>
+                
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpiar">
             </fieldset>

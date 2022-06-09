@@ -12,9 +12,25 @@
         <form method="post">
             <fieldset>
                 <legend><b>Formulario 3</b></legend>
-                <label for="">Ingrese los datos solicitados</label>
-                <br>    
-                <input type="date" name="fecha" id="fecha">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="texto1">Fecha</label>
+                        </td>
+                        <td>
+                            <input type="date" name="fecha" id="fecha">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="texto1">Fecha</label>
+                        </td>
+                        <td>
+                            <input type="datetime" name="fecha y hora" id="fechaCompleta">
+                        </td>
+                    </tr>
+                </table>
+                
                 <br>
                 <input type="datetime" name="fecha y hora" id="fechaCompleta">
                 <script>

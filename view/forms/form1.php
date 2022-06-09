@@ -14,13 +14,14 @@
         <form method="post">
             <fieldset>
                 <legend><b>Formulario 1</b></legend>
-                <label for="">Ingrese los datos solicitados</label>
-                <br>    
+                <label for="texto1">Nombres&nbsp;</label>
                 <input type="text" name="nombres" id="texto1" placeholder="Ingrese sus nombres">
                 <br>
+                <label for="texto2">Apellidos</label>
                 <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
                 <br>
-                <input type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
+                <label for="texto3">Edad</label>
+                <input style="margin-left: 30px;" type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
                 <br>
                 <input type="submit" value="Enviar">
             </fieldset>
