@@ -16,10 +16,9 @@
         <form method="post">
             <fieldset>
                 <legend><b>Formulario 6</b></legend>
-                <label for="">Ingrese los datos solicitados</label>
+                <label for="comentarios"><b>COMENTARIOS</b></label>
                 <br>
-                <textarea name="comentarios" id="comentarios" cols="40" rows="5">
-                    </textarea>
+                <textarea name="comentarios" id="comentarios" cols="40" rows="5" placeholder="Escriba aquí sus comentarios"></textarea>
                 <br>
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpiar">
