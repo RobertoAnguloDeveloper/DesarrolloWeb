@@ -2,13 +2,29 @@
     require_once '../controller/conexionDB.php';
     require_once 'dao.php';
 
+    $usuario = new Usuario($_POST['usuario'], $_POST['password'],$_POST['email'],$_POST['respuesta']);
+    //Recive by post method data from form
+    class Usuario{
+        private $username;
+        private $password;
+        private $email;
+        private $respuesta;
+
+        public function __construct($username, $password, $email, $respuesta){
+            $this->username = $username;
+            $this->password = $password;
+            $this->email = $email;
+            $this->respuesta = $respuesta;
+        }
+    }
+
     class UsuariosDao implements DAO{
         private $conexion;
 
         public function __construct(){
             $this->conexion = new Conexion("root", "", "musica", "localhost", "3306");
         }
-        
+
         public function create($obj){
             $this->conexion->conectar();
             $sql = "INSERT INTO usuarios (usuario, pass, email, respuesta) VALUES (:usuario, :pass, :email, :respuesta)";
