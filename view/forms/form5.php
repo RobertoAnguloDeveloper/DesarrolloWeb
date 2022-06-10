@@ -16,7 +16,7 @@
         <form method="post">
             <fieldset>
                 <legend><b>Formulario 5</b></legend>
-                <label for="">Ingrese los datos solicitados</label>
+                <label for="spinner1">Estado civil</label>
                 <br>
                 <select name="estado_civil" size="1" id="spinner1">
                     <option value=""></option>
@@ -25,6 +25,8 @@
                     <option value="Unión Libre">Unión libre</option>
                 </select>
                 <br><br>
+                <label for="spinner2">Idiomas manejados</label>
+                <br>
                 <select name="idiomas" size="3" id="spinner2" multiple>
                     <option value=""></option>
                     <option value="Esp">Español</option>
