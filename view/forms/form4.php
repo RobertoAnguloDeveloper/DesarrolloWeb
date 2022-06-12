@@ -48,7 +48,18 @@
             echo "<tr>";
 
             while (key($_POST) != null) {
-                echo "<td>" . current($_POST) . "</td>";
+                if(preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', current($_POST))){
+                    if(current($_POST) == "#000000"){
+                        echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #ffffff;'>".current($_POST)."</td>";
+                    }else if(current($_POST) == "#ffffff"){
+                        echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #000000;'>".current($_POST)."</td>";
+                    } else{
+                    echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #ffffff;'>".current($_POST)."</td>";
+                    }
+                }
+                else{
+                    echo "<td>" . current($_POST) . "</td>";
+                }
                 next($_POST);
             }
 

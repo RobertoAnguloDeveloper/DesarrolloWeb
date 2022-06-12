@@ -93,7 +93,7 @@
 /* Aplicar diseño a todos los input menos los submit*/
 
 .formulario input[type="datetime"]{
-    width: 90%;
+    width: 102%;
 }
 
 .formulario input[type="email"]{
