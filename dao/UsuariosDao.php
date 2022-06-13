@@ -1,6 +1,5 @@
 <?php
     require_once '../controller/conexionDB.php';
-    require_once 'dao.php';
 
     $usuario = new Usuario($_POST['usuario'], $_POST['password'],$_POST['email'],$_POST['respuesta']);
     $usuarioDao = new UsuariosDao();
@@ -29,18 +28,18 @@
         }
 
         public function create($obj){
-            //Surround the following code with try/catch
+            
             try{
-                $this->conexion->conectar();
+                $this->conexion = $this->conexion->conectar();
                 $sql = "INSERT INTO usuarios (usuario, password, email, respuesta) VALUES (:usuario, :password, :email, :respuesta)";
-                $stmt = $this->conexion->conexion->prepare($sql);
+                $stmt = $this->conexion->prepare($sql);
                 $stmt->bindParam(':usuario', $obj->username);
                 $stmt->bindParam(':password', $obj->password);
                 $stmt->bindParam(':email', $obj->email);
                 $stmt->bindParam(':respuesta', $obj->respuesta);
                 $stmt->execute();
                 echo "<script> alert('Usuario creado');</script>";
-                $this->conexion->desconectar();
+                $this->conexion = null;
             }catch(PDOException $e){
                 echo "Error: " . $e->getMessage();
             }
@@ -49,7 +48,7 @@
         public function read($obj){
             $this->conexion->conectar();
             $sql = "SELECT * FROM usuarios WHERE id = :id";
-            $stmt = $this->conexion->dbh->prepare($sql);
+            $stmt = $this->conexion->conexion->prepare($sql);
             $stmt->bindParam(':id', $obj->id);
             $stmt->execute();
             $this->conexion->dbh = null;

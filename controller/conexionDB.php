@@ -27,10 +27,6 @@
             }
         }
 
-        public function desconectar(){
-            $this->conexion = null;
-        }
-
         public function getUser(){
             return $this->user;
         }
