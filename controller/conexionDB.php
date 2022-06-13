@@ -1,12 +1,11 @@
 <?php 
     class Conexion{
-        private $user;
-        private $pass;
-        private $host;
-        private $db;
-        private $port;
-        private $dbh;
-        private $conexion;
+        public $user;
+        public $pass;
+        public $host;
+        public $db;
+        public $port;
+        public $conexion;
 
         public function __construct($user, $pass, $db, $host, $port){
             $this->user = $user;
@@ -21,15 +20,15 @@
             try{
                 $this->conexion = new PDO("mysql:host=$this->host;dbname=$this->db", $this->user, $this->pass);
                 $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $this->conexion = $this->dbh;
-                return $this->dbh;
+                echo "<script> alert('Conexion exitosa');</script>";
+                return $this->conexion;
             }catch(PDOException $e){
                 echo "Error: " . $e->getMessage();
             }
         }
 
         public function desconectar(){
-            $this->dbh = null;
+            $this->conexion = null;
         }
 
         public function getUser(){

@@ -37,3 +37,9 @@
         var iframe = document.getElementById("formsFrame");
         iframe.src = "./forms/"+form+".php";
     }
+
+    function prueba() {
+        showIframe();
+        var iframe = document.getElementById("formsFrame");
+        iframe.src = ".././dao/pruebaDao.php";
+    }
