@@ -18,7 +18,9 @@
     <header class="header">
         <h1>&lt; DESARROLLO WEB &gt;</h1>
     </header>
-
+    <!-- Simple Login Modal Window with JS -->
+    
+    
     <ul class="menu-barra">
         <li>
             <a onmouseover="showPopup();" onmouseout="hidePopup();" href="#" >Actividad de aprendizaje 1</a>

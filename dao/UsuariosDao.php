@@ -21,7 +21,7 @@
     }
 
     class UsuariosDao {
-        public $conexion;
+        private $conexion;
 
         public function __construct(){
             $this->conexion = new Conexion("root", "", "musica", "localhost", "3306");

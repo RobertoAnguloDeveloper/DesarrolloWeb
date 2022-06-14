@@ -1,11 +1,11 @@
 <?php 
     class Conexion{
-        public $user;
-        public $pass;
-        public $host;
-        public $db;
-        public $port;
-        public $conexion;
+        private $user;
+        private $pass;
+        private $host;
+        private $db;
+        private $port;
+        private $conexion;
 
         public function __construct($user, $pass, $db, $host, $port){
             $this->user = $user;
