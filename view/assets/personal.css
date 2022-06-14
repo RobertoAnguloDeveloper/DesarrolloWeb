@@ -16,7 +16,7 @@
     border-radius: 40px;
 }
 
-.menu-barra{
+.menu-barra {
     width: 75%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     background-color: #ffe600;
@@ -25,13 +25,8 @@
     text-align: center;
     font-size: 15px;
     border-radius: 40px;
-}
-
-.menu-barra li a{
-    margin-left: 0px;
-    margin-right: 15px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    list-style-type: none;
 }
 
 .menu-barra li{
@@ -39,31 +34,40 @@
     display: inline-block;
 }
 
-.menu-barra li a:hover{
-    border-radius: 40px;
+.menu-barra li a {
+    padding: 2px 6px 2px 6px;
+    text-decoration: none;
+    list-style-type: none;
+    color: rgb(0, 0, 0);
+}
+
+.menu-barra li a:hover {
     background-color: #ffc200;
     background-image: linear-gradient(#ffc200, #ffe600);
     box-shadow: 0px 0px 10px #000;
     color: #fff;
+    padding: 2px 6px 2px 6px;
+    border-radius: 30px;
     text-shadow: 1.5px 1px 5px #000;
 }
 
 #popup{
-    margin: 0 auto;
-    padding: 0 auto;
     display: none;
     position: fixed;
     background-color: #ffe600;
     background-image: linear-gradient(#ffe600, #ffc200);
+    box-shadow: 0px 0px 10px #000;
+    text-decoration: none;
+    list-style-type: none;
+    text-align: center;
+    position: absolute;
+    border-radius: 10px;
+    top: 12.5%;
+    left: 21.5%;
 }
 
-#popup a:hover{
-    border-radius: 40px;
-    background-color: #ffc200;
-    background-image: linear-gradient(#ffc200, #ffe600);
-    box-shadow: 0px 0px 10px #000;
-    color: #fff;
-    text-shadow: 1.5px 1px 5px #000;
+#popup li a{
+    margin-left: -38px;
 }
 
 #formsFrame {
@@ -73,7 +77,6 @@
 }
 
 .formulario {
-    
     font-size: 1em;
     padding: 5px;
     margin-right: 10px;
