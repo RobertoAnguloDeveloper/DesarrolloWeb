@@ -12,10 +12,10 @@
     <style>
         .contenedor{
             border: 2px solid black;
-            width: 50%;
+            width: 40%;
             height: 80%;
             box-sizing: border-box;
-            background-color: rgba(48,48,48,0.5);
+            background-color: rgba(182, 182, 182, 0.258);
             position: absolute;
             border-radius: 10px;
             top: 50%;
@@ -27,8 +27,8 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: red;
-            color: white;
+            background-color: rgba(255, 255, 13, 0.701);
+            color: rgb(0, 0, 0);
             font-size: 30px;
             border: none;
             border-radius: 10px;
@@ -37,9 +37,9 @@
 
         .cuadro{
             padding: 20px;
-            width: 80%;
+            width: 60%;
             height: 80%;
-            background-color: red;
+            background-color: rgba(255, 238, 0, 0.551);
             position: absolute;
             top: 50%;
             left: 50%;
@@ -49,13 +49,51 @@
     </style>
 
     <script>
-        function cerrar(){
-            document.getElementById('log-in').style.display = 'none';
+        window.onload = function() {
+            var fadeTarget = document.getElementById("log-in");
+            var fadeEffect = setInterval(function() {
+                if (!fadeTarget.style.opacity) {
+                    fadeTarget.style.opacity = 0;
+                }
+                if (fadeTarget.style.opacity < 1) {
+                    fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
+                } else {
+                    clearInterval(fadeEffect);
+                }
+            }, 100);
+        }
+
+        function fadeOutEffect() {
+            var fadeTarget = document.getElementById("log-in");
+            var fadeEffect = setInterval(function() {
+                if (!fadeTarget.style.opacity) {
+                    fadeTarget.style.opacity = 1;
+                }
+                if (fadeTarget.style.opacity > 0) {
+                    fadeTarget.style.opacity -= 0.1;
+                } else {
+                    clearInterval(fadeEffect);
+                }
+            }, 30);
+        }
+
+        function fadeInEffect() {
+            var fadeTarget = document.getElementById("log-in");
+            var fadeEffect = setInterval(function() {
+                if (!fadeTarget.style.opacity) {
+                    fadeTarget.style.opacity = 0;
+                }
+                if (fadeTarget.style.opacity < 1) {
+                    fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
+                } else {
+                    clearInterval(fadeEffect);
+                }
+            }, 100);
         }
     </script>
 
     <div class="contenedor" id="log-in">
-        <button id="btn-x" onclick="cerrar();">x</button>
+        <button id="btn-x" onclick="fadeOutEffect();">x</button>
         <div class="cuadro">
             <form method="POST">
                 <h1>Iniciar Sesión</h1>
