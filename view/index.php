@@ -48,6 +48,7 @@
         <li><a href="#">Información del estudiante</a></li>
     </ul>
 
+    <h4 id="datosEstudiante">Estudiante ROBERTO ANGULO</h4>
     <div class="contenedor" id="log-in">
         <a id="btn-x" onclick="fadeOutEffect();">x</a>
         <div class="cuadro">

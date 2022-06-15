@@ -65,24 +65,24 @@
             document.onmouseup = null;
             document.onmousemove = null;
         }
-
     }
 
     window.onload = function() {
         var fadeTarget = document.getElementById("log-in");
-        fadeTarget.style.opacity = 0.01;
+        fadeTarget.style.opacity = 0.1;
         fadeTarget.style.display = "block";
         dragElement(fadeTarget);
+
         var fadeEffect = setInterval(function() {
             if (!fadeTarget.style.opacity) {
                 fadeTarget.style.opacity = 0;
             }
             if (fadeTarget.style.opacity < 1) {
-                fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.03;
+                fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
             } else {
                 clearInterval(fadeEffect);
             }
-        }, 100);
+        }, 30);
     }
 
     function fadeOutEffect() {

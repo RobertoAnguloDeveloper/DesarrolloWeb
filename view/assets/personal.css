@@ -132,9 +132,9 @@
 #formsFrame {
     width: 75%;
     height: 50vh;
-    margin-top: 20px;
-
+    margin-top: 10px;
     border-radius: 40px;
+    background-image: linear-gradient(#ffe600, #ffc200);
 }
 
 .formulario {
