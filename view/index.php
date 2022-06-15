@@ -20,7 +20,7 @@
     <header class="header">
         <h1>&lt; DESARROLLO WEB &gt;</h1>
     </header>
-    
+    <img id="background" src="./assets/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
         <li>
             <a onmouseover="showPopup();" onmouseout="hidePopup();" href="#">Actividad de aprendizaje 1</a>
