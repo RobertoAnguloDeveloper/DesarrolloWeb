@@ -68,6 +68,10 @@
     }
 
     window.onload = function() {
+        showIframe();
+        var form = document.activeElement.id;
+        var iframe = document.getElementById("formsFrame");
+        iframe.src = "datosEstudiante.php";
         var fadeTarget = document.getElementById("log-in");
         fadeTarget.style.opacity = 0.1;
         fadeTarget.style.display = "block";
