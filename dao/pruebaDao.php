@@ -32,18 +32,30 @@
                             <input type="password" name="contraseña">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            Email:
+                        </td>
+                        <td>
+                            <input type="text" name="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-justify: auto;">
+                            <b>Pregunta secreta</b>
+                            <br>
+                            Cual es tu país favorito?
+                        </td>
+                        <td>
+                            <input type="text" name="respuesta">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Enviar">
+                        </td>
+                    </tr>
                 </table>
-                <br>
-                Contraseña: <input type="password" name="password">
-                <br>
-                Email: <input type="text" name="email">
-                <br><br>
-                <label for="respuesta">Pregunta secreta</label>
-                <br><br>
-                Cual es el nombre de tu país favorito?
-                <br>
-                <input type="text" name="respuesta">
-                <input type="submit" value="Enviar">
             </form>
         </fieldset>
     </div>
