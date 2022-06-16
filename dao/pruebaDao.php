@@ -29,7 +29,7 @@
                             Contraseña:
                         </td>
                         <td>
-                            <input type="password" name="contraseña">
+                            <input type="password" name="password">
                         </td>
                     </tr>
                     <tr>

@@ -72,50 +72,50 @@
         var form = document.activeElement.id;
         var iframe = document.getElementById("formsFrame");
         iframe.src = "datosEstudiante.php";
-        var fadeTarget = document.getElementById("log-in");
-        fadeTarget.style.opacity = 0.1;
-        fadeTarget.style.display = "block";
-        dragElement(fadeTarget);
+    //     var fadeTarget = document.getElementById("log-in");
+    //     fadeTarget.style.opacity = 0.1;
+    //     fadeTarget.style.display = "block";
+    //     dragElement(fadeTarget);
 
-        var fadeEffect = setInterval(function() {
-            if (!fadeTarget.style.opacity) {
-                fadeTarget.style.opacity = 0;
-            }
-            if (fadeTarget.style.opacity < 1) {
-                fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
-            } else {
-                clearInterval(fadeEffect);
-            }
-        }, 30);
-    }
+    //     var fadeEffect = setInterval(function() {
+    //         if (!fadeTarget.style.opacity) {
+    //             fadeTarget.style.opacity = 0;
+    //         }
+    //         if (fadeTarget.style.opacity < 1) {
+    //             fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
+    //         } else {
+    //             clearInterval(fadeEffect);
+    //         }
+    //     }, 30);
+    // }
 
-    function fadeOutEffect() {
-        var fadeTarget = document.getElementById("log-in");
+    // function fadeOutEffect() {
+    //     var fadeTarget = document.getElementById("log-in");
 
-        var fadeEffect = setInterval(function() {
-            if (!fadeTarget.style.opacity) {
-                fadeTarget.style.opacity = 1;
-            }
-            if (fadeTarget.style.opacity > 0) {
-                fadeTarget.style.opacity -= 0.1;
-            } else {
-                clearInterval(fadeEffect);
-            }
-        }, 30);
-    }
+    //     var fadeEffect = setInterval(function() {
+    //         if (!fadeTarget.style.opacity) {
+    //             fadeTarget.style.opacity = 1;
+    //         }
+    //         if (fadeTarget.style.opacity > 0) {
+    //             fadeTarget.style.opacity -= 0.1;
+    //         } else {
+    //             clearInterval(fadeEffect);
+    //         }
+    //     }, 30);
+    // }
 
-    function fadeInEffect() {
-        var fadeTarget = document.getElementById("log-in");
-        var fadeEffect = setInterval(function() {
-            if (!fadeTarget.style.opacity) {
-                fadeTarget.style.opacity = 0;
-            }
-            if (fadeTarget.style.opacity < 1) {
-                fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
-            } else {
-                clearInterval(fadeEffect);
-            }
-        }, 100);
+    // function fadeInEffect() {
+    //     var fadeTarget = document.getElementById("log-in");
+    //     var fadeEffect = setInterval(function() {
+    //         if (!fadeTarget.style.opacity) {
+    //             fadeTarget.style.opacity = 0;
+    //         }
+    //         if (fadeTarget.style.opacity < 1) {
+    //             fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
+    //         } else {
+    //             clearInterval(fadeEffect);
+    //         }
+    //     }, 100);
     }
 
     function showIframe() {
