@@ -22,10 +22,9 @@
     </header>
     <img id="background" src="./assets/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
-        <li><a href="#"><img id="home-icon" src="./assets/img/home.png"></a></li>
+        <a href="#"><img id="home-icon" src="./assets/img/home.png"></a>
         <li>
             <a onmouseover="showPopup();" onmouseout="hidePopup();" href="#">Actividad de aprendizaje 1</a>
-
             <ul id="popup" onmouseover="showPopup();" onmouseout="hidePopup();">
                 <li><a id="form1" onclick="form();" href="#">Formulario 1</a></li>
                 <br>

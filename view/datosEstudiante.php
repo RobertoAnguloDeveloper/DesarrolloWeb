@@ -12,7 +12,7 @@
 
 <body>
     <div id="studentData">
-        <h5>Estudiante</h5>
+        <h3><b>ESTUDIANTE</b></h3>
     </div>
 </body>
 

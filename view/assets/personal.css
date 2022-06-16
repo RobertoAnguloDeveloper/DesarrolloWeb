@@ -3,7 +3,7 @@
     padding: 0 auto;
 }
 
-#background{
+#background {
     z-index: -100;
     opacity: 0.8;
     filter: blur(10px);
@@ -46,18 +46,21 @@
     display: inline-block;
 }
 
-li a #home-icon {
-    width: 25px;
+#home-icon {
+    display: inline-block;
+    margin-left: 65px;
+    margin-top: 5px;
+    margin-bottom: -8px;
+    width: 30px;
 }
 
-/* li a #home-icon:hover{
+#home-icon:hover{
     background-color: #ffc200;
     box-shadow: 0px 0px 5px #000;
     color: #fff;
-    padding: 2px 6px 6px 6px;
     border-radius: 30px;
     text-shadow: 1.5px 1px 5px #000;
-} */
+}
 
 .menu-barra li a {
     padding: 2px 6px 2px 6px;
@@ -76,7 +79,7 @@ li a #home-icon {
 }
 
 #basesDatos2 a {
-    padding: 6px 6px 6px 6px;
+    padding: 2px 6px 6px 6px;
     text-decoration: none;
     list-style-type: none;
     color: rgb(255, 255, 255);
@@ -88,7 +91,7 @@ li a #home-icon {
     background-color: #ffc200;
     box-shadow: 0px 0px 5px #000;
     color: #fff;
-    padding: 6px 6px 6px 6px;
+    padding: 2px 6px 6px 6px;
     border-radius: 30px;
     text-shadow: 1.5px 1px 5px #000;
 }
