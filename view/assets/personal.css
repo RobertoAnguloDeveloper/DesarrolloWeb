@@ -66,6 +66,7 @@
     display: inline-block;
     margin-bottom: -12px;
     margin-right: 5px;
+    margin-left: -40px;
     width: 30px;
 }
 
@@ -133,6 +134,19 @@
 }
 
 .contenedor{
+    border: 2px solid black;
+    width: 30%;
+    height: 40%;
+    box-sizing: border-box;
+    background-color: rgba(182, 182, 182, 0.258);
+    position: absolute;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.contenedorLogin{
     display: none;
     border: 2px solid black;
     width: 30%;

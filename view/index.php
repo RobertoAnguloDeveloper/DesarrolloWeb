@@ -23,7 +23,7 @@
     <img id="background" src="./assets/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./assets/img/home.png"></a>
-            <a href="#"><img id="login-icon" src="./assets/img/login.png"></a>
+            <a href="#" onclick="fadeInEffect('log-in',1);"><img id="login-icon" src="./assets/img/login.png"></a>
         <li>
             <a onmouseover="showPopup();" onmouseout="hidePopup();" href="#">Actividad de aprendizaje 1</a>
             <ul id="popup" onmouseover="showPopup();" onmouseout="hidePopup();">
@@ -49,8 +49,8 @@
         <li id="basesDatos2"><a href="#">BASES DE DATOS II</a></li>
     </ul>
 
-    <div class="contenedor" id="log-in">
-        <a id="btn-x" onclick="fadeOutEffect();">x</a>
+    <div class="contenedorLogin" id="log-in">
+        <a id="btn-x" onclick="fadeOutEffect('log-in',0.1);dragElement(document.getElementById('log-in'));">x</a>
         <div class="cuadro">
             <form method="POST">
                 <h1>Iniciar Sesión</h1>
@@ -63,5 +63,14 @@
     <center><iframe id="formsFrame" style="display: none;" src="" frameborder="1"></iframe></center>
 
 </body>
-
 </html>
+
+<script>
+    window.onload = function() {
+        showIframe();
+        var iframe = document.getElementById("formsFrame");
+        iframe.style.opacity = 0.6;
+        iframe.src = "datosEstudiante.php";
+        fadeInEffect("formsFrame",1);
+    }
+</script>
