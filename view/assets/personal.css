@@ -155,8 +155,8 @@
     background-color: rgba(182, 182, 182, 0.258);
     position: absolute;
     border-radius: 10px;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    right: -10%;
     transform: translate(-50%,-50%);
 }
 
@@ -196,7 +196,7 @@
 #btn-x:hover{
     background-color: #ffc200;
     position: absolute;
-    top: -0.05%;
+    top: -0.01%;
     box-shadow: 0px 10px 5px #000;
     color:#ff0000;
     background-color:#ffffff;

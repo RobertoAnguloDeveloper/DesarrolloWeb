@@ -84,6 +84,7 @@
 
     function fadeInEffect(objeto, duracion) {
         var fadeTarget = document.getElementById(objeto);
+        fadeTarget.style.opacity = 0.1;
         fadeTarget.style.display = "block";
         var fadeEffect = setInterval(function() {
             if (!fadeTarget.style.opacity) {

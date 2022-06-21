@@ -23,7 +23,7 @@
     <img id="background" src="./assets/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./assets/img/home.png"></a>
-            <a href="#" onclick="fadeInEffect('log-in',1);"><img id="login-icon" src="./assets/img/login.png"></a>
+            <a href="#" onclick="fadeInEffect('log-in',0.3);"><img id="login-icon" src="./assets/img/login.png"></a>
         <li>
             <a onmouseover="showPopup();" onmouseout="hidePopup();" href="#">Actividad de aprendizaje 1</a>
             <ul id="popup" onmouseover="showPopup();" onmouseout="hidePopup();">
@@ -50,7 +50,7 @@
     </ul>
 
     <div class="contenedorLogin" id="log-in">
-        <a id="btn-x" onclick="fadeOutEffect('log-in',0.1);dragElement(document.getElementById('log-in'));">x</a>
+        <a id="btn-x" onclick="fadeOutEffect('log-in',0.1);">x</a>
         <div class="cuadro">
             <form method="POST">
                 <h1>Iniciar Sesión</h1>
@@ -67,6 +67,7 @@
 
 <script>
     window.onload = function() {
+        dragElement(document.getElementById('log-in'));
         showIframe();
         var iframe = document.getElementById("formsFrame");
         iframe.style.opacity = 0.6;
