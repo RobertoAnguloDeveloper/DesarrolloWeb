@@ -67,11 +67,11 @@
 
 <script>
     window.onload = function() {
-        dragElement(document.getElementById('log-in'));
+        agarrar(document.getElementById('log-in'));
         showIframe();
         var iframe = document.getElementById("formsFrame");
-        iframe.style.opacity = 0.6;
+        iframe.style.opacity = 0.1;
         iframe.src = "datosEstudiante.php";
-        fadeInEffect("formsFrame",1);
+        fadeInEffect("formsFrame",0.5);
     }
 </script>
