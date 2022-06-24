@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../view/assets/personal.css">
+    <script src="../../view/assets/personal.js"></script>
     <title>Formulario 1</title>
 </head>
 
 <body>
     <div class="formulario">
-        <form method="post">
+        <form method="post" onsubmit="validar();">
             <fieldset>
                 <legend><b>Formulario 1</b></legend>
                 <label for="texto1">Nombres&nbsp;</label>
@@ -21,7 +22,7 @@
                 <input type="text" name="apellidos" id="texto2" placeholder="Ingrese sus apellidos">
                 <br>
                 <label for="texto3">Edad</label>
-                <input style="margin-left: 30px;" type="number" name="edad" id="texto3" placeholder="Ingrese su edad">
+                <input style="margin-left: 30px;" type="number" name="edad" id="texto3" min="18" max="130" placeholder="Ingrese su edad">
                 <br>
                 <input type="submit" value="Enviar">
             </fieldset>

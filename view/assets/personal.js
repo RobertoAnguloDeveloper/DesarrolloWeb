@@ -10,6 +10,21 @@
         document.getElementById("valor").innerHTML = valor;
     }
 
+    function validar() {
+        let dato = parseInt(document.getElementById("texto3").value);
+        let nombre = document.getElementById("texto1").value +" "+ document.getElementById("texto2").value;
+        
+        if (dato >= 60){
+            alert("Gracias por compartir tu gran experiencia con nosotros"+
+            "\n\n                             BIENVENIDO"+
+            "\n\n                MAESTRO "+nombre);
+        }else if (dato > 30 && dato < 60){
+            alert("Aprenderemos mucho juntos, tu experiencia es muy valiosa"+
+            "\n\n                             BIENVENIDO"+
+            "\n\n                PROFESOR "+nombre);
+        }
+    }
+
     function muestraValorColor() {
         var id = document.activeElement.id;
         var valor = document.getElementById(id).value;
