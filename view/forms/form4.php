@@ -1,34 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../view/assets/personal.css">
-    <script src="../../view/assets/personal.js"></script>
-
-    <title>Formulario 4</title>
+    <title>Formulario 3</title>
 </head>
+
 <body>
     <div class="formulario">
         <form method="post">
             <fieldset>
-                <legend><b>Formulario 4</b></legend>
-                <label for="">Escoja un color</label>
-                <br>
-                <input type="color" oninput="muestraValorColor();" name="color de piel" id="piel">
-                <span id="valorPiel"></span>
-                <br><br>
-                <label for="">Adjunte su documentación en PDF</label>
-                <br>
-                <input type="file" accept=".pdf" name="adjunto" id="archivo">
-                <br><br>
-                <label for="">Desplace la barra para colocar su estatura en metros</label>
-                <br>
-                <input type="range" onclick="muestraValor();" name="estatura(cm)" min="100" max="300" id="estatura">
-                <!-- Mostrar el valor del range a un lado -->
-                <span id="valor"></span>&nbsp;m
-                <br><br>
+                <legend><b>Formulario 3</b></legend>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="fecha">Fecha</label>
+                        </td>
+                        <td>
+                            <input type="date" name="fecha" id="fecha">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="fechaCompleta">Fecha</label>
+                        </td>
+                        <td>
+                            <input type="datetime" name="fecha y hora" id="fechaCompleta">
+                            <script>
+                                var date = new Date();
+                                //Translate Datetime in Spanish
+                                var options = {
+                                    weekday: "long",
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric"
+                                };
+                                document.getElementById("fechaCompleta").value = date.toLocaleDateString("es-ES", options);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="mes">Fecha</label>
+                        </td>
+                        <td>
+                            <input type="month" name="mes" id="mes">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="mes">Hora</label>
+                        </td>
+                        <td>
+                            <input type="time" name="hora" id="hora">
+                        </td>
+                    </tr>
+                </table>
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpiar">
             </fieldset>
@@ -37,36 +67,26 @@
     <br>
     <table class="tabla">
         <?php
-            while (key($_POST) != null) {
-                echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
-                next($_POST);
-            }
+        while (key($_POST) != null) {
+            echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
+            next($_POST);
+        }
 
-            //Rebobina el puntero al principio del array
-            reset($_POST);
+        //Rebobina el puntero al principio del array
+        reset($_POST);
 
-            echo "<tr>";
+        echo "<tr>";
 
-            while (key($_POST) != null) {
-                if(preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', current($_POST))){
-                    if(current($_POST) == "#000000"){
-                        echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #ffffff;'>".current($_POST)."</td>";
-                    }else if(current($_POST) == "#ffffff"){
-                        echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #000000;'>".current($_POST)."</td>";
-                    } else{
-                    echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #ffffff;'>".current($_POST)."</td>";
-                    }
-                }
-                else{
-                    echo "<td>" . current($_POST) . "</td>";
-                }
-                next($_POST);
-            }
+        while (key($_POST) != null) {
+            echo "<td>" . current($_POST) . "</td>";
+            next($_POST);
+        }
 
-            echo "</tr>";
+        echo "</tr>";
         ?>
     </table>
     <br>
     <br>
 </body>
+
 </html>

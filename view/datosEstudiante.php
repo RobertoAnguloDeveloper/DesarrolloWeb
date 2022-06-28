@@ -19,7 +19,7 @@
         <p>JHON CARLOS ARRIETA ARRIETA</p>
         <br>
         <h3>Asignaturas</h3>
-        <p>DESARROLLO WEB & BASES DE DATOS II</p>
+        <p>DESARROLLO DE SOFTWARE WEB & BASES DE DATOS II</p>
     </div>
 </body>
 

@@ -17,11 +17,15 @@
         if (dato >= 60){
             alert("Gracias por compartir tu gran experiencia con nosotros"+
             "\n\n                             BIENVENIDO"+
-            "\n\n                MAESTRO "+nombre);
+            "\n                MAESTRO "+nombre);
         }else if (dato > 30 && dato < 60){
             alert("Aprenderemos mucho juntos, tu experiencia es muy valiosa"+
             "\n\n                             BIENVENIDO"+
-            "\n\n                PROFESOR "+nombre);
+            "\n                PROFESOR "+nombre);
+        }else{
+            alert("Con nuestra experiencia, creceras mucho profesionalmente"+
+            "\n\n                             BIENVENIDO"+
+            "\n                PROFESOR "+nombre);
         }
     }
 

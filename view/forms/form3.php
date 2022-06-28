@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="../../view/assets/personal.css">
     <title>Formulario 3</title>
 </head>
-
 <body>
     <div class="formulario">
         <form method="post">
@@ -17,48 +15,27 @@
                 <table>
                     <tr>
                         <td>
-                            <label for="fecha">Fecha</label>
+                            <label for="genero">Genero</label>
                         </td>
                         <td>
-                            <input type="date" name="fecha" id="fecha">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="fechaCompleta">Fecha</label>
-                        </td>
-                        <td>
-                            <input type="datetime" name="fecha y hora" id="fechaCompleta">
-                            <script>
-                                var date = new Date();
-                                //Translate Datetime in Spanish
-                                var options = {
-                                    weekday: "long",
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric"
-                                };
-                                document.getElementById("fechaCompleta").value = date.toLocaleDateString("es-ES", options);
-                            </script>
+                           <input type="radio" name="genero" id="genero" value="Masculino" checked> Masculino
+                           <br>
+                           <input type="radio" name="genero" id="genero" value="Femenino"> Femenino
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="mes">Fecha</label>
+                            <label for="hobbie1">Hobbies</label>
                         </td>
                         <td>
-                            <input type="month" name="mes" id="mes">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="mes">Hora</label>
-                        </td>
-                        <td>
-                            <input type="time" name="hora" id="hora">
+                            <input type="checkbox" name="hobbie_1" id="hobbie1" value="Leer"> Leer
+                            <input type="checkbox" name="hobbie_2" id="hobbie2" value="Cine"> Cine
+                            <input type="checkbox" name="hobbie_3" id="hobbie3" value="TV"> TV
+                            <input type="checkbox" name="hobbie_4" id="hobbie4" value="Jugar"> Jugar
                         </td>
                     </tr>
                 </table>
+                
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpiar">
             </fieldset>
@@ -67,26 +44,25 @@
     <br>
     <table class="tabla">
         <?php
-        while (key($_POST) != null) {
-            echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
-            next($_POST);
-        }
+            while (key($_POST) != null) {
+                echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
+                next($_POST);
+            }
 
-        //Rebobina el puntero al principio del array
-        reset($_POST);
+            //Rebobina el puntero al principio del array
+            reset($_POST);
 
-        echo "<tr>";
+            echo "<tr>";
 
-        while (key($_POST) != null) {
-            echo "<td>" . current($_POST) . "</td>";
-            next($_POST);
-        }
+            while (key($_POST) != null) {
+                echo "<td>" . current($_POST) . "</td>";
+                next($_POST);
+            }
 
-        echo "</tr>";
+            echo "</tr>";
         ?>
     </table>
     <br>
     <br>
 </body>
-
 </html>

@@ -35,6 +35,8 @@
                 <br>
                 <li><a id="form6" onclick="form();" href="#">Formulario 6</a></li>
                 <br>
+                <li><a id="form7" onclick="form();" href="#">Formulario 7</a></li>
+                <br>
                 <li><a id="pruebaDao" onclick="prueba();" href="#">Prueba DAO</a></li>
             </ul>
         </li>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,35 +7,27 @@
     <link rel="stylesheet" href="../../view/assets/personal.css">
     <script src="../../view/assets/personal.js"></script>
 
-    <title>Formulario 5</title>
+    <title>Formulario 4</title>
 </head>
-
 <body>
     <div class="formulario">
         <form method="post">
             <fieldset>
-                <legend><b>Formulario 5</b></legend>
-                <label for="spinner1">Estado civil</label>
+                <legend><b>Formulario 4</b></legend>
+                <label for="">Escoja un color</label>
                 <br>
-                <select name="estado_civil" size="1" id="spinner1">
-                    <option value=""></option>
-                    <option value="Casado">Casado</option>
-                    <option value="Soltero">Soltero</option>
-                    <option value="Unión Libre">Unión libre</option>
-                </select>
+                <input type="color" oninput="muestraValorColor();" name="color de piel" id="piel">
+                <span id="valorPiel"></span>
                 <br><br>
-                <label for="spinner2">Idiomas manejados</label>
+                <label for="">Adjunte su documentación en PDF</label>
                 <br>
-                <select name="idiomas" size="3" id="spinner2" multiple>
-                    <option value=""></option>
-                    <option value="Esp">Español</option>
-                    <option value="Eng">Inglés</option>
-                    <option value="Ita">Italiano</option>
-                    <option value="Fr">Francés</option>
-                    <option value="Ale">Alemán</option>
-                    <option value="Chi">Chino</option>
-                    <option value="Rus">Ruso</option>
-                </select>
+                <input type="file" accept=".pdf" name="adjunto" id="archivo">
+                <br><br>
+                <label for="">Desplace la barra para colocar su estatura en metros</label>
+                <br>
+                <input type="range" onclick="muestraValor();" name="estatura(cm)" min="100" max="300" id="estatura">
+                <!-- Mostrar el valor del range a un lado -->
+                <span id="valor"></span>&nbsp;m
                 <br><br>
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpiar">
@@ -57,7 +48,18 @@
             echo "<tr>";
 
             while (key($_POST) != null) {
-                echo "<td>" . current($_POST) . "</td>";
+                if(preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', current($_POST))){
+                    if(current($_POST) == "#000000"){
+                        echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #ffffff;'>".current($_POST)."</td>";
+                    }else if(current($_POST) == "#ffffff"){
+                        echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #000000;'>".current($_POST)."</td>";
+                    } else{
+                    echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #ffffff;'>".current($_POST)."</td>";
+                    }
+                }
+                else{
+                    echo "<td>" . current($_POST) . "</td>";
+                }
                 next($_POST);
             }
 
