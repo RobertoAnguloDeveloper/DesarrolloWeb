@@ -12,7 +12,7 @@
 
 <body>
     <div class="formulario">
-        <form method="post" onsubmit="validar();">
+        <form method="post" onsubmit="validarEdad();">
             <fieldset>
                 <legend><b>Formulario 1</b></legend>
                 <label for="texto1">Nombres&nbsp;</label>
