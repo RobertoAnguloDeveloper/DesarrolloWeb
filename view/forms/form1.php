@@ -30,7 +30,7 @@
     </div>
     <br>
 
-    <!-- La tabla solo se muestra y crea cuando recive los datos del formulario -->
+    <!-- La tabla solo se muestra y crea cuando recibe los datos del formulario -->
     <table class="tabla">
         <?php
             while (key($_POST) != null) {

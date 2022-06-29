@@ -46,10 +46,6 @@
     <br>
     <table class="tabla">
         <?php
-            // if(count($_POST) != 0){
-            //     var_dump($_POST);
-            //     echo is_array($_POST);
-            // }
             while (key($_POST) != null) {
                 echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
                 next($_POST);

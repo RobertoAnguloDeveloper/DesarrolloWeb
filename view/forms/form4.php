@@ -31,13 +31,13 @@
                             <input type="datetime" name="fecha y hora" id="fechaCompleta">
                             <script>
                                 var date = new Date();
-                                //Translate Datetime in Spanish
                                 var options = {
                                     weekday: "long",
                                     year: "numeric",
                                     month: "long",
                                     day: "numeric"
                                 };
+                                //Traduce al español la fecha
                                 document.getElementById("fechaCompleta").value = date.toLocaleDateString("es-ES", options);
                             </script>
                         </td>
