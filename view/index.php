@@ -19,7 +19,7 @@
     <img id="background" src="./assets/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./assets/img/home.png"></a>
-            <a href="#" onclick="fadeInEffect('log-in',0.3);"><img id="login-icon" src="./assets/img/login.png"></a>
+            <!-- <a href="#" onclick="fadeInEffect('log-in',0.3);"><img id="login-icon" src="./assets/img/login.png"></a> -->
         <li>
             <a onmouseover="showPopup();" onmouseout="hidePopup();" href="#">Actividad de aprendizaje 1</a>
             <ul id="popup" onmouseover="showPopup();" onmouseout="hidePopup();">
