@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="../../view/assets/personal.css">
     <script src="../../view/assets/personal.js"></script>
 
-    <title>Formulario 6</title>
+    <title>Formulario 7</title>
 </head>
 
 <body>
     <div class="formulario">
         <form method="post">
             <fieldset>
-                <legend><b>Formulario 6</b></legend>
+                <legend><b>Formulario 7</b></legend>
                 <label for="comentarios"><b>COMENTARIOS</b></label>
                 <br>
                 <textarea name="comentarios" id="comentarios" cols="40" rows="5" placeholder="Escriba aquí sus comentarios"></textarea>
@@ -28,22 +28,8 @@
     <br>
     <table class="tabla">
         <?php
-            while (key($_POST) != null) {
-                echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
-                next($_POST);
-            }
-
-            //Rebobina el puntero al principio del array
-            reset($_POST);
-
-            echo "<tr>";
-
-            while (key($_POST) != null) {
-                echo "<td>" . current($_POST) . "</td>";
-                next($_POST);
-            }
-
-            echo "</tr>";
+            require_once 'tablas.php';
+            tablaComun();
         ?>
     </table>
     <br>

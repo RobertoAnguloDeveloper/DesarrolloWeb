@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="../../view/assets/personal.css">
     <script src="../../view/assets/personal.js"></script>
 
-    <title>Formulario 4</title>
+    <title>Formulario 5</title>
 </head>
 <body>
     <div class="formulario">
         <form method="post">
             <fieldset>
-                <legend><b>Formulario 4</b></legend>
+                <legend><b>Formulario 5</b></legend>
                 <label for="">Escoja un color</label>
                 <br>
                 <input type="color" oninput="muestraValorColor();" name="color de piel" id="piel">
@@ -37,33 +37,8 @@
     <br>
     <table class="tabla">
         <?php
-            while (key($_POST) != null) {
-                echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
-                next($_POST);
-            }
-
-            //Rebobina el puntero al principio del array
-            reset($_POST);
-
-            echo "<tr>";
-
-            while (key($_POST) != null) {
-                if(preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', current($_POST))){
-                    if(current($_POST) == "#000000"){
-                        echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #ffffff;'>".current($_POST)."</td>";
-                    }else if(current($_POST) == "#ffffff"){
-                        echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #000000;'>".current($_POST)."</td>";
-                    } else{
-                    echo "<td id='color' style='background-color: " . strtoupper(current($_POST)) . ";color: #ffffff;'>".current($_POST)."</td>";
-                    }
-                }
-                else{
-                    echo "<td>" . current($_POST) . "</td>";
-                }
-                next($_POST);
-            }
-
-            echo "</tr>";
+           require_once 'tablas.php';
+           tablaColores();
         ?>
     </table>
     <br>

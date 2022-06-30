@@ -34,6 +34,7 @@
     <table class="tabla">
         <?php
             require_once 'tablas.php';
+            tablaComun();
         ?>
     </table>
     <br>

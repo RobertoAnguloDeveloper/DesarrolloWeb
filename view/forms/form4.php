@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../view/assets/personal.css">
-    <title>Formulario 3</title>
+    <title>Formulario 4</title>
 </head>
 
 <body>
     <div class="formulario">
         <form method="post">
             <fieldset>
-                <legend><b>Formulario 3</b></legend>
+                <legend><b>Formulario 4</b></legend>
                 <table>
                     <tr>
                         <td>
@@ -67,22 +67,8 @@
     <br>
     <table class="tabla">
         <?php
-        while (key($_POST) != null) {
-            echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
-            next($_POST);
-        }
-
-        //Rebobina el puntero al principio del array
-        reset($_POST);
-
-        echo "<tr>";
-
-        while (key($_POST) != null) {
-            echo "<td>" . current($_POST) . "</td>";
-            next($_POST);
-        }
-
-        echo "</tr>";
+            require_once 'tablas.php';
+            tablaComun();
         ?>
     </table>
     <br>

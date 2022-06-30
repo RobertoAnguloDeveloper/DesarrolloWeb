@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="../../view/assets/personal.css">
     <script src="../../view/assets/personal.js"></script>
 
-    <title>Formulario 5</title>
+    <title>Formulario 6</title>
 </head>
 
 <body>
     <div class="formulario">
         <form method="post">
             <fieldset>
-                <legend><b>Formulario 5</b></legend>
+                <legend><b>Formulario 6</b></legend>
                 <label for="spinner1">Estado civil</label>
                 <br>
                 <select name="estado_civil" size="1" id="spinner1">
@@ -46,34 +46,8 @@
     <br>
     <table class="tabla">
         <?php
-            while (key($_POST) != null) {
-                echo "<th><b>" . strtoupper(key($_POST)) . "</b></th>";
-                next($_POST);
-            }
-
-            //Rebobina el puntero al principio del array
-            reset($_POST);
-
-            echo "<tr>";
-
-            while (key($_POST) != null) {
-                echo "<td>" . current($_POST) . "</td>";
-                next($_POST);
-
-                if(is_array(current($_POST))){
-                    echo "<td>";
-
-                    foreach(current($_POST) as $idiomas){
-                        echo $idiomas . "<br>";
-                    }
-
-                    echo "</td>";
-
-                    next($_POST);
-                }
-            }
-
-            echo "</tr>";
+            require_once 'tablas.php';
+            tableMultiSelect();
         ?>
     </table>
     <br>
