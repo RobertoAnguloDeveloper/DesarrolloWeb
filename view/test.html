@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .menu{
-            list-style: none;
-        }
-
-        .menu li a{
-            text-decoration: none;
-        }
-    </style>
 
 <body>
     <!-- <ul class="menu">
@@ -26,6 +17,17 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quam, excepturi delectus quo culpa id ex! 
             Dolorem at sit explicabo asperiores est, numquam iusto consequatur repellat corrupti corporis hic. Fugit.</p>
     </div>
+    <input type="button" onclick="uno();dos();" value="Dale">
     
 </body>
 </html>
+
+<script>
+    function uno(){
+        let aja = document.getElementsByName("prueba")[0];
+        aja.innerHTML = "Hola";
+    }
+    function dos(){
+        alert("SI LO HIZO");
+    }
+</script>
