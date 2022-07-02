@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../view/assets/personal.css">
+    <link rel="stylesheet" href="../css/personal.css">
     <script src="../../view/assets/personal.js"></script>
 
     <title>Formulario 6</title>

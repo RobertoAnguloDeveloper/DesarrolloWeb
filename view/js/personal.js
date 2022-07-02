@@ -38,13 +38,23 @@
         document.getElementById("valorPiel").innerHTML = valor;
     }
 
-    function showPopup() {
-        var popup = document.getElementById("popup");
-        popup.style.display = "block";
+    function showPopupAAU1() {
+        var popup = document.getElementById("AAU1");
+            popup.style.display = "block";
     }
 
-    function hidePopup() {
-        var popup = document.getElementById("popup");
+    function hidePopupAAU1() {
+        var popup = document.getElementById("AAU1");
+        popup.style.display = "none";
+    }
+
+    function showPopupAAU2() {
+        var popup = document.getElementById("AAU2");
+            popup.style.display = "block";
+    }
+
+    function hidePopupAAU2() {
+        var popup = document.getElementById("AAU2");
         popup.style.display = "none";
     }
 
