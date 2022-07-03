@@ -3,13 +3,12 @@
     
     class UsuarioDAO{
 
-        public function crearUsuario($usuario, $password, $email, $respuesta, $rol){
-            $user = new Usuario();
-            $user->usuario = $usuario;
-            $user->password = $password;
-            $user->email = $email;
-            $user->respuesta = $respuesta;
-            $user->rol = $rol;
-            $user->save();
+        public static function crearUsuario($usuario){
+            try{
+                $usuario->save();
+            } catch(Exception $e){
+                throw new Exception("ERROR *** No se pudo");
+            }
+            
         }
     }
