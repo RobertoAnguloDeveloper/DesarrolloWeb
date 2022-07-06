@@ -25,7 +25,7 @@
                 <br><br>
                 <label for="">Desplace la barra para colocar su estatura en metros</label>
                 <br>
-                <input type="range" onclick="muestraValor();" name="estatura(cm)" min="100" max="300" id="estatura">
+                <input type="range" onclick="muestraValor();" name="estatura(m)" min="100" max="300" id="estatura">
                 <!-- Mostrar el valor del rango a un lado -->
                 <span id="valor"></span>&nbsp;m
                 <br><br>

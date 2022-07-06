@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/personal.css">
-    <script src="./js/personal.js"></script>
+    <link rel="stylesheet" href="./view/css/personal.css">
+    <script src="./view/js/personal.js"></script>
 
     <title>&lt;DESARROLLO WEB&gt;</title>
 
@@ -16,10 +16,10 @@
     <header class="header">
         <h1>&lt; DESARROLLO WEB &gt;</h1>
     </header>
-    <img id="background" src="./img/udcPiedra.jpg" alt="UdC">
+    <img id="background" src="./view/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
-            <a href="index.php"><img id="home-icon" src="./img/home.png"></a>
-            <a href="#" onclick="fadeInEffect('log-in',0.3);"><img id="login-icon" src="./img/login.png"></a>
+            <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
+            <a href="#" onclick="fadeInEffect('log-in',0.3);"><img id="login-icon" src="./view/img/login.png"></a>
         <li>
             <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
             <ul id="AAU1" class="popup" onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();">
@@ -82,7 +82,7 @@
         showIframe();
         var iframe = document.getElementById("formsFrame");
         iframe.style.opacity = 0.1;
-        iframe.src = "datosEstudiante.php";
+        iframe.src = "./view/datosEstudiante.php";
         fadeInEffect("formsFrame",0.5);
     }
 </script>

@@ -132,7 +132,7 @@
         showIframe();
         var form = document.activeElement.id;
         var iframe = document.getElementById("formsFrame");
-        iframe.src = "./forms/"+form+".php";
+        iframe.src = "./view/forms/"+form+".php";
     }
 
     function prueba() {
