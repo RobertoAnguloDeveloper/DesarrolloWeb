@@ -20,7 +20,7 @@
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
             <a href="#" onclick="fadeInEffect('log-in',0.3);"><img id="login-icon" src="./view/img/login.png"></a>
-        <li>
+        <!-- <li>
             <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
             <ul id="AAU1" class="popup" onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();">
                 <li><a id="form1" onclick="form();" href="#">Formulario 1</a></li>
@@ -39,7 +39,7 @@
                 <br>
                 <li><a id="pruebaDao" onclick="prueba();" href="#">Prueba DAO</a></li>
             </ul>
-        </li>
+        </li> -->
 
         <li><a onmouseover="showPopupAAU2();" onmouseout="hidePopupAAU2();" href="#">Actividad de aprendizaje 2</a>
             <ul id="AAU2" class="popup" onmouseover="showPopupAAU2();" onmouseout="hidePopupAAU2();">
