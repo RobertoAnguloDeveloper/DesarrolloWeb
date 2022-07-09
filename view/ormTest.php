@@ -1,7 +1,7 @@
 <?php
-    require_once '../model/DAOUsuario.php';
+    require_once '../model/UsuarioDAO.php';
+    require_once '../model/Usuario.php';
 
-    $usuario = new UsuarioDAO();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,23 +13,49 @@
 </head>
 <body>
     <form method="post">
-        USUARIO: <input type="text" name="usuario"><br>
-        PASSWORD: <input type="password" name="password"><br>
-        EMAIL: <input type="text" name="email"><br>
-        RESPUESTA: <input type="text" name="respuesta"><br>
-        ROL: <input type="number" min="0" max="1" name="rol"><br>
+        CEDULA: <input type="text" name="cedula"><br>
+        CLAVE: <input type="password" name="clave"><br>
+        NOMBRE: <input type="text" name="nombre"><br>
+        TELFONO: <input type="text" name="telefono"><br>
+        EMAIL: <input type="email" name="email"><br>
         <input type="submit" value="Enviar">
+    </form>
+
+    <form method="post">
+        CEDULA: <input type="text" name="cedula"><br>
+        CLAVE: <input type="password" name="clave"><br>
+        NOMBRE: <input type="text" name="nombre"><br>
+        TELFONO: <input type="text" name="telefono"><br>
+        EMAIL: <input type="email" name="email"><br>
+        <input type="submit" value="Editar">
+    </form>
+
+    <!-- Formulario para buscar por Cedula -->
+    <form method="post">
+        CEDULA: <input type="text" name="cedula"><br>
+        <input type="submit" value="Buscar">
+    </form>
+
+    <form method="post">
+        CEDULA: <input type="text" name="cedula"><br>
+        <input type="submit" value="Eliminar">
+    </form>
+
+    <form method="post">
+        <input type="submit" value="Listar">
     </form>
     
     <?php
-        if(count($_POST) != 0){
-            $user = $_POST['usuario'];
-            $password = $_POST['password'];
-            $email = $_POST['email'];
-            $respuesta = $_POST['respuesta'];
-            $rol = $_POST['rol'];
+        if(count($REQUEST) != 0){
+            $usuario = new Usuario();
 
-            $usuario->crearUsuario($user, $password, $email, $respuesta, $rol);
+            $usuario->cedula = $REQUEST['cedula'];
+            $usuario->clave = $REQUEST['clave'];
+            $usuario->nombre = $REQUEST['nombre'];
+            $usuario->telefono = $REQUEST['telefono'];
+            $usuario->email = $REQUEST['email'];
+
+            UsuarioDAO::agregar($usuario);
         }
             
     ?>
