@@ -129,14 +129,12 @@
     }
 
     function form() {
-        showIframe();
         var form = document.activeElement.id;
         var iframe = document.getElementById("formsFrame");
         iframe.src = "./view/forms/"+form+".php";
     }
 
-    function prueba() {
-        showIframe();
+    function login(){
         var iframe = document.getElementById("formsFrame");
-        iframe.src = ".././dao/pruebaDao.php";
+        iframe.src = "./view/usuario/";
     }

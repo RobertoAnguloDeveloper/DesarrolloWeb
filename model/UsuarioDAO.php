@@ -5,12 +5,18 @@
             try{
                return $usuario->save();
             }catch(Exception $e){
-                echo "alert('$e->getMessage()')";
+                echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
+                echo "<script>alert('No se pudo agregar el usuario')</script>";
             }
         }
 
         public static function buscar($cedula){
-            return Usuario::find_by_cedula($cedula);
+            try{
+                return Usuario::find_by_cedula($cedula);
+            }catch(Exception $e){
+                echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
+                echo "<script>alert('No se pudo buscar el usuario')</script>";
+            }
         }
 
         public static function editar($usuario){

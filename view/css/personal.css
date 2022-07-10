@@ -135,8 +135,8 @@
 
 .contenedor{
     border: 2px solid black;
-    width: 30%;
-    height: 40%;
+    width: 50%;
+    height: 20%;
     box-sizing: border-box;
     background-color: rgba(182, 182, 182, 0.258);
     position: absolute;
@@ -147,37 +147,40 @@
 }
 
 .contenedorLogin{
-    display: none;
+    display: block;
     border: 2px solid black;
-    width: 20%;
-    height: 30%;
+    width: 35%;
+    height: 80%;
     box-sizing: border-box;
-    background-color: rgba(103, 103, 103, 0.508);
+    background-color: rgba(255, 230, 0,0.697);
     position: absolute;
     border-radius: 10px;
-    top: 30%;
-    left: 15%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%,-50%);
 }
 
-.contenedorLogin h1{
-    display: inline-block;
-    padding: 2px 5px 1px 5px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    color: white;
-    text-shadow: 2.5px 1.5px 3px #000;
+#sesion{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+    color: #fff;
+    text-shadow: 2.5px 1.5px 6px #000;
+    font-size: 30px;
+    font-weight: bold;
 }
 
-.contenedorLogin input{
-    display: flex;
-    margin: 2px 5px 2px 5px;
+input:not([type="submit"]) {
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 .cuadro{
-    padding: 20px;
-    width: 75%;
-    height: 70%;
+    width: 50%;
+    height: 80%;
     background-color: rgba(255, 230, 0,0.697);
     position: absolute;
     top: 50%;

@@ -19,7 +19,7 @@
     <img id="background" src="./view/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
-            <a href="#" onclick="fadeInEffect('log-in',0.3);"><img id="login-icon" src="./view/img/login.png"></a>
+            <a href="#" onclick="login();"><img id="login-icon" src="./view/img/login.png"></a>
         <!-- <li>
             <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
             <ul id="AAU1" class="popup" onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();">
@@ -60,17 +60,7 @@
         <li id="basesDatos2"><a href="#">BASES DE DATOS II</a></li> -->
     </ul>
 
-    <div class="contenedorLogin" id="log-in">
-        <a id="btn-x" onclick="fadeOutEffect('log-in',0.1);">x</a>
-        <div class="cuadro">
-            <form method="POST">
-                <h1>Iniciar Sesión</h1>
-                <input type="text" name="user" placeholder="Usuario">
-                <input type="password" name="password" placeholder="Contraseña">
-                <input type="submit" value="Iniciar Sesión">
-            </form>
-        </div>
-    </div>
+    
     <center><iframe id="formsFrame" style="display: none;" src="" frameborder="1"></iframe></center>
 
 </body>
@@ -78,7 +68,6 @@
 
 <script>
     window.onload = function() {
-        agarrar(document.getElementById('log-in'));
         showIframe();
         var iframe = document.getElementById("formsFrame");
         iframe.style.opacity = 0.1;
