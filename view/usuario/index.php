@@ -28,14 +28,21 @@
                 <td>
                     <center>
                         <br>
-                        <input type="submit" value="Iniciar sesión">
-                        <br><br>
-                        <a href="../view/registro.php">Registrarse</a>
+                        <input type="submit" name="buscar" value="Iniciar sesión">
+                        <input type="button" name="agregar" value="Registrarse"></a>
                     </center>
                 </td>
             </tr>
         </table>
     </form>
+
+    
+
+    <?php
+        if(count($_REQUEST)!=0){
+            header("Location: ../../view/usuario/index.php");
+        }
+    ?>
 </body>
 
 </html>

@@ -19,7 +19,7 @@
     <img id="background" src="./view/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
-            <a href="#" onclick="login();"><img id="login-icon" src="./view/img/login.png"></a>
+            <a href="#" onclick="cLogin();"><img id="login-icon" src="./view/img/login.png"></a>
         <!-- <li>
             <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
             <ul id="AAU1" class="popup" onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();">

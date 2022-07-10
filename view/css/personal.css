@@ -146,6 +146,10 @@
     transform: translate(-50%,-50%);
 }
 
+#sign-in{
+    display: none;
+}
+
 .contenedorLogin{
     display: block;
     border: 2px solid black;
@@ -176,6 +180,34 @@ input:not([type="submit"]) {
     padding: 5px;
     width: 90%;
     box-sizing: border-box;
+}
+
+input[type="submit"], input[type="button"] {
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffc200;
+    box-shadow: 0px 0px 5px #000;
+    color: #fff;
+    text-shadow: 1.5px 1px 5px #000;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #ffc200;
+    box-shadow: 0px 0px 5px #000;
+    color: #fff;
+    text-shadow: 1.5px 1px 5px #000;
+    cursor: pointer;
 }
 
 .cuadro{
@@ -251,8 +283,6 @@ input:not([type="submit"]) {
 .formulario input{
     margin-bottom:  5px;
 }
-
-/* Aplicar diseño a todos los input menos los submit*/
 
 .formulario input[type="datetime"]{
     width: 102%;

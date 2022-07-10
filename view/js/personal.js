@@ -134,7 +134,7 @@
         iframe.src = "./view/forms/"+form+".php";
     }
 
-    function login(){
+    function cLogin(){
         var iframe = document.getElementById("formsFrame");
-        iframe.src = "./view/usuario/";
+        iframe.src = "./controller/ControladorUsuario/ControladorUsuario.php";
     }
