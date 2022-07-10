@@ -15,7 +15,7 @@
         <table>
             <tr>
                 <br>
-                <h2 id="sesion"><center>INICIAR SESION</center></h2>
+                <h2 id="iniSesion">INICIAR SESION</h2>
                 <br>
             </tr>
             <tr>
@@ -36,9 +36,7 @@
     </form>
 
     <?php
-        
         if(count($_REQUEST)!=0){
-            // var_dump($_REQUEST);
             header("Location: ../../controller/ControladorUsuario.php?".array_keys($_REQUEST)[2]);
         }
     ?>

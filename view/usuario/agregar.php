@@ -11,35 +11,42 @@
 </head>
 
 <body>
-    <form method="POST" id="sign-in" class="contenedorLogin">
+    <form method="post" id="sign-in" class="contenedorSignin">
         <a id="btn-x" onclick="fadeOutEffect('sign-in',0.5);">x</a>
         <table>
             <tr>
                 <br>
-
-                <br>
             </tr>
             <tr>
-                <center>
-                    <h2 id="sesion">
-                        <center>REGISTRAR USUARIO</center>
-                    </h2>
-                    <input type="number" name="cedula" placeholder="Introduzca su Cédula">
-                    <input type="password" name="clave" placeholder="Introduzca su Contraseña">
-                    <input type="email" name="email" placeholder="Introduzca su email">
-                    <input type="text" name="nombre" placeholder="Introduzca su nombre completo">
-                    <input type="number" name="telefono" placeholder="Introduzca su telefono">
-            <tr>
-                <td>
-                    <input type="submit" value="Guardar">
-                </td>
+                <h2 id="regUsuario">
+                    <center>REGISTRAR USUARIO</center>
+                </h2>
+                <input type="number" name="cedula" placeholder="Introduzca su Cédula">
+                <input type="password" name="clave" placeholder="Introduzca su Contraseña">
+                <input type="email" name="email" placeholder="Introduzca su email">
+                <input type="text" name="nombre" placeholder="Introduzca su nombre completo">
+                <input type="number" name="telefono" placeholder="Introduzca su telefono">
+                <tr>
+                    <td>
+                        <input type="submit" name="guardar" value="Guardar">
+                    </td>
+                </tr>
             </tr>
-            
-            </center>
-            </tr>
-
         </table>
     </form>
+    <?php
+        if(count($_REQUEST)!=0){
+            // var_dump($_REQUEST);
+            session_start();
+            $_SESSION['cedula'] = $_REQUEST['cedula'];
+            $_SESSION['clave'] = $_REQUEST['clave'];
+            $_SESSION['email'] = $_REQUEST['email'];
+            $_SESSION['nombre'] = $_REQUEST['nombre'];
+            $_SESSION['telefono'] = $_REQUEST['telefono'];
+
+            header("Location: ../../controller/ControladorUsuario.php?".array_keys($_REQUEST)[5]);
+        }
+    ?>
 </body>
 
 </html>
