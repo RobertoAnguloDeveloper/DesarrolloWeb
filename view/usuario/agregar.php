@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/personal.css">
+    <script src="../js/personal.js"></script>
     <title>Document</title>
 </head>
 
@@ -14,27 +16,28 @@
         <table>
             <tr>
                 <br>
-                <h2 id="sesion">
-                    <center>REGISTRAR USUARIO</center>
-                </h2>
+
                 <br>
             </tr>
             <tr>
                 <center>
+                    <h2 id="sesion">
+                        <center>REGISTRAR USUARIO</center>
+                    </h2>
                     <input type="number" name="cedula" placeholder="Introduzca su Cédula">
                     <input type="password" name="clave" placeholder="Introduzca su Contraseña">
                     <input type="email" name="email" placeholder="Introduzca su email">
                     <input type="text" name="nombre" placeholder="Introduzca su nombre completo">
                     <input type="number" name="telefono" placeholder="Introduzca su telefono">
-                </center>
-            </tr>
             <tr>
                 <td>
-                    <center>
-                        <input type="submit" value="Guardar">
-                    </center>
+                    <input type="submit" value="Guardar">
                 </td>
             </tr>
+            
+            </center>
+            </tr>
+
         </table>
     </form>
 </body>

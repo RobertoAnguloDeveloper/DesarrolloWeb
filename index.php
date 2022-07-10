@@ -19,7 +19,8 @@
     <img id="background" src="./view/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
-            <a href="#" onclick="cLogin();"><img id="login-icon" src="./view/img/login.png"></a>
+            <a href="#" name="usuarios" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a>
+            <a href="#" name="gastos" onclick="controller();" >GASTOS</a>
         <!-- <li>
             <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
             <ul id="AAU1" class="popup" onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();">
@@ -41,7 +42,7 @@
             </ul>
         </li> -->
 
-        <li><a onmouseover="showPopupAAU2();" onmouseout="hidePopupAAU2();" href="#">Actividad de aprendizaje 2</a>
+        <!-- <li><a onmouseover="showPopupAAU2();" onmouseout="hidePopupAAU2();" href="#">Actividad de aprendizaje 2</a>
             <ul id="AAU2" class="popup" onmouseover="showPopupAAU2();" onmouseout="hidePopupAAU2();">
                 <li><a id="form1" onclick="form();" href="#">Formulario 1</a></li>
                 <br>
@@ -54,7 +55,7 @@
                 <li><a id="form5" onclick="form();" href="#">Formulario 5</a></li>
                 <br>
             </ul>
-        </li>
+        </li> -->
         <!-- <li><a href="#">Actividad de aprendizaje 3</a></li>
         <li><a href="#">Actividad de aprendizaje 4</a></li>
         <li id="basesDatos2"><a href="#">BASES DE DATOS II</a></li> -->

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form method="POST" id="log-in" class="contenedorLogin">
+    <form method="post" id="log-in" class="contenedorLogin">
         <a id="btn-x" onclick="fadeOutEffect('log-in',0.5);">x</a>
         <table>
             <tr>
@@ -27,20 +27,19 @@
             <tr>
                 <td>
                     <center>
-                        <br>
                         <input type="submit" name="buscar" value="Iniciar sesión">
-                        <input type="button" name="agregar" value="Registrarse"></a>
+                        <input type="submit" name="agregar" value="Registrarse">
                     </center>
                 </td>
             </tr>
         </table>
     </form>
 
-    
-
     <?php
+        
         if(count($_REQUEST)!=0){
-            header("Location: ../../view/usuario/index.php");
+            // var_dump($_REQUEST);
+            header("Location: ../../controller/ControladorUsuario.php?".array_keys($_REQUEST)[2]);
         }
     ?>
 </body>
