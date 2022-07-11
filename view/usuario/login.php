@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,9 +33,8 @@
                     <center>
                         <input type="submit" name="sesion" value="Iniciar sesión">
                         <input type="submit" name="registrar" value="Registrarse">
-                        <!-- Olvidaste la contraseña? -->
                         <br>
-                        <a href="recoverypass.php">Olvidaste tu contraseña?</a>
+                        <a id="recoveryPass" href="recoverypass.php">Olvidaste tu contraseña?</a>
                     </center>
                 </td>
             </tr>
@@ -39,13 +42,34 @@
     </form>
 
     <?php
-         
-        if(count($_REQUEST)!=0){
-            session_start();
-            $_SESSION['cedula'] = $_REQUEST['cedula'];
-            $_SESSION['clave'] = $_REQUEST['clave'];
-            // echo array_keys($_REQUEST)[2];
-            header("Location: ../../controller/ControladorUsuario.php?".array_keys($_REQUEST)[2]);
+    
+        if(count($_REQUEST) != 0){
+            switch($_REQUEST){
+                case isset($_REQUEST['sesion']):
+                    $_SESSION['cedula'] = $_REQUEST['cedula'];
+                    $_SESSION['clave'] = $_REQUEST['clave'];
+                    header("Location: ../../controller/ControladorUsuario.php?sesion=active");
+                    break;
+                case isset($_REQUEST['registrar']):
+                    header("Location: ../../controller/ControladorUsuario.php?registrar=active");
+                    break;
+                // case isset($_REQUEST['buscar']):
+                //     var_dump($_SESSION);
+                //     /*Verify if $_SESSION is empty */
+
+                //     if(count($_SESSION) != 0){
+                //         echo "<script>alert('BIENVENIDO ". $_SESSION['nombre']."')</script>";
+                //     }else{
+                //         echo "<script>alert('CREDENCIALES INVALIDAS, revise su usuario y contraseña')</script>";
+                //     }
+                //     break;
+                // case isset($_REQUEST['registrar']):
+                //     header("Location: agregar.php");
+                //     break;
+                default:
+                    echo "NO HIZO NADA";
+                    break;
+            }
         }
     ?>
 </body>

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,8 +38,8 @@
         </table>
     </form>
     <?php
-        if(count($_REQUEST)!=0){
-            session_start();
+        if(isset($_REQUEST['agregar'])){
+            
             $_SESSION['cedula'] = $_REQUEST['cedula'];
             $_SESSION['clave'] = $_REQUEST['clave'];
             $_SESSION['email'] = $_REQUEST['email'];

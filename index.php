@@ -19,7 +19,7 @@
     <img id="background" src="./view/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
-            <!-- <a href="#" name="usuarios" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a> -->
+            <a href="#" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a>
             <li><a href="#" name="usuarios" onclick="controller();">INICIAR SESION</a></li>
             <li><a href="#" name="gastos" onclick="controller();">GASTOS</a></li>
         <!-- <li>

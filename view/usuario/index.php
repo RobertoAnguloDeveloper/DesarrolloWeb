@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +19,22 @@
             case isset($_REQUEST['sesion']):
                 header("Location: login.php");
                 break;
+            case isset($_REQUEST['buscar']):
+                if(isset($_SESSION['respuesta'])){
+                    echo "<script>alert('BIENVENIDO ". $_SESSION['nombre']."')</script>";
+                }else{
+                    echo "<script>alert('CREDENCIALES INVALIDAS, revise su usuario y contraseña')</script>";
+                }
+                break;
             case isset($_REQUEST['registrar']):
                 header("Location: agregar.php");
+                break;
+            case isset($_REQUEST['respuesta']):
+                if($_REQUEST['respuesta'] == '1'){
+                    echo "<script>alert('GRACIAS POR TU REGISTRO ". $_SESSION['nombre']."')</script>";
+                }else{
+                    echo "<script>alert('LO SENTIMOS, NO PUDIMOS REALIZAR TU REGISTRO')</script>";
+                }
                 break;
             default:
                 echo "NO HIZO NADA";

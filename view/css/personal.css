@@ -79,7 +79,7 @@
 }
 
 #login-icon {
-    display: inline-block;
+    display: none;
     margin-bottom: -12px;
     width: 30px;
 }
@@ -239,6 +239,12 @@ input[type="button"]:hover {
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 10px;
+}
+
+#recoveryPass{
+    /*Change underlined color*/
+    text-decoration: underline;
+    color: rgb(255, 0, 0);
 }
 
 #btn-x{

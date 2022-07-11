@@ -17,14 +17,14 @@
             try{
                 if(!is_null(Usuario::find_by_cedula($usuario->cedula))){
                     if(Usuario::find_by_cedula($usuario->cedula)->clave == $usuario->clave){
-                        echo "<script>console.log('CREDENCIALES CORRECTAS')</script>";
-                        return true;
+                        echo "<script>console.log('CREDENCIALES CORRECTAS');</script>";
+                        return Usuario::find_by_cedula($usuario->cedula);
                     }else{
-                        echo "<script>console.log('CONTRASEÑA INVALIDA')</script>";
+                        echo "<script>console.log('CONTRASEÑA INVALIDA');</script>";
                         return false;
                     }
                 }else{
-                    echo "<script>console.log('USUARIO INVALIDO')</script>";
+                    echo "<script>console.log('USUARIO INVALIDO');</script>";
                     return false;
                 }
             }catch(Exception $e){
@@ -35,11 +35,11 @@
         public static function editar($usuario){
             try{
                 $usuario->save();
-                echo "<script>alert('USUARIO EDITADO CORRECTAMENTE')</script>";
+                echo "<script>console.log('USUARIO EDITADO CORRECTAMENTE');</script>";
                 return true;
             }catch(Exception $e){
-                echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-                echo "<script>alert('No se pudo editar el usuario')</script>";
+                echo "<script>console.log('Error: ".$e->getMessage()."');</script>";
+                echo "<script>console.log('No se pudo editar el usuario');</script>";
                 return false;
             }
         }
@@ -47,11 +47,11 @@
         public static function eliminar($usuario){
             try{
                 $usuario->delete();
-                echo "<script>alert('USUARIO ELIMINADO CORRECTAMENTE')</script>";
+                echo "<script>console.log('USUARIO ELIMINADO CORRECTAMENTE')</script>";
                 return true;
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-                echo "<script>alert('No se pudo eliminar el usuario')</script>";
+                echo "<script>console.log('No se pudo eliminar el usuario')</script>";
                 return false;
             }
         }
@@ -62,7 +62,7 @@
                 return $usuarios;
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-                echo "<script>alert('No se pudo listar los usuarios')</script>";
+                echo "<script>console.log('No se pudo listar los usuarios')</script>";
                 return false;
             }
         }
