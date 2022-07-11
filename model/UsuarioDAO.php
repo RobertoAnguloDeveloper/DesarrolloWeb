@@ -4,10 +4,12 @@
     class UsuarioDAO{
         public static function agregar($usuario){
             try{
+                $usuario->save();
                 echo "<script>console.log('USUARIO AGREGADO CORRECTAMENTE')</script>";
-                return $usuario->save();
+                return true;
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
+                return false;
             }
         }
 
@@ -18,9 +20,11 @@
                         echo "<script>console.log('CREDENCIALES CORRECTAS')</script>";
                         return true;
                     }else{
+                        echo "<script>console.log('CONTRASEÑA INVALIDA')</script>";
                         return false;
                     }
                 }else{
+                    echo "<script>console.log('USUARIO INVALIDO')</script>";
                     return false;
                 }
             }catch(Exception $e){
@@ -32,9 +36,11 @@
             try{
                 $usuario->save();
                 echo "<script>alert('USUARIO EDITADO CORRECTAMENTE')</script>";
+                return true;
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
                 echo "<script>alert('No se pudo editar el usuario')</script>";
+                return false;
             }
         }
 
@@ -42,9 +48,11 @@
             try{
                 $usuario->delete();
                 echo "<script>alert('USUARIO ELIMINADO CORRECTAMENTE')</script>";
+                return true;
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
                 echo "<script>alert('No se pudo eliminar el usuario')</script>";
+                return false;
             }
         }
 
@@ -55,6 +63,7 @@
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
                 echo "<script>alert('No se pudo listar los usuarios')</script>";
+                return false;
             }
         }
     }
