@@ -20,15 +20,18 @@
             </tr>
             <tr>
                 <center>
-                    <input type="text" name="user" placeholder="Introduzca su Cédula">
+                    <input type="text" name="cedula" placeholder="Introduzca su Cédula">
                     <input type="password" name="clave" placeholder="Introduzca su Contraseña">
                 </center>
             </tr>
             <tr>
                 <td>
                     <center>
-                        <input type="submit" name="buscar" value="Iniciar sesión">
-                        <input type="submit" name="agregar" value="Registrarse">
+                        <input type="submit" name="sesion" value="Iniciar sesión">
+                        <input type="submit" name="registrar" value="Registrarse">
+                        <!-- Olvidaste la contraseña? -->
+                        <br>
+                        <a href="recoverypass.php">Olvidaste tu contraseña?</a>
                     </center>
                 </td>
             </tr>
@@ -36,7 +39,12 @@
     </form>
 
     <?php
+         
         if(count($_REQUEST)!=0){
+            session_start();
+            $_SESSION['cedula'] = $_REQUEST['cedula'];
+            $_SESSION['clave'] = $_REQUEST['clave'];
+            // echo array_keys($_REQUEST)[2];
             header("Location: ../../controller/ControladorUsuario.php?".array_keys($_REQUEST)[2]);
         }
     ?>

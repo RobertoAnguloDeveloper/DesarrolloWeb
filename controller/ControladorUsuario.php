@@ -8,13 +8,13 @@ switch($_REQUEST){
 //     case isset($_REQUEST['gastos']):
 //         header("Location: ../view/gasto/index.php");
 //         break;
-//     case isset($_REQUEST['buscar']):
-//         echo 'ENTRO BUSCAR';
-//         break;
-    case isset($_REQUEST['agregar']):
+    case isset($_REQUEST['sesion']):
+        header("Location: ../view/usuario/buscar.php");
+        break;
+    case isset($_REQUEST['registrar']):
         header("Location: ../view/usuario/agregar.php");
         break;
-    case isset($_REQUEST['guardar']):
+    case isset($_REQUEST['agregar']):
         require_once '../model/UsuarioDAO.php';
         $usuario = new Usuario();
         $usuario->cedula = $_SESSION['cedula'];
@@ -23,6 +23,13 @@ switch($_REQUEST){
         $usuario->telefono = $_SESSION['telefono'];
         $usuario->email = $_SESSION['email'];
         UsuarioDAO::agregar($usuario);
+        break;
+    case isset($_REQUEST['buscar']):
+        require_once '../model/UsuarioDAO.php';
+        $usuario = new Usuario();
+        $usuario->cedula = $_SESSION['cedula'];
+        $usuario->clave = $_SESSION['clave'];
+        UsuarioDAO::buscar($usuario);
         break;
     default:
         echo 'NO ENTRO';

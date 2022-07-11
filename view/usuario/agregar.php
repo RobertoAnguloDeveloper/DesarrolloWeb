@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/personal.css">
     <script src="../js/personal.js"></script>
-    <title>Document</title>
 </head>
 
 <body>
@@ -28,7 +27,7 @@
                 <input type="number" name="telefono" placeholder="Introduzca su telefono">
                 <tr>
                     <td>
-                        <input type="submit" name="guardar" value="Guardar">
+                        <input type="submit" name="agregar" value="Guardar">
                     </td>
                 </tr>
             </tr>
@@ -36,7 +35,6 @@
     </form>
     <?php
         if(count($_REQUEST)!=0){
-            // var_dump($_REQUEST);
             session_start();
             $_SESSION['cedula'] = $_REQUEST['cedula'];
             $_SESSION['clave'] = $_REQUEST['clave'];

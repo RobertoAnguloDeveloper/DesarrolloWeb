@@ -4,21 +4,27 @@
     class UsuarioDAO{
         public static function agregar($usuario){
             try{
-                $usuario->save();
-                echo "<script>alert('USUARIO AGREGADO CORRECTAMENTE')</script>";
+                echo "<script>console.log('USUARIO AGREGADO CORRECTAMENTE')</script>";
+                return $usuario->save();
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-                echo "<script>alert('No se pudo agregar el usuario')</script>";
             }
         }
 
-        public static function buscar($cedula){
+        public static function buscar($usuario){
             try{
-                Usuario::find_by_cedula($cedula);
-                echo "<script>alert('USUARIO ENCONTRADO')</script>";
+                if(!is_null(Usuario::find_by_cedula($usuario->cedula))){
+                    if(Usuario::find_by_cedula($usuario->cedula)->clave == $usuario->clave){
+                        echo "<script>console.log('CREDENCIALES CORRECTAS')</script>";
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-                echo "<script>alert('No se pudo buscar el usuario')</script>";
             }
         }
 
