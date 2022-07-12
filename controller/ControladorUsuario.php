@@ -50,7 +50,6 @@ switch($_REQUEST){
         $usuario->email = $_SESSION['email'];
         $respuesta = UsuarioDAO::agregar($usuario);
         header("Location: ../view/usuario/index.php?respuesta=".$respuesta);
-            
         break;
 
     default:

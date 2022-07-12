@@ -80,7 +80,10 @@
 
 #login-icon {
     display: none;
-    margin-bottom: -12px;
+    position: absolute;
+    border-radius: 30px;
+    background-color: #fff;
+    left: 85%;
     width: 30px;
 }
 

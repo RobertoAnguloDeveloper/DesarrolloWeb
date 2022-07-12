@@ -139,3 +139,11 @@
         var name = document.activeElement.name;
         iframe.src = "controller/ControladorUsuario.php?"+name+"=active";
     }
+
+    function show(id){
+        document.getElementById(id).style.display = 'inline-block';
+    }
+
+    function hide(id){
+        document.getElementById(id).style.display = 'none';
+    }

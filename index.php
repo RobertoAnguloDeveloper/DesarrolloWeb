@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,7 +24,7 @@
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
             <a href="#" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a>
-            <li><a href="#" name="usuarios" onclick="controller();">INICIAR SESION</a></li>
+            <li><a href="#" id="sesion" name="usuarios" onclick="controller();">INICIAR SESION</a></li>
             <li><a href="#" name="gastos" onclick="controller();">GASTOS</a></li>
         <!-- <li>
             <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
@@ -68,10 +72,17 @@
 </body>
 </html>
 
+<?php
+    require_once './view/usuario/logeo.php';
+?>
+
 <script>
     window.onload = function() {
         showIframe();
+        var sesion = document.getElementById("sesion");
+        var sesionBtn = document.getElementById("login-icon");
         var iframe = document.getElementById("formsFrame");
+
         iframe.style.opacity = 0.1;
         iframe.src = "./view/datosEstudiante.php";
         fadeInEffect("formsFrame",0.5);
