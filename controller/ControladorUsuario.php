@@ -2,6 +2,9 @@
 session_start();
 
 switch($_REQUEST){
+    case isset($_REQUEST['userMenu']):
+        header("Location: login.php");
+        break;
     case isset($_REQUEST['usuarios']):
         header("Location: ../view/usuario/index.php?sesion=active");
         break;

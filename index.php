@@ -23,9 +23,9 @@
     <img id="background" src="./view/img/udcPiedra.jpg" alt="UdC">
     <ul class="menu-barra">
             <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
-            <a href="#" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a>
+            <a href="#" name="userMenu" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a>
             <li><a href="#" id="sesion" name="usuarios" onclick="controller();">INICIAR SESION</a></li>
-            <li><a href="#" name="gastos" onclick="controller();">GASTOS</a></li>
+            <li><a href="#" id="gastos" name="gastos" onclick="controller();">GASTOS</a></li>
         <!-- <li>
             <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
             <ul id="AAU1" class="popup" onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();">

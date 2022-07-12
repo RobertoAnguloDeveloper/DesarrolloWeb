@@ -62,8 +62,17 @@
     text-shadow: 1.5px 1px 5px #000;
 }
 
+#gastos{
+    display: inline-block;
+    position: relative;
+    right: -70%;
+    width: 55px;
+}
+
 #home-icon {
     display: inline-block;
+    position: relative;
+    right: -50%;
     margin-bottom: -12px;
     margin-right: 5px;
     margin-left: -40px;
@@ -80,10 +89,11 @@
 
 #login-icon {
     display: none;
-    position: absolute;
+    position: relative;
+    left: 50%;
+    margin-bottom: -12px;
     border-radius: 30px;
     background-color: #fff;
-    left: 85%;
     width: 30px;
 }
 
@@ -115,8 +125,10 @@
 
 #studentData {
     padding: 20px;
-    margin: 10px 10px 10px 10px;
+    margin-top: 50px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
 
 .popup{
@@ -287,13 +299,6 @@ input[type="button"]:hover {
     border-radius: 40px;
     box-shadow: 0px 0px 10px #000;
     background-color: rgba(255, 255, 255, 0.458);
-}
-
-#studentData{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 50px;
 }
 
 .formulario {
