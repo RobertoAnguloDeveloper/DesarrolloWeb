@@ -1,6 +1,5 @@
 <?php
 session_start();
-/*Validate keys from $_REQUEST Array using a switch*/
 
 switch($_REQUEST){
     case isset($_REQUEST['usuarios']):

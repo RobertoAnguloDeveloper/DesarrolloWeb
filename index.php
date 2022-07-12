@@ -66,25 +66,33 @@
         <li id="basesDatos2"><a href="#">BASES DE DATOS II</a></li> -->
     </ul>
 
-    
     <center><iframe id="formsFrame" style="display: none;" src="" frameborder="1"></iframe></center>
 
 </body>
 </html>
 
-<?php
-    require_once './view/usuario/logeo.php';
-?>
-
 <script>
     window.onload = function() {
         showIframe();
-        var sesion = document.getElementById("sesion");
-        var sesionBtn = document.getElementById("login-icon");
         var iframe = document.getElementById("formsFrame");
-
         iframe.style.opacity = 0.1;
         iframe.src = "./view/datosEstudiante.php";
         fadeInEffect("formsFrame",0.5);
     }
 </script>
+
+<?php
+    if(isset($_SESSION['logStatus'])){
+        if($_SESSION['logStatus'] == '1'){
+            echo "<script>
+                    hide('sesion');
+                    show('login-icon');
+                </script>";
+        }else{
+            echo "<script>
+                    hide('login-icon');
+                    show('sesion');
+                </script>";
+        } 
+    }
+?>
