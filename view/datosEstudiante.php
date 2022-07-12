@@ -12,8 +12,11 @@
 
 <body>
     <div id="studentData">
-        <h3>Estudiante</h3>
-        <p>ROBERTO CARLOS ANGULO TINOCO</p>
+        <h3>EJERCICIO 6</h3>
+        <br>
+        <h3>Integrantes de CIPA</h3>
+        <p>ROBERTO CARLOS ANGULO TINOCO COD:7502010009</p>
+        <p>VINCENT ARTURO ROLONG MARQUEZ COD:7502010020</p>
         <br>
         <h3>Tutor</h3>
         <p>JHON CARLOS ARRIETA ARRIETA</p>

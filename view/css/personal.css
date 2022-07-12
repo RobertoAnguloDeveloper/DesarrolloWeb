@@ -6,7 +6,7 @@
 #background {
     z-index: -100;
     opacity: 0.8;
-    filter: blur(10px);
+    filter: blur(15px);
     position: absolute;
     top: 0;
     left: 0;
@@ -24,12 +24,13 @@
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 40px;
 }
 
-.menu-barra {
-    width: 75%;
-    padding-bottom: 10px;
+.menu-barra:not([class="barra-elementos"]) {
+    width: 250px;
+    margin-top: 0.5%;
+    margin-right: 25%;
+    padding: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     background-color: #ffe600;
     color: #fff;
@@ -38,48 +39,57 @@
     border-radius: 40px;
     text-decoration: none;
     list-style-type: none;
-    text-align: center;
 }
 
-.menu-barra li{
-    margin-top: 5px;
+.menu-barra li a:not([class="barra-elementos"]){
+    position: relative;
     display: inline-block;
-}
-
-.menu-barra li a {
-    padding: 2px 6px 2px 6px;
+    left: 10%;
     text-decoration: none;
     list-style-type: none;
+    text-shadow: 0px 0px 0px #000;
     color: rgb(0, 0, 0);
 }
 
-.menu-barra li a:hover {
+.menu-barra li a:hover:not([class="barra-elementos"]){
     background-color: #ffc200;
     box-shadow: 0px 0px 5px #000;
     color: #fff;
-    padding: 2px 6px 2px 6px;
-    border-radius: 30px;
+    border-radius: 5px;
     text-shadow: 1.5px 1px 5px #000;
 }
 
-#gastos{
+.barra-elementos:not([href="index.php"],[name="userMenu"]) {
     display: inline-block;
-    position: relative;
-    right: -70%;
-    width: 55px;
-}
-
-#home-icon {
-    display: inline-block;
-    position: relative;
-    right: -50%;
-    margin-bottom: -12px;
     margin-right: 5px;
-    margin-left: -40px;
-    width: 30px;
+    margin-left: 5px;
+    text-decoration: none;
+    list-style-type: none;
+    text-shadow: 0px 0px 0px #000;
+    color: rgb(0, 0, 0);
+    padding: 4px;
 }
 
-#home-icon:hover{
+.barra-elementos:hover:not([href="index.php"],[name="userMenu"]){
+    background-color: #ffc200;
+    box-shadow: 0px 0px 5px #000;
+    color: #fff;
+    border-radius: 30px;
+    text-shadow: 1.5px 1px 5px #000;
+    padding: 4px;
+}
+
+.barra-elementos img[id="home-icon"] {
+    width: 25px;
+    margin-top:-6px;
+    margin-bottom: -12px;
+    text-decoration: none;
+    list-style-type: none;
+    text-shadow: 0px 0px 0px #000;
+    color: rgb(0, 0, 0);
+}
+
+.barra-elementos img[id="home-icon"]:hover{
     background-color: #ffc200;
     box-shadow: 0px 0px 5px #000;
     color: #fff;
@@ -87,7 +97,26 @@
     text-shadow: 1.5px 1px 5px #000;
 }
 
-#login-icon {
+.barra-elementos img[id="login-icon"] {
+    display: none;
+    width: 25px;
+    margin-bottom: -8px;
+    margin-top: -6px;
+    text-decoration: none;
+    list-style-type: none;
+    text-shadow: 0px 0px 0px #000;
+    color: rgb(0, 0, 0);
+}
+
+.barra-elementos img[id="login-icon"]:hover{
+    background-color: #ffc200;
+    box-shadow: 0px 0px 5px #000;
+    color: #fff;
+    border-radius: 30px;
+    text-shadow: 1.5px 1px 5px #000;
+}
+
+/* #login-icon {
     display: none;
     position: relative;
     left: 50%;
@@ -103,7 +132,7 @@
     color: #fff;
     border-radius: 30px;
     text-shadow: 1.5px 1px 5px #000;
-}
+} */
 
 #basesDatos2 a {
     padding: 4px 6px 6px 6px;
@@ -124,11 +153,10 @@
 }
 
 #studentData {
-    padding: 20px;
-    margin-top: 50px;
+    margin: 5%;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 21px;
 }
 
 .popup{
@@ -294,11 +322,11 @@ input[type="button"]:hover {
 
 #formsFrame {
     width: 75%;
-    height: 50vh;
+    height: 60vh;
     margin-top: 10px;
     border-radius: 40px;
     box-shadow: 0px 0px 10px #000;
-    background-color: rgba(255, 255, 255, 0.458);
+    background-color: rgba(255, 255, 255, 0.545);
 }
 
 .formulario {

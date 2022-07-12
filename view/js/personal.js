@@ -146,4 +146,5 @@
 
     function hide(id){
         document.getElementById(id).style.display = 'none';
+        document.getElementById("barra").style.width = '150px';
     }

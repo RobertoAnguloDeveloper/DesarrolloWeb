@@ -21,11 +21,12 @@
         <h1>&lt; DESARROLLO WEB &gt;</h1>
     </header>
     <img id="background" src="./view/img/udcPiedra.jpg" alt="UdC">
-    <ul class="menu-barra">
-            <a href="index.php"><img id="home-icon" src="./view/img/home.png"></a>
-            <a href="#" name="userMenu" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a>
-            <li><a href="#" id="sesion" name="usuarios" onclick="controller();">INICIAR SESION</a></li>
-            <li><a href="#" id="gastos" name="gastos" onclick="controller();">GASTOS</a></li>
+    <ul id="barra" class="menu-barra">
+            <a class="barra-elementos" href="index.php"><img id="home-icon" class="barra-elementos" src="./view/img/home.png"></a>
+            <a href="#" class="barra-elementos" name="userMenu" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a>
+            <a href="#" class="barra-elementos" id="sesion" name="usuarios" onclick="controller();">INICIAR SESION</a>
+            <a href="#" class="barra-elementos" name="gastos" onclick="controller();">GASTOS</a>
+            
         <!-- <li>
             <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
             <ul id="AAU1" class="popup" onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();">
