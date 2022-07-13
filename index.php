@@ -1,5 +1,6 @@
 <?php
-    session_start();
+session_start();
+require_once 'view/usuario/logeo.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,87 +14,49 @@
     <script src="./view/js/personal.js"></script>
 
     <title>&lt;DESARROLLO WEB&gt;</title>
-
 </head>
 
 <body>
-    <header class="header">
+    <header id="header">
         <h1>&lt; DESARROLLO WEB &gt;</h1>
     </header>
     <img id="background" src="./view/img/udcPiedra.jpg" alt="UdC">
     <ul id="barra" class="menu-barra">
-            <a class="barra-elementos" href="index.php"><img id="home-icon" class="barra-elementos" src="./view/img/home.png"></a>
-            <a href="#" class="barra-elementos" name="userMenu" onclick="controller();"><img id="login-icon" src="./view/img/login.png"></a>
-            <a href="#" class="barra-elementos" id="sesion" name="usuarios" onclick="controller();">INICIAR SESION</a>
-            <a href="#" class="barra-elementos" name="gastos" onclick="controller();">GASTOS</a>
-            
-        <!-- <li>
-            <a onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();" href="#">Actividad de aprendizaje 1</a>
-            <ul id="AAU1" class="popup" onmouseover="showPopupAAU1();" onmouseout="hidePopupAAU1();">
-                <li><a id="form1" onclick="form();" href="#">Formulario 1</a></li>
-                <br>
-                <li><a id="form2" onclick="form();" href="#">Formulario 2</a></li>
-                <br>
-                <li><a id="form3" onclick="form();" href="#">Formulario 3</a></li>
-                <br>
-                <li><a id="form4" onclick="form();" href="#">Formulario 4</a></li>
-                <br>
-                <li><a id="form5" onclick="form();" href="#">Formulario 5</a></li>
-                <br>
-                <li><a id="form6" onclick="form();" href="#">Formulario 6</a></li>
-                <br>
-                <li><a id="form7" onclick="form();" href="#">Formulario 7</a></li>
-                <br>
-                <li><a id="pruebaDao" onclick="prueba();" href="#">Prueba DAO</a></li>
-            </ul>
-        </li> -->
-
-        <!-- <li><a onmouseover="showPopupAAU2();" onmouseout="hidePopupAAU2();" href="#">Actividad de aprendizaje 2</a>
-            <ul id="AAU2" class="popup" onmouseover="showPopupAAU2();" onmouseout="hidePopupAAU2();">
-                <li><a id="form1" onclick="form();" href="#">Formulario 1</a></li>
-                <br>
-                <li><a id="form2" onclick="form();" href="#">Formulario 2</a></li>
-                <br>
-                <li><a id="form3" onclick="form();" href="#">Formulario 3</a></li>
-                <br>
-                <li><a id="form4" onclick="form();" href="#">Formulario 4</a></li>
-                <br>
-                <li><a id="form5" onclick="form();" href="#">Formulario 5</a></li>
-                <br>
-            </ul>
-        </li> -->
-        <!-- <li><a href="#">Actividad de aprendizaje 3</a></li>
-        <li><a href="#">Actividad de aprendizaje 4</a></li>
-        <li id="basesDatos2"><a href="#">BASES DE DATOS II</a></li> -->
+        <a class="barra-elementos" href="index.php"><img id="home-icon" class="barra-elementos" src="./view/img/home.png"></a>
+        <a href="#" class="barra-elementos" id="userMenu" name="userMenu" onclick="clicks('userMenu');"><img id="login-icon" src="./view/img/login.png"></a>
+        <a href="#" class="barra-elementos" id="sesion" name="usuarios" onclick="controller();">INICIAR SESION</a>
+        <a href="#" class="barra-elementos" id="gastos" name="gastos" onclick="controller();">GASTOS</a>
+    </ul>
+    
+    <ul id="logData" class="popup">
+        <li>BIENVENIDO <p id="nombreUsuario"><?= $_SESSION['nombre'] ?></p></li>
+        <hr>
+        <li><a href="#">Datos de la cuenta</a></li>
+        <hr>
+        <li><a href="#" name="cerrarSesion" onclick="controller();">Cerrar sesión</a></li>
+        <hr>
     </ul>
 
     <center><iframe id="formsFrame" style="display: none;" src="" frameborder="1"></iframe></center>
 
+    <footer id="footer">
+        <h1>&lt; DESARROLLO WEB &gt;</h1>
+    </footer>
 </body>
+
 </html>
 
 <script>
+    var iframe = document.getElementById("formsFrame");
     window.onload = function() {
         showIframe();
-        var iframe = document.getElementById("formsFrame");
         iframe.style.opacity = 0.1;
         iframe.src = "./view/datosEstudiante.php";
-        fadeInEffect("formsFrame",0.5);
+        fadeInEffect("formsFrame", 0.5);
     }
+    
 </script>
 
 <?php
-    if(isset($_SESSION['logStatus'])){
-        if($_SESSION['logStatus'] == '1'){
-            echo "<script>
-                    hide('sesion');
-                    show('login-icon');
-                </script>";
-        }else{
-            echo "<script>
-                    hide('login-icon');
-                    show('sesion');
-                </script>";
-        } 
-    }
+    status();
 ?>

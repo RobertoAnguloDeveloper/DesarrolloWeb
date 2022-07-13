@@ -23,10 +23,8 @@
                 if(isset($_SESSION['respuesta']) && $_SESSION['respuesta'] == true){
                     $_SESSION['logStatus'] = true;
                     echo "<script>alert('BIENVENIDO ". $_SESSION['nombre']."')</script>";
-                    /*Reload root page out of the iframe */
+                    /*Recarga la pagina principal, el index.php de la raiz del proyecto */
                     echo "<script>window.top.location.reload();</script>";
-                    // header("Location: ../../controller/ControladorUsuario.php?inicio=1");
-
                 }else{
                     echo "<script>alert('CREDENCIALES INVALIDAS, revise su usuario y contraseña')</script>";
                     $_SESSION['logStatus'] = "0";

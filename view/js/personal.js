@@ -38,6 +38,28 @@
         document.getElementById("valorPiel").innerHTML = valor;
     }
 
+    function clicks(id){
+        idElement = document.getElementById(id);
+        var count = 2;
+        showPopup("logData");
+        idElement.onclick = function() {
+            if (count % 2 == 0) {
+                hidePopup("logData");
+            } else {
+                showPopup("logData");
+            }
+            count++;
+        }
+    }
+
+    function showPopup(id){
+        document.getElementById(id).style.display = 'block';
+    }
+
+    function hidePopup(id){
+        document.getElementById(id).style.display = "none";
+    }
+
     function showPopupAAU1() {
         var popup = document.getElementById("AAU1");
             popup.style.display = "block";

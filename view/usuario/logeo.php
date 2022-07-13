@@ -5,6 +5,7 @@
                 echo "<script>
                         hide('sesion');
                         show('login-icon');
+                        show('gastos');
                     </script>";
             }else{
                 echo "<script>

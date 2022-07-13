@@ -54,6 +54,11 @@ switch($_REQUEST){
         header("Location: ../view/usuario/index.php?respuesta=".$respuesta);
         break;
 
+    case isset($_REQUEST['cerrarSesion']):
+        session_destroy();
+        echo "<script>alert('HASTA PRONTO ". $_SESSION['nombre']."')</script>";
+        echo "<script>window.top.location.reload();</script>";
+        break;
     default:
         echo 'NO ENTRO';
         break;

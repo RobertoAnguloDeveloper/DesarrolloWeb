@@ -1,8 +1,4 @@
-<?php
-    require_once './model/Usuario.php';
-    require_once './model/UsuarioDAO.php';
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +44,7 @@
     // var_dump($_POST);
 
     while(key($_POST)){
+        require_once 'model/UsuarioDAO.php';
         switch(key($_POST)){
             case 'agregar':
                 $usuario = new Usuario();
