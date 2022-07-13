@@ -13,6 +13,10 @@ switch($_REQUEST){
         header("Location: ../view/usuario/buscar.php");
         break;
 
+    case isset($_REQUEST['datosCuenta']):
+        header("Location: ../view/usuario/datosCuenta.php");
+        break;
+
     case isset($_REQUEST['buscar']):
         require_once '../model/UsuarioDAO.php';
         $usuario = new Usuario();

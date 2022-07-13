@@ -31,7 +31,7 @@ require_once 'view/usuario/logeo.php';
     <ul id="logData" class="popup">
         <li>BIENVENIDO <p id="nombreUsuario"><?= $_SESSION['nombre'] ?></p></li>
         <hr>
-        <li><a href="#">Datos de la cuenta</a></li>
+        <li><a href="#" name="datosCuenta" onclick="controller();">Datos de la cuenta</a></li>
         <hr>
         <li><a href="#" name="cerrarSesion" onclick="controller();">Cerrar sesión</a></li>
         <hr>
