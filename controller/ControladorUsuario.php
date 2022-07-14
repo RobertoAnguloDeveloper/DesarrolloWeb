@@ -14,7 +14,7 @@ switch($_REQUEST){
         break;
 
     case isset($_REQUEST['datosCuenta']):
-        header("Location: ../view/usuario/datosCuenta.php");
+        header("Location: ../view/usuario/buscar.php?datosCuenta=active");
         break;
 
     case isset($_REQUEST['buscar']):

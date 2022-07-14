@@ -152,6 +152,34 @@
     font-weight: bold;
 }
 
+#adminCuentas{
+    display: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#adminCuentas:hover{
+    background-color: #ffffff;
+    color: rgb(0, 21, 255);
+    text-shadow: 0.5px 1px 1px rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+#cerrarSesion{
+    color: rgb(255, 255, 255);
+}
+
+#cerrarSesion:hover{
+    background-color: #ffffff;
+    color: rgb(255, 0, 0);
+    text-shadow: 0.5px 1px 1px rgb(255, 255, 255);
+    border: solid 5px rgb(255, 0, 0);
+    
+    border-radius: 10px;
+}
+
 #studentData {
     margin: 5%;
     text-align: center;
@@ -188,11 +216,11 @@
 
 .popup a:hover{
     padding: 3px;
-    background-color: #ffc200;
-    box-shadow: 0px 0px 5px #000;
-    color: #fff;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     border-radius: 10px;
-    text-shadow: 1.5px 1px 5px #000;
+    font-weight: unset;
+    text-shadow: 0.5px 1px 1px rgb(255, 255, 255);
 }
 
 .contenedor{

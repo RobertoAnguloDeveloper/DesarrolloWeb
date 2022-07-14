@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'view/usuario/logeo.php';
+// var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -29,11 +30,13 @@ require_once 'view/usuario/logeo.php';
     </ul>
     
     <ul id="logData" class="popup">
-        <li>BIENVENIDO <p id="nombreUsuario"><?= $_SESSION['nombre'] ?></p></li>
+        <li>BIENVENID@ <p id="nombreUsuario"><?= $_SESSION['nombre'] ?></p></li>
         <hr>
         <li><a href="#" name="datosCuenta" onclick="controller();">Datos de la cuenta</a></li>
         <hr>
-        <li><a href="#" name="cerrarSesion" onclick="controller();">Cerrar sesión</a></li>
+        <li><a href="#" id="adminCuentas" name="adminCuentas" onclick="controller();">Admin cuentas</a></li>
+        <hr>
+        <li><a href="#" id="cerrarSesion" name="cerrarSesion" onclick="controller();">Cerrar sesión</a></li>
         <hr>
     </ul>
 

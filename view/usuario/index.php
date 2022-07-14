@@ -21,10 +21,17 @@
                 break;
             case isset($_REQUEST['buscar']):
                 if(isset($_SESSION['respuesta']) && $_SESSION['respuesta'] == true){
-                    $_SESSION['logStatus'] = true;
-                    echo "<script>alert('BIENVENIDO ". $_SESSION['nombre']."')</script>";
-                    /*Recarga la pagina principal, el index.php de la raiz del proyecto */
-                    echo "<script>window.top.location.reload();</script>";
+                    if($_SESSION['cedula'] == '123456789'){
+                        $_SESSION['logStatus'] = true;
+                        $_SESSION['admin'] = '1';
+                        echo "<script>alert('BIENVENIDO ". $_SESSION['nombre']."')</script>";
+                        echo "<script>window.top.location.reload();</script>";
+                    }else{
+                        $_SESSION['logStatus'] = true;
+                        echo "<script>alert('BIENVENID@ ". $_SESSION['nombre']."')</script>";
+                        /*Recarga la pagina principal, el index.php de la raiz del proyecto */
+                        echo "<script>window.top.location.reload();</script>";
+                    }
                 }else{
                     echo "<script>alert('CREDENCIALES INVALIDAS, revise su usuario y contraseña')</script>";
                     $_SESSION['logStatus'] = "0";
