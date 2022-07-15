@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -15,44 +15,49 @@
 
 <body>
     <?php
-        switch($_REQUEST){
-            case isset($_REQUEST['sesion']):
-                header("Location: login.php");
-                break;
-            case isset($_REQUEST['buscar']):
-                if(isset($_SESSION['respuesta']) && $_SESSION['respuesta'] == true){
-                    if($_SESSION['cedula'] == '123456789'){
-                        $_SESSION['logStatus'] = true;
-                        $_SESSION['admin'] = '1';
-                        echo "<script>alert('BIENVENIDO ". $_SESSION['nombre']."')</script>";
-                        echo "<script>window.top.location.reload();</script>";
-                    }else{
-                        $_SESSION['logStatus'] = true;
-                        echo "<script>alert('BIENVENID@ ". $_SESSION['nombre']."')</script>";
-                        /*Recarga la pagina principal, el index.php de la raiz del proyecto */
-                        echo "<script>window.top.location.reload();</script>";
-                    }
-                }else{
-                    echo "<script>alert('CREDENCIALES INVALIDAS, revise su usuario y contraseña')</script>";
-                    $_SESSION['logStatus'] = "0";
-                    echo "<script>window.location.href='login.php'</script>";
+    switch ($_REQUEST) {
+        case isset($_REQUEST['sesion']):
+            header("Location: login.php");
+            break;
+        case isset($_REQUEST['buscar']):
+            if (isset($_SESSION['respuesta']) && $_SESSION['respuesta'] == true) {
+                if ($_SESSION['cedula'] == '123456789') {
+                    $_SESSION['logStatus'] = true;
+                    $_SESSION['admin'] = '1';
+                    echo "<script>alert('BIENVENIDO " . $_SESSION['nombre'] . "')</script>";
+                    echo "<script>window.top.location.reload();</script>";
+                } else {
+                    $_SESSION['logStatus'] = true;
+                    echo "<script>alert('BIENVENID@ " . $_SESSION['nombre'] . "')</script>";
+                    /*Recarga la pagina principal, el index.php de la raiz del proyecto */
+                    echo "<script>window.top.location.reload();</script>";
                 }
-                break;
-            case isset($_REQUEST['registrar']):
-                header("Location: agregar.php");
-                break;
-            case isset($_REQUEST['respuesta']):
-                if($_REQUEST['respuesta'] == '1'){
-                    echo "<script>alert('GRACIAS POR TU REGISTRO ". $_SESSION['nombre']."')</script>";
-                }else{
-                    echo "<script>alert('LO SENTIMOS, NO PUDIMOS REALIZAR TU REGISTRO')</script>";
-                }
-                break;
-            default:
-                echo "NO HIZO NADA";
-                break;
-        }
-        
+            } else {
+                echo "<script>alert('CREDENCIALES INVALIDAS, revise su usuario y contraseña')</script>";
+                session_destroy();
+                echo "<script>window.location.href='login.php';</script>";
+            }
+            break;
+        case isset($_REQUEST['registrar']):
+            header("Location: agregar.php");
+            break;
+        case isset($_REQUEST['respuesta']):
+            if ($_REQUEST['respuesta'] == '1') {
+                echo "<script>alert('GRACIAS POR TU REGISTRO " . $_SESSION['nombre'] . "')</script>";
+            } else {
+                echo "<script>alert('LO SENTIMOS, NO PUDIMOS REALIZAR TU REGISTRO')</script>";
+            }
+            break;
+        case isset($_REQUEST['datosCuenta']):
+            ?>
+               
+            <?php
+            break;
+        default:
+            echo "NO HIZO NADA";
+            break;
+    }
+
     ?>
 </body>
 

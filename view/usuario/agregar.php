@@ -15,7 +15,7 @@
 
 <body>
     <form method="post" id="sign-in" class="contenedorSignin">
-        <a id="btn-x" onclick="fadeOutEffect('sign-in',0.5);">x</a>
+        <a id="btn-x" onclick="hideElement('log-in');">x</a>
         <table>
             <tr>
                 <br>
