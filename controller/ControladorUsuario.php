@@ -58,7 +58,7 @@ switch($_REQUEST){
         header("Location: ../view/usuario/index.php?respuesta=".$respuesta);
         break;
 
-    case isset($_REQUEST['guardar']):
+    case isset($_REQUEST['editar']):
         require_once '../model/UsuarioDAO.php';
         $usuario = new Usuario();
         $usuario = UsuarioDAO::buscarPorCedula($_SESSION['cedula']);
