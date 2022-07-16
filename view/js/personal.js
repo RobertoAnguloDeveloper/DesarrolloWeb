@@ -159,7 +159,7 @@
     function controller(){
         var iframe = document.getElementById("formsFrame");
         var name = document.activeElement.name;
-        iframe.src = "controller/ControladorUsuario.php?"+name+"=active";
+        iframe.src = "controller/ControladorUsuario.php?"+name;
     }
 
     function show(id){
@@ -173,4 +173,10 @@
 
     function hideElement(id){
         document.getElementById(id).style.display = 'none';
+    }
+
+    function enableInputs(ids){
+        for (var i = 0; i < ids.length; i++) {
+            document.getElementById(ids[i]).disabled = false;
+        }
     }

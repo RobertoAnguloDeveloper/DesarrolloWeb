@@ -14,7 +14,7 @@ switch($_REQUEST){
         break;
 
     case isset($_REQUEST['datosCuenta']):
-        header("Location: ../view/usuario/index.php?datosCuenta=active");
+        header("Location: ../view/usuario/index.php?datosCuenta");
         break;
 
     case isset($_REQUEST['buscar']):
@@ -55,6 +55,19 @@ switch($_REQUEST){
         $usuario->telefono = $_SESSION['telefono'];
         $usuario->email = $_SESSION['email'];
         $respuesta = UsuarioDAO::agregar($usuario);
+        header("Location: ../view/usuario/index.php?respuesta=".$respuesta);
+        break;
+
+    case isset($_REQUEST['guardar']):
+        require_once '../model/UsuarioDAO.php';
+        $usuario = new Usuario();
+        $usuario = UsuarioDAO::buscarPorCedula($_SESSION['cedula']);
+        $usuario->cedula = $_SESSION['cedula'];
+        $usuario->clave = $_SESSION['clave'];
+        $usuario->nombre = $_SESSION['nombre'];
+        $usuario->telefono = $_SESSION['telefono'];
+        $usuario->email = $_SESSION['email'];
+        $respuesta = UsuarioDAO::editar($usuario);
         header("Location: ../view/usuario/index.php?respuesta=".$respuesta);
         break;
 

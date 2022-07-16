@@ -15,23 +15,24 @@
 
 <body>
     <form method="post" id="sign-in" class="contenedorSignin">
-        <a id="btn-x" onclick="hideElement('log-in');">x</a>
+        <a id="btn-x" onclick="hideElement('sign-in');">x</a>
         <table>
             <tr>
                 <br>
             </tr>
             <tr>
-                <h2 id="regUsuario">
+                <h2 id="regUsuario" class="tituloForm">
                     <center>REGISTRAR USUARIO</center>
                 </h2>
-                <input type="number" name="cedula" placeholder="Introduzca su Cédula">
-                <input type="password" name="clave" placeholder="Introduzca su Contraseña">
-                <input type="email" name="email" placeholder="Introduzca su email">
-                <input type="text" name="nombre" placeholder="Introduzca su nombre completo">
-                <input type="number" name="telefono" placeholder="Introduzca su telefono">
+                <input type="number" name="cedula" placeholder="Introduzca su Cédula" required>
+                <input type="password" name="clave" placeholder="Introduzca su Contraseña" required>
+                <input type="email" name="email" placeholder="Introduzca su email" required>
+                <input type="text" name="nombre" placeholder="Introduzca su nombre completo" required>
+                <input type="number" name="telefono" placeholder="Introduzca su telefono" required>
                 <tr>
                     <td>
                         <input type="submit" name="agregar" value="Guardar">
+                        <input type="reset" name="limpiar" value="Limpiar campos">
                     </td>
                 </tr>
             </tr>

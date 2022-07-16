@@ -43,9 +43,14 @@
 
 
 .menu-barra:not([class="barra-elementos"]) {
+    /*Arrange in front*/
+    z-index: 1;
+    /*Position*/
+    position: fixed;
+    right: 0.5%;
     width: 170px;
-    margin-top: 0.5%;
-    margin-right: 15%;
+    margin-top: 1%;
+    
     padding: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     background-color: #ffe600;
@@ -139,7 +144,8 @@
 #logData{
     display: none;
     position: absolute;
-    right: 15%;
+    top: 16.2%;
+    right: 0.6%;
     list-style-type: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     background-color: #ffe600;
@@ -150,6 +156,13 @@
     padding: 10px;
     font-size: 15px;
     font-weight: bold;
+}
+
+#nombreUsuario{
+    color: rgb(0, 17, 255);
+    text-shadow: unset;
+    font-weight: unset;
+    
 }
 
 #adminCuentas{
@@ -181,7 +194,7 @@
 }
 
 #studentData {
-    margin: 5%;
+    margin: 9%;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 21px;
@@ -240,7 +253,7 @@
     display: block;
     border: 2px solid black;
     width: 35%;
-    height: 71%;
+    height: 63%;
     padding: 2%;
     box-sizing: border-box;
     background-color: rgba(255, 230, 0,0.697);
@@ -254,8 +267,8 @@
 .contenedorSignin{
     display: block;
     border: 2px solid black;
-    width: 35%;
-    height: 71%;
+    width: 45%;
+    height: 70%;
     padding: 2%;
     box-sizing: border-box;
     background-color: rgba(255, 230, 0,0.697);
@@ -266,53 +279,64 @@
     transform: translate(-50%,-50%);
 }
 
-.tituloForm{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
-    color: #fff;
-    text-shadow: 2.5px 1.5px 6px #000;
-    font-size: 135%;
-    font-weight: bold;
-    text-align: center;
+#account{
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+    margin-top: 2.5%;
+    padding-top: 1%;
+    width: 36%;
+    height: 450px;
 }
 
-#iniSesion{
+#account label{
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+    text-shadow: 1px 1px 3px #000;
+    
+}
+
+#account input[type="text"], #account input[type="password"], #account input[type="email"], #account input[type="number"]{
+    margin-bottom: 3%;
+}
+
+
+.tituloForm{
+    padding: unset;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     color: #fff;
     text-shadow: 2.5px 1.5px 6px #000;
-    font-size: 135%;
+    font-size: 185%;
     font-weight: bold;
     text-align: center;
 }
 
 #regUsuario{
     margin-bottom: 6%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
-    color: #fff;
-    text-shadow: 2.5px 1.5px 6px #000;
-    font-size: 135%;
-    font-weight: bold;
-    text-align: center;
 }
 
 input:not([type="submit"]) {
     display: block;
     border: 1px solid rgb(0, 0, 0);
-    border-radius: 4px;
-    margin-top: 5px;
-    padding: 5px;
-    width: 90%;
-    box-sizing: border-box;
-}
-
-input[type="submit"], input[type="button"] {
-    display: block;
-    border: 1px solid rgb(0, 0, 0);
+    color: rgb(55, 0, 255);
     border-radius: 4px;
     margin-top: 5px;
     padding: 5px;
     width: 100%;
     box-sizing: border-box;
-    font-size: 15px;
+}
+
+input[type="submit"], input[type="button"], input[type="reset"]{
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 80%;
     font-weight: bold;
 }
 
@@ -330,6 +354,18 @@ input[type="button"]:hover {
     color: #fff;
     text-shadow: 1.5px 1px 5px #000;
     cursor: pointer;
+}
+
+input[type="reset"]:hover {
+    background-color: #ffc200;
+    box-shadow: 0px 0px 5px #000;
+    color: #fff;
+    text-shadow: 1.5px 1px 5px #000;
+    cursor: pointer;
+}
+
+input[name="guardar"]{
+    width: 100%;
 }
 
 .cuadro{
@@ -380,8 +416,8 @@ input[type="button"]:hover {
 
 #formsFrame {
     width: 75%;
-    height: 60vh;
-    margin-top: 0.5%;
+    height: 70vh;
+    margin-top: 2.6%;
     border-radius: 40px;
     box-shadow: 0px 0px 10px #000;
     background-color: rgba(255, 255, 255, 0.545);

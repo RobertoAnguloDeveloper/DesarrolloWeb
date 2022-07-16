@@ -32,6 +32,20 @@
             }
         }
 
+        public static function buscarPorCedula($cedula){
+            try{
+                if(!is_null(Usuario::find_by_cedula($cedula))){
+                    echo "<script>console.log('USUARIO EXISTENTE');</script>";
+                    return Usuario::find_by_cedula($cedula);
+                }else{
+                    echo "<script>console.log('USUARIO NO EXISTENTE');</script>";
+                    return false;
+                }
+            }catch(Exception $e){
+                echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
+            }
+        }
+
         public static function editar($usuario){
             try{
                 $usuario->save();

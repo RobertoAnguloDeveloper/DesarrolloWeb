@@ -19,7 +19,7 @@
         <table>
             <tr>
                 <br>
-                <h2 id="iniSesion">INICIAR SESION</h2>
+                <h2 class="tituloForm">INICIAR SESION</h2>
                 <br>
             </tr>
             <tr>
@@ -53,19 +53,6 @@
                 case isset($_REQUEST['registrar']):
                     header("Location: ../../controller/ControladorUsuario.php?registrar=active");
                     break;
-                // case isset($_REQUEST['buscar']):
-                //     var_dump($_SESSION);
-                //     /*Verify if $_SESSION is empty */
-
-                //     if(count($_SESSION) != 0){
-                //         echo "<script>alert('BIENVENIDO ". $_SESSION['nombre']."')</script>";
-                //     }else{
-                //         echo "<script>alert('CREDENCIALES INVALIDAS, revise su usuario y contraseña')</script>";
-                //     }
-                //     break;
-                // case isset($_REQUEST['registrar']):
-                //     header("Location: agregar.php");
-                //     break;
                 default:
                     echo "NO HIZO NADA";
                     break;
