@@ -46,6 +46,7 @@
         if(count($_REQUEST) != 0){
             switch($_REQUEST){
                 case isset($_REQUEST['sesion']):
+                    echo "<script>console.log('login->sesion')</script>";
                     $_SESSION['cedula'] = $_REQUEST['cedula'];
                     $_SESSION['clave'] = $_REQUEST['clave'];
                     header("Location: ../../controller/ControladorUsuario.php?sesion=active");

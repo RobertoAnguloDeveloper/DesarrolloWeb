@@ -6,11 +6,13 @@ switch($_REQUEST){
         header("Location: login.php");
         break;
     case isset($_REQUEST['usuarios']):
+        echo "<script>console.log('Ctrl->usuarios')</script>";
         header("Location: ../view/usuario/index.php?sesion=active");
         break;
 
     case isset($_REQUEST['sesion']):
-        header("Location: ../view/usuario/buscar.php");
+        echo "<script>console.log('Ctrl->sesion')</script>";
+        header("Location: ../view/usuario/buscar.php?sesionBuscar");
         break;
 
     case isset($_REQUEST['datosCuenta']):
@@ -71,6 +73,15 @@ switch($_REQUEST){
         header("Location: ../view/usuario/index.php?respuesta=".$respuesta);
         break;
 
+    case isset($_REQUEST['adminCuentas']):
+        header("Location: ../view/usuario/listar.php");
+        break;
+
+    case isset($_REQUEST['listar']):
+        require_once '../model/UsuarioDAO.php';
+        $usuarios = UsuarioDAO::listar();
+        header("Location: ../view/usuario/listar.php?usuarios");
+        break;
     case isset($_REQUEST['cerrarSesion']):
         session_destroy();
         echo "<script>alert('HASTA PRONTO ". $_SESSION['nombre']."')</script>";

@@ -17,6 +17,7 @@ session_start();
     <?php
     switch ($_REQUEST) {
         case isset($_REQUEST['sesion']):
+            echo "<script>console.log('indexU->sesion')</script>";
             header("Location: login.php");
             break;
         case isset($_REQUEST['buscar']):
