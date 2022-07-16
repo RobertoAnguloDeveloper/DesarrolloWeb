@@ -72,7 +72,8 @@
 
         public static function listar(){
             try{
-                $usuarios = Usuario::all();
+                $usuarios = new Usuario();
+                $usuarios = Usuario::find('all');
                 return $usuarios;
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";

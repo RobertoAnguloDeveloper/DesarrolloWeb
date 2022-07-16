@@ -24,17 +24,16 @@ session_start();
                 <th>Teléfono</th>
             </tr>
             <?php
-            foreach ($_SESSION['usuarios'] as $usuario) {
-                echo "<tr>";
-                echo "<td>" . $usuario->getNombre() . "</td>";
-                echo "<td>" . $usuario->getCedula() . "</td>";
-                echo "<td>" . $usuario->getEmail() . "</td>";
-                echo "<td>" . $usuario->getTelefono() . "</td>";
-                echo "<td>";
-                echo "<a href='../../controller/ControladorUsuario.php?editar=" . $usuario->getCedula() . "'>Editar</a>";
-                echo "</td>";
-                echo "</tr>";
-            }
+            
+            // for ($i=0; $i < count($_SESSION['usuarios']); $i++) {
+            //     echo "<tr>";
+            //     echo "<td>" . $_SESSION['usuarios'][$i]->cedula . "</td>";
+            //     echo "<td>" . $_SESSION['usuarios'][$i]->clave . "</td>";
+            //     echo "<td>" . $_SESSION['usuarios'][$i]->nombre . "</td>";
+            //     echo "<td>" . $_SESSION['usuarios'][$i]->email . "</td>";
+            //     echo "<td>" . $$_SESSION['usuarios'][$i]->telefono . "</td>";
+            //     echo "</tr>";
+            // }
             ?>
 
         </table>
@@ -44,12 +43,9 @@ session_start();
 </html>
 
 <?php
-if (isset($_REQUEST['guardar'])) {
-    $_SESSION['nombre'] = $_REQUEST['nombre'];
-    $_SESSION['clave'] = $_REQUEST['clave'];
-    $_SESSION['email'] = $_REQUEST['email'];
-    $_SESSION['telefono'] = $_REQUEST['telefono'];
-
-    header("Location: ../../controller/ControladorUsuario.php?editar");
+switch ($_REQUEST){
+    case isset($_REQUEST['adminCuentas']):
+        header("Location: ../../controller/ControladorUsuario.php?listar");
+        break;
 }
 ?>

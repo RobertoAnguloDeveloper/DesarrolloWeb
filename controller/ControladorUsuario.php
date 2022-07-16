@@ -74,13 +74,18 @@ switch($_REQUEST){
         break;
 
     case isset($_REQUEST['adminCuentas']):
-        header("Location: ../view/usuario/listar.php");
+        header("Location: ../view/usuario/listar.php?adminCuentas");
         break;
 
     case isset($_REQUEST['listar']):
         require_once '../model/UsuarioDAO.php';
+        $usuarios = new Usuario();
         $usuarios = UsuarioDAO::listar();
-        header("Location: ../view/usuario/listar.php?usuarios");
+        $_SESSION['usuarios'] = $usuarios;
+        for($i = 0; $i < count($_SESSION['usuarios']); $i++){
+            echo $_SESSION['usuarios'][$i]->cedula;
+        }
+        // header("Location: ../view/usuario/listar.php?listar=active");
         break;
     case isset($_REQUEST['cerrarSesion']):
         session_destroy();
