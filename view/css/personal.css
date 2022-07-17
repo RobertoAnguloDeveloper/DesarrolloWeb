@@ -367,7 +367,7 @@
     width: 90%;
     height: 95%;
     padding: 1%;
-    display: block;
+    display: nonelock;
     position: absolute;
     top: 51%;
     left: 50%;
@@ -378,8 +378,9 @@
     border-radius: 10px;
 }
 
+
 #listaGastos input[name="id"]{
-    width: 100%;
+    width: 215px;
     margin: unset;
     display: inline-block;
     position: unset;
@@ -388,11 +389,26 @@
     transform: unset;
 }
 
+#listaGastos button{
+    width: 40px;
+    padding-top: 10%;
+    border-radius: 30px;
+    border-color: #000000;
+    box-shadow: 0 0 30px 30px #ffc4008e inset;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+#listaGastos button:hover{
+    width: 40px;
+    padding-top: 10%;
+    box-shadow: 0 0 1px 0 #ffc200 inset, 0 1px 1px 1px #ffc200;
+    color: #ffc200;
+    cursor: pointer;
+}
+
 #listaGastos fieldset{
     display: inline-block;
-    width: 22%;
-    height: 0%;
-    padding: 0%;
+    width: 30%;
     position: unset;
     margin: unset;
     top: unset;

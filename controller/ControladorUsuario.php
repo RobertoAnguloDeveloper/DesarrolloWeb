@@ -2,7 +2,6 @@
 session_start();
 
 include_once '../model/UsuarioDAO.php';
-include_once '../model/GastoDAO.php';
 
 $rootPath = $_SERVER['DOCUMENT_ROOT'].'/desarrolloweb/';
 

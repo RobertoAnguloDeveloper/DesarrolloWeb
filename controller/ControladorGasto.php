@@ -7,7 +7,12 @@ $rootPath = $_SERVER['DOCUMENT_ROOT'].'/desarrolloweb/';
 
 switch($_REQUEST){
     case isset($_REQUEST['gastos']):
-        header("Location: ../view/gasto/index.php?gastos=active");
+        $gastos = new Gasto();
+        $gastos = GastoDAO::buscarPorCedula($_SESSION['cedula']);
+        $gastos = serialize($gastos);
+        $_SESSION['gastosUsuario'] = $gastos;
+        header("Location: ../view/gasto/index.php?gastosUsuario=active");
+
         break;
 
     case isset($_REQUEST['agregarGasto']):

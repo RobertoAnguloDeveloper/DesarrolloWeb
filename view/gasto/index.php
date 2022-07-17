@@ -1,5 +1,7 @@
 <?php
-session_start();
+    session_start();
+    require_once $_SERVER['DOCUMENT_ROOT'].'/DesarrolloWeb/model/Gasto.php';
+    $gastos = @unserialize($_SESSION['gastosUsuario']);
 ?>
 
 <!DOCTYPE html>
@@ -15,44 +17,44 @@ session_start();
 
 <body>
     <div id="listaGastos">
-        <h2 class="tituloForm">GASTOS</h2>
         <form method="post">
             <fieldset>
-                <legend class="tituloForm">BUSCAR</legend>
+                <legend class="tituloForm">Que deseas hacer?</legend>
                 <table>
                     <tr>
+                        <td>
+                            <button type="submit" name="agregarGasto"><img src="../img/add.png" alt="Agregar">
+                        </td>
+                        <td>
+                            <button type="submit" name="listaGastos"><img src="../img/list.png" alt="Listar">
+                        </td>
                         <td>
                             <input type="number" name="id" placeholder="Escriba el ID de gasto a buscar">
                         </td>
                         <td>
-                            <input type="submit" name="buscarGasto" value="Buscar">
+                            <button type="submit" name="buscarGasto"><img src="../img/search.png" alt="buscar">
                         </td>
                     </tr>
                 </table>
             </fieldset>
         </form>
-        <a href="agregar.php">AGREGAR</a>
+        <h2 class="tituloForm">GASTOS</h2>
         <table id="tablaUsuarios">
-</body>
-
-</html>
-
 <?php
-switch ($_REQUEST) {
-    case isset($_REQUEST['agregarGasto']):
-        echo "<script>alert('GASTO " . $_SESSION['nombre_gasto'] . " AGREGADO CON EXITO')</script>";
-        echo "<script>window.location.href='agregar.php'</script>";
-        break;
+    switch ($_REQUEST) {
+        case isset($_REQUEST['agregarGasto']):
+            echo "<script>alert('GASTO " . $_SESSION['nombre_gasto'] . " AGREGADO CON EXITO')</script>";
+            echo "<script>window.location.href='agregar.php'</script>";
+            break;
 
-    case isset($_REQUEST['buscarGasto']):
-        $_SESSION['id'] = $_REQUEST['id'];
-        header("Location: ../../controller/ControladorGasto.php?buscarGasto=active");
-        break;
+        case isset($_REQUEST['buscarGasto']):
+            $_SESSION['id'] = $_REQUEST['id'];
+            header("Location: ../../controller/ControladorGasto.php?buscarGasto=active");
+            break;
 
-    case isset($_REQUEST['gastoBuscado']):
-        if ($_REQUEST['gastoBuscado'] == '1') {
-            ?>
-
+        case isset($_REQUEST['gastoBuscado']):
+            if ($_REQUEST['gastoBuscado'] == '1') {
+?>
             <tr>
                 <th>Id</th>
                 <th>Usuario Id</th>
@@ -86,13 +88,52 @@ switch ($_REQUEST) {
             </tr>
             </table>
             </div>
-
 <?php
-        } else {
+        } 
+        else {
             echo "<script>alert('GASTO NO ENCONTRADO')</script>";
         }
         break;
+    case isset($_REQUEST['gastosUsuario']):
+        
+        echo "<tr>
+            <th>Id</th>
+            <th>Usuario Id</th>
+            <th>Fecha</th>
+            <th>Valor total sin IVA</th>
+            <th>IVA total</th>
+            <th>Valor total con IVA</th>
+            <th>Nombre del gasto</th>
+            <th>Lugar</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+            <tr>";
+            
+            foreach ($gastos as $i => $gasto) {
+                echo "<tr>";
+                echo "<td>" . $gasto->id . "</td>";
+                echo "<td><input id='usuario_id".$i."' type='text' value='" . $gasto->usuario_id . "' disabled></td>";
+                echo "<td><input id='fecha".$i."' type='text' value='" . $gasto->fecha . "' disabled></td>";
+                echo "<td><input id='valor_total_sin_iva".$i."' type='text' value='" . $gasto->valor_total_sin_iva . "' disabled></td>";
+                echo "<td><input id='iva_total".$i."' type='text' value='" . $gasto->iva_total . "' disabled></td>";
+                echo "<td><input id='valor_total_con_iva".$i."' type='text' value='" . $gasto->valor_total_con_iva . "' disabled></td>";
+                echo "<td><input id='nombre_gasto".$i."' type='text' value='" . $gasto->nombre_gasto . "' disabled></td>";
+                echo "<td><input id='lugar".$i."' type='text' value='" . $gasto->lugar . "' disabled></td>";
+                echo "<td><input id='descripcion".$i."' type='text' value='" . $gasto->descripcion . "' disabled></td>";
+                
+                    echo "<td>".
+                        "<script>
+                            ids".$i." = ['usuario_id".$i."', 'fecha".$i."', 'valor_total_sin_iva".$i."', 'iva_total".$i.
+                            "', 'valor_total_con_iva".$i."', 'nombre_gasto".$i."', 'lugar".$i."', 'descripcion".$i."'];
+                        </script>".
+                        "<a href='#' onclick=".'"'."enableInputs(ids".$i.");".'"'." ><img src='../img/edit.png'></a>".
+                        "<a href='#' onclick=".'"'."userUpdateDB(ids".$i.");".'"'." ><img src='../img/save.png'></a>"
+                        ."<a href='#' onclick=".'"'."userDeleteDB(ids".$i.");".'"'." ><img src='../img/erase.png'></a>"
 
+                        ."</td></tr>";
+            }
+        break;
     case isset($_REQUEST['editarGasto']):
         echo "<script>alert('GASTO " . $_SESSION['nombre_gasto'] . " EDITADO CON EXITO')</script>";
         echo "<script>window.location.href='editar.php'</script>";
@@ -104,3 +145,5 @@ switch ($_REQUEST) {
         break;
 }
 ?>
+</body>
+</html>

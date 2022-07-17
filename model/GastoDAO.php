@@ -15,9 +15,9 @@
 
         public static function buscar($gasto){
             try{
-                if(!is_null(gasto::find_by_id($gasto->id))){
+                if(!is_null(Gasto::find_by_id($gasto->id))){
                     echo "<script>console.log('GASTO ENCONTRADO');</script>";
-                    return gasto::find_by_id($gasto->id);
+                    return Gasto::find_by_id($gasto->id);
                 }else{
                     echo "<script>console.log('GASTO NO ENCONTRADO');</script>";
                     return false;
@@ -27,19 +27,19 @@
             }
         }
 
-        // public static function buscarPorCedula($cedula){
-        //     try{
-        //         if(!is_null(gasto::find_by_cedula($cedula))){
-        //             echo "<script>console.log('gasto EXISTENTE');</script>";
-        //             return gasto::find_by_cedula($cedula);
-        //         }else{
-        //             echo "<script>console.log('Gasto NO EXISTENTE');</script>";
-        //             return false;
-        //         }
-        //     }catch(Exception $e){
-        //         echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-        //     }
-        // }
+        public static function buscarPorCedula($cedula){
+            try{
+                if(!is_null(Gasto::all(array('conditions' => array('usuario_id  = ?', $cedula))))){
+                    echo "<script>console.log('CEDULA EXISTENTE');</script>";
+                    return Gasto::all(array('conditions' => array('usuario_id  = ?', $cedula)));
+                }else{
+                    echo "<script>console.log('CEDULA INEXISTENTE');</script>";
+                    return false;
+                }
+            }catch(Exception $e){
+                echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
+            }
+        }
 
         // public static function editar($gasto){
         //     try{
