@@ -25,18 +25,18 @@ require_once 'view/usuario/logeo.php';
     <ul id="barra" class="menu-barra">
         <a class="barra-elementos" href="index.php"><img id="home-icon" class="barra-elementos" src="./view/img/home.png"></a>
         <a href="#" class="barra-elementos" id="userMenu" name="userMenu" onclick="clicks('userMenu');"><img id="login-icon" src="./view/img/login.png"></a>
-        <a href="#" class="barra-elementos" id="sesion" name="usuarios" onclick="controller();">INICIAR SESION</a>
-        <a href="#" class="barra-elementos" id="gastos" name="gastos" onclick="controller();">GASTOS</a>
+        <a href="#" class="barra-elementos" id="sesion" name="usuarios" onclick="userController();">INICIAR SESION</a>
+        <a href="#" class="barra-elementos" id="gastos" name="gastos" onclick="gastoController();">GASTOS</a>
     </ul>
     
     <ul id="logData" class="popup">
         <li>BIENVENID@ <p id="nombreUsuario"><?= $_SESSION['nombre'] ?></p></li>
         <hr>
-        <li><a href="#" name="datosCuenta" onclick="controller();">Datos de la cuenta</a></li>
+        <li><a href="#" name="datosCuenta" onclick="userController();">Datos de la cuenta</a></li>
         <hr>
-        <li><a href="#" id="adminCuentas" name="adminCuentas" onclick="controller();">Admin cuentas</a></li>
+        <li><a href="#" id="adminCuentas" name="adminCuentas" onclick="userController();">Admin cuentas</a></li>
         <hr>
-        <li><a href="#" id="cerrarSesion" name="cerrarSesion" onclick="controller();">Cerrar sesión</a></li>
+        <li><a href="#" id="cerrarSesion" name="cerrarSesion" onclick="userController();">Cerrar sesión</a></li>
         <hr>
     </ul>
 

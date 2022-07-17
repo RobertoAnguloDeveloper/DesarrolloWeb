@@ -25,10 +25,10 @@
                 </h2>
                 <input type="number" name="usuario_id" value="<?=$_SESSION['cedula']?>" disabled>
                 <input type="date" name="fecha" required>
-                <input type="number" step="0.01" name="valorTotalSinIva" placeholder="Valor total sin IVA" required>
-                <input type="number" step="0.01" name="ivaTotal" placeholder="IVA total" required>
-                <input type="number" step="0.01" name="valorTotalConIva" placeholder="Valor total con IVA" required>
-                <input type="text" name="nombreGasto" placeholder="Introduzca el nombre del gasto" required>
+                <input type="number" step="0.01" name="valor_total_sin_iva" placeholder="Valor total sin IVA" required>
+                <input type="number" step="0.01" name="iva_total" placeholder="IVA total" required>
+                <input type="number" step="0.01" name="valor_total_con_iva" placeholder="Valor total con IVA" required>
+                <input type="text" name="nombre_gasto" placeholder="Introduzca el nombre del gasto" required>
                 <input type="text" name="lugar" placeholder="Lugar del gasto" required>
                 <input type="text" name="descripcion" placeholder="Descripción del gasto" required>
                 <tr>
@@ -45,10 +45,10 @@
             
             $_SESSION['usuario_id'] = $_SESSION['cedula'];
             $_SESSION['fecha'] = $_REQUEST['fecha'];
-            $_SESSION['valortotalsiniva'] = $_REQUEST['valorTotalSinIva'];
-            $_SESSION['ivatotal'] = $_REQUEST['ivaTotal'];
-            $_SESSION['valortotalconiva'] = $_REQUEST['valorTotalConIva'];
-            $_SESSION['nombregasto'] = $_REQUEST['nombreGasto'];
+            $_SESSION['valor_total_sin_iva'] = $_REQUEST['valor_total_sin_iva'];
+            $_SESSION['iva_total'] = $_REQUEST['iva_total'];
+            $_SESSION['valor_total_con_iva'] = $_REQUEST['valor_total_con_iva'];
+            $_SESSION['nombre_gasto'] = $_REQUEST['nombre_gasto'];
             $_SESSION['lugar'] = $_REQUEST['lugar'];
             $_SESSION['descripcion'] = $_REQUEST['descripcion'];
             

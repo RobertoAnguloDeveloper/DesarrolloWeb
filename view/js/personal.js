@@ -156,10 +156,16 @@
         iframe.src = "./view/forms/"+form+".php";
     }
 
-    function controller(){
+    function userController(){
         var iframe = document.getElementById("formsFrame");
         var name = document.activeElement.name;
         iframe.src = "controller/ControladorUsuario.php?"+name;
+    }
+
+    function gastoController(){
+        var iframe = document.getElementById("formsFrame");
+        var name = document.activeElement.name;
+        iframe.src = "controller/ControladorGasto.php?"+name;
     }
 
     function show(id){
