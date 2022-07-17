@@ -180,3 +180,41 @@
             document.getElementById(ids[i]).disabled = false;
         }
     }
+
+    function updateDB(ids){
+        let values = [];
+        let request = "";
+        
+        for (var i = 0; i < ids.length; i++) {
+            values[i] = document.getElementById(ids[i]).value;
+        }
+
+        for (var i = 0; i < ids.length; i++) {
+            ids[i] = ids[i].replace(/[0-9]/g, '');
+        }
+
+        for (var i = 0; i < ids.length; i++) {
+            request += ids[i] + "=" + values[i] + "&";
+        }
+
+        window.location.href = "../../controller/ControladorUsuario.php?editar&list&"+request;
+    }
+
+    function deleteDB(ids){
+        let values = [];
+        let request = "";
+        
+        for (var i = 0; i < ids.length; i++) {
+            values[i] = document.getElementById(ids[i]).value;
+        }
+
+        for (var i = 0; i < ids.length; i++) {
+            ids[i] = ids[i].replace(/[0-9]/g, '');
+        }
+
+        for (var i = 0; i < ids.length; i++) {
+            request += ids[i] + "=" + values[i] + "&";
+        }
+
+        window.location.href = "../../controller/ControladorUsuario.php?eliminar&"+request;
+    }

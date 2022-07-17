@@ -22,7 +22,7 @@ session_start();
             break;
         case isset($_REQUEST['buscar']):
             if (isset($_SESSION['respuesta']) && $_SESSION['respuesta'] == true) {
-                if ($_SESSION['cedula'] == '123456789') {
+                if ($_SESSION['cedula'] == '73202647') {
                     $_SESSION['logStatus'] = true;
                     $_SESSION['admin'] = '1';
                     echo "<script>alert('BIENVENIDO " . $_SESSION['nombre'] . "')</script>";
@@ -45,6 +45,10 @@ session_start();
         case isset($_REQUEST['respuesta']):
             if ($_REQUEST['respuesta'] == '1') {
                 echo "<script>alert('GRACIAS POR TU REGISTRO " . $_SESSION['nombre'] . "')</script>";
+
+                $_SESSION['logStatus'] = true;
+
+                echo "<script>window.top.location.reload();</script>";
             } else {
                 echo "<script>alert('LO SENTIMOS, NO PUDIMOS REALIZAR TU REGISTRO')</script>";
             }

@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+include_once '../model/UsuarioDAO.php';
+$rootPath = $_SERVER['DOCUMENT_ROOT'].'/desarrolloweb/';
+
 switch($_REQUEST){
     case isset($_REQUEST['userMenu']):
         header("Location: login.php");
@@ -20,7 +23,6 @@ switch($_REQUEST){
         break;
 
     case isset($_REQUEST['buscar']):
-        require_once '../model/UsuarioDAO.php';
         $usuario = new Usuario();
         $usuario->cedula = $_SESSION['cedula'];
         $usuario->clave = $_SESSION['clave'];
@@ -49,7 +51,6 @@ switch($_REQUEST){
         break;
 
     case isset($_REQUEST['agregar']):
-        require_once '../model/UsuarioDAO.php';
         $usuario = new Usuario();
         $usuario->cedula = $_SESSION['cedula'];
         $usuario->clave = $_SESSION['clave'];
@@ -61,16 +62,27 @@ switch($_REQUEST){
         break;
 
     case isset($_REQUEST['editar']):
-        require_once '../model/UsuarioDAO.php';
-        $usuario = new Usuario();
-        $usuario = UsuarioDAO::buscarPorCedula($_SESSION['cedula']);
-        $usuario->cedula = $_SESSION['cedula'];
-        $usuario->clave = $_SESSION['clave'];
-        $usuario->nombre = $_SESSION['nombre'];
-        $usuario->telefono = $_SESSION['telefono'];
-        $usuario->email = $_SESSION['email'];
-        $respuesta = UsuarioDAO::editar($usuario);
-        header("Location: ../view/usuario/index.php?respuesta=".$respuesta);
+        // var_dump($_REQUEST);
+        if (isset($_REQUEST['list'])){
+            $usuario = new Usuario();
+            $usuario = UsuarioDAO::buscarPorCedula($_REQUEST['cedula']);
+            $usuario->clave = $_REQUEST['clave'];
+            $usuario->nombre = $_REQUEST['nombre'];
+            $usuario->telefono = $_REQUEST['telefono'];
+            $usuario->email = $_REQUEST['email'];
+            $respuesta = UsuarioDAO::editar($usuario);
+            header("Location: ../view/usuario/listar.php?editOk&cedula=".$_REQUEST['cedula']);
+        }else{
+            $usuario = new Usuario();
+            $usuario = UsuarioDAO::buscarPorCedula($_SESSION['cedula']);
+            $usuario->cedula = $_SESSION['cedula'];
+            $usuario->clave = $_SESSION['clave'];
+            $usuario->nombre = $_SESSION['nombre'];
+            $usuario->telefono = $_SESSION['telefono'];
+            $usuario->email = $_SESSION['email'];
+            $respuesta = UsuarioDAO::editar($usuario);
+            header("Location: ../view/usuario/index.php?respuesta=".$respuesta);
+        }
         break;
 
     case isset($_REQUEST['adminCuentas']):
@@ -78,15 +90,26 @@ switch($_REQUEST){
         break;
 
     case isset($_REQUEST['listar']):
-        require_once '../model/UsuarioDAO.php';
         $usuarios = new Usuario();
         $usuarios = UsuarioDAO::listar();
+        
+        $usuarios = serialize($usuarios);
         $_SESSION['usuarios'] = $usuarios;
-        for($i = 0; $i < count($_SESSION['usuarios']); $i++){
-            echo $_SESSION['usuarios'][$i]->cedula;
-        }
-        // header("Location: ../view/usuario/listar.php?listar=active");
+        header("Location: ../view/usuario/listar.php?listar");
         break;
+
+    case isset($_REQUEST['eliminar']):
+        $usuario = new Usuario();
+        $usuario = UsuarioDAO::buscarPorCedula($_REQUEST['cedula']);
+        $usuario->cedula = $_REQUEST['cedula'];
+        $usuario->clave = $_REQUEST['clave'];
+        $usuario->nombre = $_REQUEST['nombre'];
+        $usuario->telefono = $_REQUEST['telefono'];
+        $usuario->email = $_REQUEST['email'];
+        $respuesta = UsuarioDAO::eliminar($usuario);
+        header("Location: ../view/usuario/listar.php?eliminar=".$respuesta);
+        break;
+
     case isset($_REQUEST['cerrarSesion']):
         session_destroy();
         echo "<script>alert('HASTA PRONTO ". $_SESSION['nombre']."')</script>";

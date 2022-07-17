@@ -1,6 +1,9 @@
 <?php
 session_start();
+require_once $_SERVER['DOCUMENT_ROOT'].'/DesarrolloWeb/model/Usuario.php';
+$usuarios = @unserialize($_SESSION['usuarios']);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,25 +18,42 @@ session_start();
 <body>
     <div id="listaUsuarios">
         <h2 class="tituloForm">USUARIOS</h2>
-        <table>
+        <table id="tablaUsuarios">
             <tr>
+                <th>#</th>
                 <th>Cédula</th>
                 <th>Clave</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Teléfono</th>
+                <th>Acciones</th>
             </tr>
             <?php
-            
-            // for ($i=0; $i < count($_SESSION['usuarios']); $i++) {
-            //     echo "<tr>";
-            //     echo "<td>" . $_SESSION['usuarios'][$i]->cedula . "</td>";
-            //     echo "<td>" . $_SESSION['usuarios'][$i]->clave . "</td>";
-            //     echo "<td>" . $_SESSION['usuarios'][$i]->nombre . "</td>";
-            //     echo "<td>" . $_SESSION['usuarios'][$i]->email . "</td>";
-            //     echo "<td>" . $$_SESSION['usuarios'][$i]->telefono . "</td>";
-            //     echo "</tr>";
-            // }
+                foreach ($usuarios as $i => $usuario) {
+                    echo "<tr>";
+                    echo "<td>" . ($i+1) . "</td>";
+                    echo "<td><input id='cedula".$i."' class='usuariosInput' type='text' value='" . $usuario->cedula . "' disabled></td>";
+                    echo "<td><input id='clave".$i."' class='usuariosInput' type='text' value='" . $usuario->clave . "' disabled></td>";
+                    echo "<td><input id='nombre".$i."' class='usuariosInput' type='text' value='" . $usuario->nombre . "' disabled></td>";
+                    echo "<td><input id='email".$i."' class='usuariosInput' type='text' value='" . $usuario->email . "' disabled></td>";
+                    echo "<td><input id='telefono".$i."' class='usuariosInput' type='text' value='" . $usuario->telefono . "' disabled></td>";
+                    if($_SESSION['cedula'] == $usuario->cedula){
+                        echo "<td><a href='editar.php'>Editar</a></td>";
+                        echo "</tr>";
+                    }else{
+                        echo "<td>".
+                            "<script>
+                                ids".$i." = ['cedula".$i."', 'clave".$i."', 'nombre".$i."', 'email".$i."', 'telefono".$i."'];
+                                idsEdit".$i." = ['clave".$i."', 'nombre".$i."', 'email".$i."', 'telefono".$i."'];
+                            </script>".
+                            "<a href='#' onClick=".'"'."enableInputs(idsEdit".$i.");".'"'." ><img src='../img/edit.png'></a>".
+                            "<a href='#' onClick=".'"'."updateDB(ids".$i.");".'"'." ><img src='../img/save.png'></a>"
+                            ."<a href='#' onClick=".'"'."deleteDB(ids".$i.");".'"'." ><img src='../img/erase.png'></a>"
+
+                            ."</td></tr>";
+                    }
+                    
+                }
             ?>
 
         </table>
@@ -45,7 +65,23 @@ session_start();
 <?php
 switch ($_REQUEST){
     case isset($_REQUEST['adminCuentas']):
-        header("Location: ../../controller/ControladorUsuario.php?listar");
+        header("Location: ../../controller/ControladorUsuario.php?listar=active");
+        break;
+    case isset($_REQUEST['editOk']):
+        echo "<script>alert('Usuario ".$_REQUEST['cedula']." actualizado correctamente');</script>";
+        echo "<script>window.location.href='listar.php';</script>";
+        break;
+
+    case isset($_REQUEST['eliminar']):
+        if($_REQUEST['eliminar'] == '1'){
+            echo "<script>alert('Usuario ".$_REQUEST['cedula']." eliminado correctamente');</script>";
+            echo "<script>window.location.href='listar.php';</script>";
+        }else{
+            echo "<script>alert('Error al eliminar usuario ".$_REQUEST['cedula']."');</script>";
+            echo "<script>window.location.href='listar.php';</script>";
+        }
+        break;
+    default:
         break;
 }
 ?>

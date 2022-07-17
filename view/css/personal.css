@@ -47,7 +47,7 @@
     z-index: 1;
     /*Position*/
     position: fixed;
-    right: 0.5%;
+    right: 1%;
     width: 170px;
     margin-top: 1%;
     
@@ -144,8 +144,8 @@
 #logData{
     display: none;
     position: absolute;
-    top: 16.2%;
-    right: 0.6%;
+    top: 110px;
+    right: 1.1%;
     list-style-type: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     background-color: #ffe600;
@@ -316,26 +316,52 @@
     border-radius: 10px;
 }
 
-#listaUsuarios table{
-    width: 90%;
-    margin-top: 5px;
-    font-size: 80%;
-    font-weight: bold;
-    background-color: #ffffff;
+#listaUsuarios table td{
     border: 1px solid rgb(0, 0, 0);
-    border-collapse: collapse;
+    padding: 2px;
     text-align: center;
 }
 
-#listaUsuarios table tr{
-
-    border: 1px solid rgb(0, 0, 0);
+#listaUsuarios table th{
+    width: 0.5%;
+    padding: 0.5%;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid rgb(255, 255, 255);
 }
 
-#listaUsuarios table th{
-    width: 30%;
-    height: 100%;
-    border: 1px solid rgb(0, 0, 0);
+#listaUsuarios table{
+    margin-top: 2%;
+    width: 95%;
+    border-collapse: collapse;
+    border-style: groove;
+    background-color: rgba(248, 225, 121, 0.916);
+    text-align: center;
+}
+
+
+#tablaUsuarios input[type="button"]{
+    margin-top: unset;
+    display: inline-block;
+    width: 45%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#tablaUsuarios input[type="text"]{
+    margin-top: unset;
+    display: inline-block;
+    border-style: hidden;
+    background-attachment: unset;
+}
+
+#tablaUsuarios td img{
+    width: 20px;
+    height: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .tituloForm{
@@ -355,7 +381,7 @@
 input:not([type="submit"]) {
     display: block;
     border: 1px solid rgb(0, 0, 0);
-    color: rgb(55, 0, 255);
+    color: rgb(0, 0, 0);
     border-radius: 4px;
     margin-top: 5px;
     padding: 5px;
