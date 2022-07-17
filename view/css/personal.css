@@ -316,13 +316,16 @@
     border-radius: 10px;
 }
 
-#listaUsuarios table td{
-    border: 1px solid rgb(0, 0, 0);
-    padding: 2px;
+#tablaUsuarios{
+    margin-top: 2%;
+    width: 95%;
+    border-collapse: collapse;
+    border-style: groove;
+    background-color: rgba(248, 225, 121, 0.916);
     text-align: center;
 }
 
-#listaUsuarios table th{
+#tablaUsuarios th{
     width: 0.5%;
     padding: 0.5%;
     background-color: #000000;
@@ -332,15 +335,11 @@
     border: 1px solid rgb(255, 255, 255);
 }
 
-#listaUsuarios table{
-    margin-top: 2%;
-    width: 95%;
-    border-collapse: collapse;
-    border-style: groove;
-    background-color: rgba(248, 225, 121, 0.916);
+#tablaUsuarios td{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 2px;
     text-align: center;
 }
-
 
 #tablaUsuarios input[type="button"]{
     margin-top: unset;
@@ -362,6 +361,44 @@
     height: 20px;
     margin-left: 2%;
     margin-right: 2%;
+}
+
+#listaGastos{
+    width: 90%;
+    height: 95%;
+    padding: 1%;
+    display: block;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: rgba(255, 230, 0,0.697);
+    border-radius: 10px;
+}
+
+#listaGastos input[name="id"]{
+    width: 100%;
+    margin: unset;
+    display: inline-block;
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+}
+
+#listaGastos fieldset{
+    display: inline-block;
+    width: 22%;
+    height: 0%;
+    padding: 0%;
+    position: unset;
+    margin: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+    font-size: 12px;
 }
 
 .tituloForm{

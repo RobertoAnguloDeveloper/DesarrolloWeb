@@ -32,11 +32,11 @@ $usuarios = @unserialize($_SESSION['usuarios']);
                 foreach ($usuarios as $i => $usuario) {
                     echo "<tr>";
                     echo "<td>" . ($i+1) . "</td>";
-                    echo "<td><input id='cedula".$i."' class='usuariosInput' type='text' value='" . $usuario->cedula . "' disabled></td>";
-                    echo "<td><input id='clave".$i."' class='usuariosInput' type='text' value='" . $usuario->clave . "' disabled></td>";
-                    echo "<td><input id='nombre".$i."' class='usuariosInput' type='text' value='" . $usuario->nombre . "' disabled></td>";
-                    echo "<td><input id='email".$i."' class='usuariosInput' type='text' value='" . $usuario->email . "' disabled></td>";
-                    echo "<td><input id='telefono".$i."' class='usuariosInput' type='text' value='" . $usuario->telefono . "' disabled></td>";
+                    echo "<td><input id='cedula".$i."' type='text' value='" . $usuario->cedula . "' disabled></td>";
+                    echo "<td><input id='clave".$i."' type='text' value='" . $usuario->clave . "' disabled></td>";
+                    echo "<td><input id='nombre".$i."' type='text' value='" . $usuario->nombre . "' disabled></td>";
+                    echo "<td><input id='email".$i."' type='text' value='" . $usuario->email . "' disabled></td>";
+                    echo "<td><input id='telefono".$i."' type='text' value='" . $usuario->telefono . "' disabled></td>";
                     if($_SESSION['cedula'] == $usuario->cedula){
                         echo "<td><a href='editar.php'>Editar</a></td>";
                         echo "</tr>";
@@ -46,9 +46,9 @@ $usuarios = @unserialize($_SESSION['usuarios']);
                                 ids".$i." = ['cedula".$i."', 'clave".$i."', 'nombre".$i."', 'email".$i."', 'telefono".$i."'];
                                 idsEdit".$i." = ['clave".$i."', 'nombre".$i."', 'email".$i."', 'telefono".$i."'];
                             </script>".
-                            "<a href='#' onClick=".'"'."enableInputs(idsEdit".$i.");".'"'." ><img src='../img/edit.png'></a>".
-                            "<a href='#' onClick=".'"'."updateDB(ids".$i.");".'"'." ><img src='../img/save.png'></a>"
-                            ."<a href='#' onClick=".'"'."deleteDB(ids".$i.");".'"'." ><img src='../img/erase.png'></a>"
+                            "<a href='#' onclick=".'"'."enableInputs(idsEdit".$i.");".'"'." ><img src='../img/edit.png'></a>".
+                            "<a href='#' onclick=".'"'."userUpdateDB(ids".$i.");".'"'." ><img src='../img/save.png'></a>"
+                            ."<a href='#' onclick=".'"'."userDeleteDB(ids".$i.");".'"'." ><img src='../img/erase.png'></a>"
 
                             ."</td></tr>";
                     }

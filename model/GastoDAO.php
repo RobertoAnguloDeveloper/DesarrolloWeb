@@ -13,24 +13,19 @@
             }
         }
 
-        // public static function buscar($gasto){
-        //     try{
-        //         if(!is_null(gasto::find_by_id($gasto->id))){
-        //             if(gasto::find_by_cedula($gasto->id)->clave == $gasto->clave){
-        //                 echo "<script>console.log('CREDENCIALES CORRECTAS');</script>";
-        //                 return gasto::find_by_cedula($gasto->cedula);
-        //             }else{
-        //                 echo "<script>console.log('CONTRASEÑA INVALIDA');</script>";
-        //                 return false;
-        //             }
-        //         }else{
-        //             echo "<script>console.log('gasto INVALIDO');</script>";
-        //             return false;
-        //         }
-        //     }catch(Exception $e){
-        //         echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-        //     }
-        // }
+        public static function buscar($gasto){
+            try{
+                if(!is_null(gasto::find_by_id($gasto->id))){
+                    echo "<script>console.log('GASTO ENCONTRADO');</script>";
+                    return gasto::find_by_id($gasto->id);
+                }else{
+                    echo "<script>console.log('GASTO NO ENCONTRADO');</script>";
+                    return false;
+                }
+            }catch(Exception $e){
+                echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
+            }
+        }
 
         // public static function buscarPorCedula($cedula){
         //     try{

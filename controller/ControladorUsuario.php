@@ -88,10 +88,12 @@ switch($_REQUEST){
 
     case isset($_REQUEST['listar']):
         $usuarios = new Usuario();
+
         $usuarios = UsuarioDAO::listar();
-        
         $usuarios = serialize($usuarios);
+
         $_SESSION['usuarios'] = $usuarios;
+        
         header("Location: ../view/usuario/listar.php?listar");
         break;
 

@@ -187,7 +187,7 @@
         }
     }
 
-    function updateDB(ids){
+    function userUpdateDB(ids){
         let values = [];
         let request = "";
         
@@ -206,7 +206,7 @@
         window.location.href = "../../controller/ControladorUsuario.php?editar&list&"+request;
     }
 
-    function deleteDB(ids){
+    function userDeleteDB(ids){
         let values = [];
         let request = "";
         
@@ -223,4 +223,42 @@
         }
 
         window.location.href = "../../controller/ControladorUsuario.php?eliminar&"+request;
+    }
+
+    function gastoUpdateDB(ids){
+        let values = [];
+        let request = "";
+        
+        for (var i = 0; i < ids.length; i++) {
+            values[i] = document.getElementById(ids[i]).value;
+        }
+
+        for (var i = 0; i < ids.length; i++) {
+            ids[i] = ids[i].replace(/[0-9]/g, '');
+        }
+
+        for (var i = 0; i < ids.length; i++) {
+            request += ids[i] + "=" + values[i] + "&";
+        }
+
+        window.location.href = "../../controller/ControladorGasto.php?editar&list&"+request;
+    }
+
+    function gastoDeleteDB(ids){
+        let values = [];
+        let request = "";
+        
+        for (var i = 0; i < ids.length; i++) {
+            values[i] = document.getElementById(ids[i]).value;
+        }
+
+        for (var i = 0; i < ids.length; i++) {
+            ids[i] = ids[i].replace(/[0-9]/g, '');
+        }
+
+        for (var i = 0; i < ids.length; i++) {
+            request += ids[i] + "=" + values[i] + "&";
+        }
+
+        window.location.href = "../../controller/ControladorGasto.php?eliminar&"+request;
     }
