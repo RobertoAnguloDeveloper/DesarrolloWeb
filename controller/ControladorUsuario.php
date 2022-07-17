@@ -2,6 +2,8 @@
 session_start();
 
 include_once '../model/UsuarioDAO.php';
+include_once '../model/GastoDAO.php';
+
 $rootPath = $_SERVER['DOCUMENT_ROOT'].'/desarrolloweb/';
 
 switch($_REQUEST){
@@ -46,8 +48,26 @@ switch($_REQUEST){
         break;
 
     case isset($_REQUEST['gastos']):
-        echo "ENTRO POR GASTOS";
         header("Location: ../view/gasto/index.php");
+        break;
+
+    case isset($_REQUEST['agregarGasto']):
+        $gasto = new Gasto();
+        $gasto->usuario_id = $_SESSION['usuario_id'];
+        $gasto->fecha = $_SESSION['fecha'];
+        $gasto->valortotalsiniva = $_SESSION['valortotalsiniva'];
+        $gasto->ivatotal = $_SESSION['ivatotal'];
+        $gasto->valortotalconiva = $_SESSION['valortotalconiva'];
+        $gasto->nombregasto = $_SESSION['nombregasto'];
+        $gasto->lugar = $_SESSION['lugar'];
+        $gasto->descripcion = $_SESSION['descripcion'];
+
+        $respuesta = GastoDAO::agregar($gasto);
+        if($respuesta){
+            header("Location: ../view/gasto/index.php?agregarGasto=active");
+        }else{
+            header("Location: ../view/gasto/index.php?agregarGasto=active&respuesta=$respuesta");
+        }
         break;
 
     case isset($_REQUEST['agregar']):
