@@ -18,7 +18,7 @@ $usuarios = @unserialize($_SESSION['usuarios']);
 <body>
     <div id="listaUsuarios">
         <h2 class="tituloForm">USUARIOS</h2>
-        <table id="tablaUsuarios">
+        <table class="tabla2">
             <tr>
                 <th>#</th>
                 <th>Cédula</th>

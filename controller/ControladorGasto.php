@@ -51,6 +51,35 @@ switch($_REQUEST){
         }
         break;
 
+    case isset($_REQUEST['editar']):
+        $gasto = new Gasto();
+        $gasto->id = $_REQUEST['id'];
+        $gasto = GastoDAO::buscar($gasto);
+        $gasto->usuario_id = $_REQUEST['usuario_id'];
+        $gasto->fecha = $_REQUEST['fecha'];
+        $gasto->valor_total_sin_iva = $_REQUEST['valor_total_sin_iva'];
+        $gasto->iva_total = $_REQUEST['iva_total'];
+        $gasto->valor_total_con_iva = $_REQUEST['valor_total_con_iva'];
+        $gasto->nombre_gasto = $_REQUEST['nombre_gasto'];
+        $gasto->lugar = $_REQUEST['lugar'];
+        $gasto->descripcion = $_REQUEST['descripcion'];
+        $respuesta = GastoDAO::editar($gasto);
+        $_SESSION['nombre_gasto'] = $_REQUEST['nombre_gasto'];
+        header("Location: ../view/gasto/index.php?gastoEditado=1");
+        break;
+
+    case isset($_REQUEST['eliminar']):
+        $gasto = new Gasto();
+        $gasto->id = $_REQUEST['id'];
+        $_SESSION['nombre_gasto'] = $_REQUEST['nombre_gasto'];
+        $respuesta = GastoDAO::eliminar($gasto);
+        if($respuesta){
+            header("Location: ../view/gasto/index.php?gastoEliminado=1");
+        }else{
+            header("Location: ../view/gasto/index.php?gastoEliminado=0");
+        }
+        break;
+
     default:
         echo 'NO ENTRO CONTROLADOR GASTO';
         break;

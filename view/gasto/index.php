@@ -23,13 +23,13 @@
                 <table>
                     <tr>
                         <td>
-                            <button type="submit" name="agregarGasto"><img src="../img/add.png" alt="Agregar">
+                            <button type="submit" name="agregarGastoBtn"><img src="../img/add.png" alt="Agregar">
                         </td>
                         <td>
                             <button type="submit" name="listaGastos"><img src="../img/list.png" alt="Listar">
                         </td>
                         <td>
-                            <input type="number" name="id" placeholder="Escriba el ID de gasto a buscar">
+                            <input type="number" name="id" placeholder="Buscar por ID de gasto">
                         </td>
                         <td>
                             <button type="submit" name="buscarGasto"><img src="../img/search.png" alt="buscar">
@@ -38,12 +38,15 @@
                 </table>
             </fieldset>
         </form>
-        <h2 class="tituloForm">GASTOS</h2>
-        <table id="tablaUsuarios">
+        
 <?php
     switch ($_REQUEST) {
         case isset($_REQUEST['agregarGasto']):
             echo "<script>alert('GASTO " . $_SESSION['nombre_gasto'] . " AGREGADO CON EXITO')</script>";
+            echo "<script>window.location.href='agregar.php'</script>";
+            break;
+
+        case isset($_REQUEST['agregarGastoBtn']):
             echo "<script>window.location.href='agregar.php'</script>";
             break;
 
@@ -55,6 +58,8 @@
         case isset($_REQUEST['gastoBuscado']):
             if ($_REQUEST['gastoBuscado'] == '1') {
 ?>
+        <h2 id='tituloGastos' class="tituloForm">GASTOS</h2>
+        <table id="tablaGastos" class="tabla2">
             <tr>
                 <th>Id</th>
                 <th>Usuario Id</th>
@@ -79,11 +84,12 @@
                 <td><input id='descripcion' type='text' value='<?= $_SESSION['descripcion'] ?>' disabled></td>
                 <script>
                     ids = ['usuario_id', 'fecha', 'valor_total_sin_iva', 'iva_total', 'valor_total_con_iva', 'nombre_gasto', 'lugar', 'descripcion'];
+                    editIds = ['id','usuario_id', 'fecha', 'valor_total_sin_iva', 'iva_total', 'valor_total_con_iva', 'nombre_gasto', 'lugar', 'descripcion'];
                 </script>
                 <td>
                     <a href='#' onclick="enableInputs(ids);"><img src='../img/edit.png'></a>
-                    <a href='#' onclick="updateDB(ids);"><img src='../img/save.png'></a>
-                    <a href='#' onclick="deleteDB(ids);"><img src='../img/erase.png'></a>
+                    <a href='#' onclick="gastoUpdateDB(editIds);"><img src='../img/save.png'></a>
+                    <a href='#' onclick="gastoDeleteDB(editIds);"><img src='../img/erase.png'></a>
                 </td>
             </tr>
             </table>
@@ -92,58 +98,71 @@
         } 
         else {
             echo "<script>alert('GASTO NO ENCONTRADO')</script>";
+            echo "<script>window.location.href='index.php?gastosUsuario=active'</script>";
         }
         break;
     case isset($_REQUEST['gastosUsuario']):
-        
-        echo "<tr>
-            <th>Id</th>
-            <th>Usuario Id</th>
-            <th>Fecha</th>
-            <th>Valor total sin IVA</th>
-            <th>IVA total</th>
-            <th>Valor total con IVA</th>
-            <th>Nombre del gasto</th>
-            <th>Lugar</th>
-            <th>Descripción</th>
-            <th>Acciones</th>
-        </tr>
-            <tr>";
+        if(isset($_REQUEST['actualizar'])){
+            echo "<script>window.location.href='#?gastosUsuario=ok'</script>";
+        }else{
             
-            foreach ($gastos as $i => $gasto) {
-                echo "<tr>";
-                echo "<td>" . $gasto->id . "</td>";
-                echo "<td><input id='usuario_id".$i."' type='text' value='" . $gasto->usuario_id . "' disabled></td>";
-                echo "<td><input id='fecha".$i."' type='text' value='" . $gasto->fecha . "' disabled></td>";
-                echo "<td><input id='valor_total_sin_iva".$i."' type='text' value='" . $gasto->valor_total_sin_iva . "' disabled></td>";
-                echo "<td><input id='iva_total".$i."' type='text' value='" . $gasto->iva_total . "' disabled></td>";
-                echo "<td><input id='valor_total_con_iva".$i."' type='text' value='" . $gasto->valor_total_con_iva . "' disabled></td>";
-                echo "<td><input id='nombre_gasto".$i."' type='text' value='" . $gasto->nombre_gasto . "' disabled></td>";
-                echo "<td><input id='lugar".$i."' type='text' value='" . $gasto->lugar . "' disabled></td>";
-                echo "<td><input id='descripcion".$i."' type='text' value='" . $gasto->descripcion . "' disabled></td>";
+            echo "
+            <h2 id='tituloTusGastos' class='tituloForm'>TUS GASTOS</h2>
+            <table id='tablaGastos' class='tabla2'>
+                <tr>
+                <th>Id</th>
+                <th>Usuario Id</th>
+                <th>Fecha</th>
+                <th>Valor total sin IVA</th>
+                <th>IVA total</th>
+                <th>Valor total con IVA</th>
+                <th>Nombre del gasto</th>
+                <th>Lugar</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+                <tr>";
                 
-                    echo "<td>".
-                        "<script>
-                            ids".$i." = ['usuario_id".$i."', 'fecha".$i."', 'valor_total_sin_iva".$i."', 'iva_total".$i.
-                            "', 'valor_total_con_iva".$i."', 'nombre_gasto".$i."', 'lugar".$i."', 'descripcion".$i."'];
-                        </script>".
-                        "<a href='#' onclick=".'"'."enableInputs(ids".$i.");".'"'." ><img src='../img/edit.png'></a>".
-                        "<a href='#' onclick=".'"'."userUpdateDB(ids".$i.");".'"'." ><img src='../img/save.png'></a>"
-                        ."<a href='#' onclick=".'"'."userDeleteDB(ids".$i.");".'"'." ><img src='../img/erase.png'></a>"
+                foreach ($gastos as $i => $gasto) {
+                    echo "<tr>";
+                    echo "<td><input id='id".$i."' type='text' value='" . $gasto->id . "' disabled></td>";
+                    echo "<td><input id='usuario_id".$i."' type='text' value='" . $gasto->usuario_id . "' disabled></td>";
+                    echo "<td><input id='fecha".$i."' type='text' value='" . $gasto->fecha . "' disabled></td>";
+                    echo "<td><input id='valor_total_sin_iva".$i."' type='text' value='" . $gasto->valor_total_sin_iva . "' disabled></td>";
+                    echo "<td><input id='iva_total".$i."' type='text' value='" . $gasto->iva_total . "' disabled></td>";
+                    echo "<td><input id='valor_total_con_iva".$i."' type='text' value='" . $gasto->valor_total_con_iva . "' disabled></td>";
+                    echo "<td><input id='nombre_gasto".$i."' type='text' value='" . $gasto->nombre_gasto . "' disabled></td>";
+                    echo "<td><input id='lugar".$i."' type='text' value='" . $gasto->lugar . "' disabled></td>";
+                    echo "<td><input id='descripcion".$i."' type='text' value='" . $gasto->descripcion . "' disabled></td>";
+                    
+                        echo "<td>".
+                            "<script>
+                                ids".$i." = ['usuario_id".$i."', 'fecha".$i."', 'valor_total_sin_iva".$i."', 'iva_total".$i.
+                                "', 'valor_total_con_iva".$i."', 'nombre_gasto".$i."', 'lugar".$i."', 'descripcion".$i."'];
+                                editIds".$i." = ['id".$i."','usuario_id".$i."', 'fecha".$i."', 'valor_total_sin_iva".$i."', 'iva_total".$i.
+                                "', 'valor_total_con_iva".$i."', 'nombre_gasto".$i."', 'lugar".$i."', 'descripcion".$i."'];
+                            </script>".
+                            "<a href='#' onclick=".'"'."enableInputs(ids".$i.");".'"'." ><img src='../img/edit.png'></a>".
+                            "<a href='#' onclick=".'"'."gastoUpdateDB(editIds".$i.");".'"'." ><img src='../img/save.png'></a>"
+                            ."<a href='#' onclick=".'"'."gastoDeleteDB(editIds".$i.");".'"'." ><img src='../img/erase.png'></a>"
 
-                        ."</td></tr>";
+                            ."</td>
+                            </tr>";
+                }
             }
         break;
-    case isset($_REQUEST['editarGasto']):
+    case isset($_REQUEST['gastoEditado']):
         echo "<script>alert('GASTO " . $_SESSION['nombre_gasto'] . " EDITADO CON EXITO')</script>";
-        echo "<script>window.location.href='editar.php'</script>";
+        echo "<script>window.location.href='index.php?gastosUsuario=ok&actualizar=ok'</script>";
         break;
 
-    case isset($_REQUEST['eliminarGasto']):
+    case isset($_REQUEST['gastoEliminado']):
         echo "<script>alert('GASTO " . $_SESSION['nombre_gasto'] . " ELIMINADO CON EXITO')</script>";
-        echo "<script>window.location.href='eliminar.php'</script>";
+        echo "<script>window.location.href='index.php?gastosUsuario=ok&actualizar=ok'</script>";
         break;
 }
 ?>
+</table>
+</div>
 </body>
 </html>

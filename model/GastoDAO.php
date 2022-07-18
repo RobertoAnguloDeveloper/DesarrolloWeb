@@ -41,29 +41,29 @@
             }
         }
 
-        // public static function editar($gasto){
-        //     try{
-        //         $gasto->save();
-        //         echo "<script>console.log('Gasto EDITADO CORRECTAMENTE');</script>";
-        //         return true;
-        //     }catch(Exception $e){
-        //         echo "<script>console.log('Error: ".$e->getMessage()."');</script>";
-        //         echo "<script>console.log('No se pudo editar el gasto');</script>";
-        //         return false;
-        //     }
-        // }
+        public static function editar($gasto){
+            try{
+                $gasto->save();
+                echo "<script>console.log('Gasto EDITADO CORRECTAMENTE');</script>";
+                return true;
+            }catch(Exception $e){
+                echo "<script>console.log('Error: ".$e->getMessage()."');</script>";
+                echo "<script>console.log('No se pudo editar el gasto');</script>";
+                return false;
+            }
+        }
 
-        // public static function eliminar($gasto){
-        //     try{
-        //         $gasto->delete();
-        //         echo "<script>console.log('gasto ELIMINADO CORRECTAMENTE')</script>";
-        //         return true;
-        //     }catch(Exception $e){
-        //         echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-        //         echo "<script>console.log('No se pudo eliminar el gasto')</script>";
-        //         return false;
-        //     }
-        // }
+        public static function eliminar($gasto){
+            try{
+                $gasto->delete();
+                echo "<script>console.log('GASTO ELIMINADO CORRECTAMENTE')</script>";
+                return true;
+            }catch(Exception $e){
+                echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
+                echo "<script>console.log('No se pudo eliminar el gasto')</script>";
+                return false;
+            }
+        }
 
         // public static function listar(){
         //     try{

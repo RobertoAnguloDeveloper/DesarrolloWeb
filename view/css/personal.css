@@ -316,6 +316,53 @@
     border-radius: 10px;
 }
 
+.tabla2{
+    margin-top: 2%;
+    width: 95%;
+    border-collapse: collapse;
+    border-style: groove;
+    background-color: rgba(248, 225, 121, 0.916);
+    text-align: center;
+}
+
+.tabla2 th{
+    width: 0.5%;
+    padding: 0.5%;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.tabla2 td{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 2px;
+    text-align: center;
+}
+
+.tabla2 input[type="button"]{
+    margin-top: unset;
+    display: inline-block;
+    width: 45%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.tabla2 input[type="text"]{
+    margin-top: unset;
+    display: inline-block;
+    border-style: hidden;
+    background-attachment: unset;
+}
+
+.tabla2 td img{
+    width: 20px;
+    height: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
 #tablaUsuarios{
     margin-top: 2%;
     width: 95%;
@@ -364,14 +411,9 @@
 }
 
 #listaGastos{
-    width: 90%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     padding: 1%;
-    display: nonelock;
-    position: absolute;
-    top: 51%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     border: 2px solid black;
     box-sizing: border-box;
     background-color: rgba(255, 230, 0,0.697);
@@ -380,7 +422,7 @@
 
 
 #listaGastos input[name="id"]{
-    width: 215px;
+    width: 166px;
     margin: unset;
     display: inline-block;
     position: unset;
@@ -406,6 +448,10 @@
     cursor: pointer;
 }
 
+#listaGastos form{
+    margin-left: 68.3%;
+}
+
 #listaGastos fieldset{
     display: inline-block;
     width: 30%;
@@ -425,6 +471,12 @@
     font-size: 185%;
     font-weight: bold;
     text-align: center;
+}
+
+#tituloGastos, #tituloTusGastos{
+    margin-top: -4.5%;
+    
+    margin-left: -80%;
 }
 
 #regUsuario{
