@@ -77,9 +77,9 @@
                 <td><input id='id' type='text' value='<?= $_SESSION['id'] ?>' disabled></td>
                 <td><input id='usuario_id' type='text' value='<?= $_SESSION['usuario_id'] ?>' disabled></td>
                 <td><input id='fecha' type='text' value='<?= $_SESSION['fecha'] ?>' disabled></td>
-                <td><input id='valor_total_sin_iva' type='text' value='$<?= $_SESSION['valor_total_sin_iva'] ?>' disabled></td>
-                <td><input id='iva_total' type='text' value='$<?= $_SESSION['iva_total'] ?>' disabled></td>
-                <td><input id='valor_total_con_iva' type='text' value='$<?= $_SESSION['valor_total_con_iva'] ?>' disabled></td>
+                <td><input id='valor_total_sin_iva' type='text' value='<?= $_SESSION['valor_total_sin_iva'] ?>' disabled></td>
+                <td><input id='iva_total' type='text' value='<?= $_SESSION['iva_total'] ?>' disabled></td>
+                <td><input id='valor_total_con_iva' type='text' value='<?= $_SESSION['valor_total_con_iva'] ?>' disabled></td>
                 <td><input id='nombre_gasto' type='text' value='<?= $_SESSION['nombre_gasto'] ?>' disabled></td>
                 <td><input id='lugar' type='text' value='<?= $_SESSION['lugar'] ?>' disabled></td>
                 <td><input id='descripcion' type='text' value='<?= $_SESSION['descripcion'] ?>' disabled></td>
