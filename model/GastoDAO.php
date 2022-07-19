@@ -65,15 +65,15 @@
             }
         }
 
-        // public static function listar(){
-        //     try{
-        //         $gastos = new gasto();
-        //         $gastos = gasto::find('all');
-        //         return $gastos;
-        //     }catch(Exception $e){
-        //         echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
-        //         echo "<script>console.log('No se pudo listar los gastos')</script>";
-        //         return false;
-        //     }
-        // }
+        public static function listar(){
+            try{
+                $gastos = new Gasto();
+                $gastos = Gasto::find('all');
+                return $gastos;
+            }catch(Exception $e){
+                echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
+                echo "<script>console.log('No se pudo listar los gastos')</script>";
+                return false;
+            }
+        }
     }

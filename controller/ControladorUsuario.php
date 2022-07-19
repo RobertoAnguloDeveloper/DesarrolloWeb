@@ -3,8 +3,6 @@ session_start();
 
 include_once '../model/UsuarioDAO.php';
 
-
-
 switch($_REQUEST){
     case isset($_REQUEST['userMenu']):
         header("Location: login.php");
@@ -27,6 +25,7 @@ switch($_REQUEST){
         $usuario = new Usuario();
         $usuario->cedula = $_SESSION['cedula'];
         $usuario->clave = $_SESSION['clave'];
+
         $respuesta = UsuarioDAO::buscar($usuario);
 
         if($respuesta){

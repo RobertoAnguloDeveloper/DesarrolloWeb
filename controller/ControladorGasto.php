@@ -12,7 +12,6 @@ switch($_REQUEST){
         $gastos = serialize($gastos);
         $_SESSION['gastosUsuario'] = $gastos;
         header("Location: ../view/gasto/index.php?gastosUsuario=active");
-
         break;
 
     case isset($_REQUEST['agregarGasto']):
@@ -66,6 +65,11 @@ switch($_REQUEST){
         $respuesta = GastoDAO::editar($gasto);
         $_SESSION['nombre_gasto'] = $_REQUEST['nombre_gasto'];
         header("Location: ../view/gasto/index.php?gastoEditado=1");
+        break;
+    
+    case isset($_REQUEST['listar']):
+        $_SESSION['gastosTodos'] = serialize(GastoDAO::listar());
+        header("Location: ../view/gasto/index.php?gastosTodos=active");
         break;
 
     case isset($_REQUEST['eliminar']):

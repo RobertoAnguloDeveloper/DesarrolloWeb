@@ -452,7 +452,6 @@
     border-radius: 10px;
 }
 
-
 #listaGastos input[name="id"]{
     width: 166px;
     margin: unset;
@@ -480,21 +479,6 @@
     cursor: pointer;
 }
 
-#listaGastos form{
-    margin-left: 68.3%;
-}
-
-#listaGastos fieldset{
-    display: inline-block;
-    width: 30%;
-    position: unset;
-    margin: unset;
-    top: unset;
-    left: unset;
-    transform: unset;
-    font-size: 12px;
-}
-
 .tituloForm{
     padding: unset;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
@@ -505,10 +489,8 @@
     text-align: center;
 }
 
-#tituloGastos, #tituloTusGastos{
-    margin-top: -4.5%;
-    
-    margin-left: -80%;
+#tituloGastos, #tituloTusGastos, #tituloTodosGastos{
+    margin-top: 1.5%;
 }
 
 #regUsuario{

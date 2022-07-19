@@ -2,6 +2,7 @@
     session_start();
     require_once $_SERVER['DOCUMENT_ROOT'].'/DesarrolloWeb/model/Gasto.php';
     $gastos = @unserialize($_SESSION['gastosUsuario']);
+    $todosGastos = @unserialize($_SESSION['gastosTodos']);
 ?>
 
 <!DOCTYPE html>
@@ -17,28 +18,28 @@
 
 <body>
     <div id="listaGastos">
-        <form method="post">
-            <fieldset>
-                <legend class="tituloForm">Que deseas hacer?</legend>
                 <table>
                     <tr>
                         <td>
-                            <button type="submit" name="agregarGastoBtn"><img src="../img/add.png" alt="Agregar">
+                            <button name="agregarGastoBtn" onclick="window.location.href='agregar.php?agregarGastoBtn';"><img src="../img/add.png" alt="Agregar">
                         </td>
+                            
+                        <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == '1') { ?>
                         <td>
-                            <button type="submit" name="listaGastos"><img src="../img/list.png" alt="Listar">
+                            <button name="listar" onclick="window.location.href='../../controller/ControladorGasto.php?listar=active';"><img src="../img/list.png" alt="Listar">
                         </td>
-                        <td>
-                            <input type="number" name="id" placeholder="Buscar por ID de gasto">
-                        </td>
-                        <td>
-                            <button type="submit" name="buscarGasto"><img src="../img/search.png" alt="buscar">
-                        </td>
+                        <?php } ?>
+                        <form method="post">
+                            <td>
+                                <input type="number" name="id" placeholder="Buscar por ID de gasto">
+                            </td>
+                            <td>
+                                <button type="submit" name="buscarGasto"><img src="../img/search.png" alt="buscar">
+                            </td>
+                        </form>
                     </tr>
                 </table>
-            </fieldset>
-        </form>
-        
+
 <?php
     switch ($_REQUEST) {
         case isset($_REQUEST['agregarGasto']):
@@ -124,6 +125,56 @@
                 <tr>";
                 
                 foreach ($gastos as $i => $gasto) {
+                    echo "<tr>";
+                    echo "<td><input id='id".$i."' type='text' value='" . $gasto->id . "' disabled></td>";
+                    echo "<td><input id='usuario_id".$i."' type='text' value='" . $gasto->usuario_id . "' disabled></td>";
+                    echo "<td><input id='fecha".$i."' type='text' value='" . $gasto->fecha . "' disabled></td>";
+                    echo "<td><input id='valor_total_sin_iva".$i."' type='text' value='" . $gasto->valor_total_sin_iva . "' disabled></td>";
+                    echo "<td><input id='iva_total".$i."' type='text' value='" . $gasto->iva_total . "' disabled></td>";
+                    echo "<td><input id='valor_total_con_iva".$i."' type='text' value='" . $gasto->valor_total_con_iva . "' disabled></td>";
+                    echo "<td><input id='nombre_gasto".$i."' type='text' value='" . $gasto->nombre_gasto . "' disabled></td>";
+                    echo "<td><input id='lugar".$i."' type='text' value='" . $gasto->lugar . "' disabled></td>";
+                    echo "<td><input id='descripcion".$i."' type='text' value='" . $gasto->descripcion . "' disabled></td>";
+                    
+                        echo "<td>".
+                            "<script>
+                                ids".$i." = ['usuario_id".$i."', 'fecha".$i."', 'valor_total_sin_iva".$i."', 'iva_total".$i.
+                                "', 'valor_total_con_iva".$i."', 'nombre_gasto".$i."', 'lugar".$i."', 'descripcion".$i."'];
+                                editIds".$i." = ['id".$i."','usuario_id".$i."', 'fecha".$i."', 'valor_total_sin_iva".$i."', 'iva_total".$i.
+                                "', 'valor_total_con_iva".$i."', 'nombre_gasto".$i."', 'lugar".$i."', 'descripcion".$i."'];
+                            </script>".
+                            "<a href='#' onclick=".'"'."enableInputs(ids".$i.");".'"'." ><img src='../img/edit.png'></a>".
+                            "<a href='#' onclick=".'"'."gastoUpdateDB(editIds".$i.");".'"'." ><img src='../img/save.png'></a>"
+                            ."<a href='#' onclick=".'"'."gastoDeleteDB(editIds".$i.");".'"'." ><img src='../img/erase.png'></a>"
+
+                            ."</td>
+                            </tr>";
+                }
+            }
+        break;
+
+    case isset($_REQUEST['gastosTodos']):
+        if(isset($_REQUEST['actualizar'])){
+            echo "<script>window.location.href='#?gastosTodos=ok'</script>";
+        }else{
+            echo "
+            <h2 id='tituloTodosGastos' class='tituloForm'>TODOS LOS GASTOS</h2>
+            <table id='tablaGastos' class='tabla2'>
+                <tr>
+                <th>Id</th>
+                <th>Usuario Id</th>
+                <th>Fecha</th>
+                <th>Valor total sin IVA</th>
+                <th>IVA total</th>
+                <th>Valor total con IVA</th>
+                <th>Nombre del gasto</th>
+                <th>Lugar</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+                <tr>";
+                
+                foreach ($todosGastos as $i => $gasto) {
                     echo "<tr>";
                     echo "<td><input id='id".$i."' type='text' value='" . $gasto->id . "' disabled></td>";
                     echo "<td><input id='usuario_id".$i."' type='text' value='" . $gasto->usuario_id . "' disabled></td>";
