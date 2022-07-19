@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <center>
-                    <input type="text" name="cedula" placeholder="Introduzca su Cédula">
+                    <input type="text" name="cedula" placeholder="Introduzca su Cédula" required>
                     <input type="password" name="clave" placeholder="Introduzca su Contraseña">
                 </center>
             </tr>
@@ -34,7 +34,9 @@
                         <input type="submit" name="sesion" value="Iniciar sesión">
                         <input type="submit" name="registrar" value="Registrarse">
                         <br>
-                        <a id="recoveryPass" href="recoverypass.php">Olvidaste tu contraseña?</a>
+                        <!-- Make an a tag a submit button -->
+
+                        <input type="submit" id="recoveryPass" name="recoveryPass" value="Olvidaste tu contraseña?"><a  href="login.php?recoveryPass=active"></a>
                     </center>
                 </td>
             </tr>
@@ -44,6 +46,7 @@
     <?php
     
         if(count($_REQUEST) != 0){
+            
             switch($_REQUEST){
                 case isset($_REQUEST['sesion']):
                     echo "<script>console.log('login->sesion')</script>";
@@ -53,6 +56,9 @@
                     break;
                 case isset($_REQUEST['registrar']):
                     header("Location: ../../controller/ControladorUsuario.php?registrar=active");
+                    break;
+                case isset($_REQUEST['recoveryPass']):
+                    header("Location: ../../controller/ControladorUsuario.php?recovery=active&cedula=".$_REQUEST['cedula']);
                     break;
                 default:
                     echo "NO HIZO NADA";

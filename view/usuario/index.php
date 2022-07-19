@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +57,17 @@ session_start();
         case isset($_REQUEST['datosCuenta']):
             header("Location: editar.php");
             break;
+
+        case isset($_REQUEST['recovery']):
+            if($_REQUEST['recovery'] == '1'){
+                echo "<script>alert('".$_REQUEST['mensaje']."');</script>";
+            }
+            elseif($_REQUEST['recovery'] == '0'){
+                echo "<script>alert('ALGO SUCEDIO CON TU CORREO, LO SENTIMOS')</script>";
+            }elseif($_REQUEST['recovery'] == 'fail'){
+                echo "<script>alert('ALGO SUCEDE CON TU CUENTA, PONTE EN CONTACTO CON EL ADMINISTRADOR')</script>";
+            }
+            break;
         default:
             echo "NO HIZO NADA";
             break;
@@ -68,6 +80,7 @@ session_start();
         
         header("Location: ../../controller/ControladorUsuario.php?guardar");
     }
+
     ?>
 </body>
 

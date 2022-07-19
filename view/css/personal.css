@@ -264,6 +264,38 @@
     transform: translate(-50%,-50%);
 }
 
+#recoveryPass{
+    /* Hide design of a button */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-size: unset;
+    font-weight: unset;
+    text-shadow: unset;
+    padding: unset;
+    margin: unset;
+    text-decoration: underline;
+    text-align: unset;
+    font-family: unset;
+}
+
+#recoveryPass:hover{
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: unset;
+    font-size: unset;
+    font-weight: unset;
+    text-shadow: unset;
+    box-shadow: unset;
+    padding: unset;
+    margin: unset;
+    text-decoration: underline;
+    text-align: unset;
+    font-family: unset;
+}
+
 .contenedorSignin{
     display: block;
     border: 2px solid black;

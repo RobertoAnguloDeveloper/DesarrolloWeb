@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'view/usuario/logeo.php';
-// var_dump($_SESSION);
+$rootPath = $_SERVER['DOCUMENT_ROOT'].'/desarrolloweb/';
 ?>
 
 <!DOCTYPE html>

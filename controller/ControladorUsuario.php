@@ -3,7 +3,7 @@ session_start();
 
 include_once '../model/UsuarioDAO.php';
 
-$rootPath = $_SERVER['DOCUMENT_ROOT'].'/desarrolloweb/';
+
 
 switch($_REQUEST){
     case isset($_REQUEST['userMenu']):
@@ -107,6 +107,25 @@ switch($_REQUEST){
         $respuesta = UsuarioDAO::eliminar($usuario);
         header("Location: ../view/usuario/listar.php?eliminar=".$respuesta);
         break;
+
+    case isset($_REQUEST['recovery']):
+        $usuario = new Usuario();
+        $usuario = UsuarioDAO::buscarPorCedula($_REQUEST['cedula']);
+        
+        if($usuario->cedula != null){
+            require_once 'PasswordRecovery.php';
+            
+            $mail = new PasswordRecovery($usuario->email, $usuario->nombre, $usuario->cedula, $usuario->clave);
+            
+            $respuesta = $mail->send();
+            $res = [];
+            $res = explode("?", $respuesta);
+            header("Location: ../view/usuario/index.php?recovery=".$res[1]."&mensaje=".$res[0]);
+        }else{
+            header("Location: ../view/usuario/index.php?recovery=fail");
+        }
+        break;
+
 
     case isset($_REQUEST['cerrarSesion']):
         session_destroy();
