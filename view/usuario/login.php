@@ -34,7 +34,6 @@
                         <input type="submit" name="sesion" value="Iniciar sesión">
                         <input type="submit" name="registrar" value="Registrarse">
                         <br>
-                        <!-- Make an a tag a submit button -->
 
                         <input type="submit" id="recoveryPass" name="recoveryPass" value="Olvidaste tu contraseña?"><a  href="login.php?recoveryPass=active"></a>
                     </center>
