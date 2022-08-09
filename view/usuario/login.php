@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <center>
-                    <input type="text" name="cedula" placeholder="Introduzca su Cédula" required>
+                    <input type="text" name="cedula" placeholder="Introduzca su Cédula">
                     <input type="password" name="clave" placeholder="Introduzca su Contraseña">
                 </center>
             </tr>
@@ -33,9 +33,8 @@
                     <center>
                         <input type="submit" name="sesion" value="Iniciar sesión">
                         <input type="submit" name="registrar" value="Registrarse">
-                        <br>
 
-                        <input type="submit" id="recoveryPass" name="recoveryPass" 
+                        <input style="margin-top: 5px; margin-bottom: 10px;" type="submit" id="recoveryPass" name="recoveryPass" 
                         value="Olvidaste tu contraseña?"><a  href="login.php?recoveryPass=active"></a>
                     </center>
                 </td>

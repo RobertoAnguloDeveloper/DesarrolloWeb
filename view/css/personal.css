@@ -253,8 +253,7 @@
     display: block;
     border: 2px solid black;
     width: 35%;
-    height: 63%;
-    padding: 2%;
+    padding: 3%;
     box-sizing: border-box;
     background-color: rgba(255, 230, 0,0.697);
     position: absolute;
@@ -265,7 +264,7 @@
 }
 
 #recoveryPass{
-    /* Hide design of a button */
+    
     background: none;
     border: none;
     cursor: pointer;
@@ -300,7 +299,6 @@
     display: block;
     border: 2px solid black;
     width: 45%;
-    height: 70%;
     padding: 2%;
     box-sizing: border-box;
     background-color: rgba(255, 230, 0,0.697);
