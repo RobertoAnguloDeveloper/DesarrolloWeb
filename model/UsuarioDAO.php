@@ -4,9 +4,14 @@
     class UsuarioDAO{
         public static function agregar($usuario){
             try{
-                $usuario->save();
-                echo "<script>console.log('USUARIO AGREGADO CORRECTAMENTE')</script>";
-                return true;
+                if(!is_null(Usuario::find_by_cedula($usuario->cedula))){
+                    echo "<script>console.log('YA EXISTE ESA CEDULA')</script>";
+                    return false;
+                }else{
+                    $usuario->save();
+                    echo "<script>console.log('USUARIO AGREGADO CORRECTAMENTE')</script>";
+                    return true;
+                }
             }catch(Exception $e){
                 echo "<script>console.log('Error: ".$e->getMessage()."')</script>";
                 return false;
